@@ -69,7 +69,7 @@ every loader (`paper_manifest.json` records both). The uncertainty output is
 usable ordinally only; its interval scale is not calibrated on real data, and
 that warning travels with every result.
 
-## What is deliberately absent
+## What is absent
 
 The synthetic measurement-world generators, all training code, and every
 capability outside the paper (longitudinal trait-state analysis, multimodal
