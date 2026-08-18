@@ -1,0 +1,45 @@
+{
+  "access_tier": "public_use",
+  "approval": {
+    "approved_by": "Alvin K. Tay (project owner), authorised in session 2026-08-04",
+    "approved_on": "2026-08-04",
+    "d8_instrument_licensing": true,
+    "d8_reference": "No instrument text is stored or released. The mapping records only ESS variable names (fltdpr, flteeff, slprl, wrhpp, fltlnl, enjlf, fltsd, cldgng), category codes (1-4) and administrative codes (7 Refusal, 8 Don't know, 9 No answer), all of which are metadata rather than CES-D item wording. The ESS codebook HTML is gitignored and never committed. Direction handling for the two positively worded items is recorded as a DECLARATION citing the codebook, not as reproduced text. Enforced by test.",
+    "d9_data_governance": true,
+    "d9_reference": "Discharged by the ESS release terms. ESS integrated files are published for academic secondary analysis after disclosure control and contain no direct identifiers; idno is a within-country serial number, treated as an opaque string and used only as part of a composite key. Re-identification is prohibited by those terms and is not attempted. Access tier: public_use. Licence obligations (CC BY-NC-SA 4.0) are gated separately by require_licence_compatible.",
+    "notes": "APPROVED SCOPE: non-commercial academic evaluation of the FROZEN model v0.6.0-beta.1 on ESS Round 7 edition 2.3, and academic reporting of aggregate results with the required citation. This approval does NOT extend to: model training or fine-tuning on ESS data (explicitly not authorized in this milestone); commercial reuse (not assumed, and not grantable here - only the licensor can relax the NC clause); ESS Round 11 or any other round (reserved); or any restricted dataset. All six permission flags remain false and are rejected by the schema if flipped."
+  },
+  "attribution": "European Social Survey (ESS), Round 7, 2014. Data collected by the ESS ERIC and distributed by Sikt - Norwegian Agency for Shared Services in Education and Research.",
+  "commercial_reuse_assumed": false,
+  "converted_data_location": "<scratch>/ess_round7_cesd8.parquet (outside the repository)",
+  "cycle_completed_on": null,
+  "cycle_result_reference": null,
+  "dataset_edition": "ESS7e02_3 (edition 2.3)",
+  "dataset_id": "ess_round7_cesd8",
+  "instrument": "CES-D 8-item short form (ESS Round 7 wellbeing module)",
+  "instrument_family": "CES-D",
+  "licence": "cc_by_nc_sa_4_0",
+  "licence_reference": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+  "model_version": "v0.6.0-beta.1",
+  "notes": "Role is new_instrument_multicountry_validation. The frozen DIF capability (SELECTED_MODEL_5A) is architecturally TWO-GROUP - group_code_from_settings reduces settings to (setting > 0) - so a 21-country omnibus contrast is outside its validated region. Cross-country DIF is therefore run as prespecified two-group reference-country contrasts, and labelled with that scope.",
+  "permissions": {
+    "architecture_selection_allowed": false,
+    "benchmark_criteria_selection_allowed": false,
+    "fine_tuning_allowed": false,
+    "neural_training_allowed": false,
+    "recalibration_allowed": false,
+    "schema_development_use": false,
+    "threshold_modification_allowed": false
+  },
+  "publication_use_status": "Non-commercial academic evaluation and academic reporting only, per CC BY-NC-SA 4.0. Aggregate results may be reported with the required citation. The share-alike clause reaches derived artifacts, so any redistributed derivative carries the same terms. Commercial reuse is NOT assumed and is not authorised here. CES-D item TEXT is not reproduced in the mapping, templates or any committed artifact.",
+  "raw_data_excluded_from_benchmarks": true,
+  "raw_data_excluded_from_git": true,
+  "raw_data_location": "data/public/ESS7e02_3.csv (gitignored; stays outside the repository index)",
+  "required_citation": "European Social Survey European Research Infrastructure (ESS ERIC). ESS Round 7 (2014) Integrated File, edition 2.3 [Data set]. Sikt - Norwegian Agency for Shared Services in Education and Research, Norway. doi:10.21338/NSD-ESS7-2014.",
+  "reserved_datasets": {
+    "ess_round11": "RESERVED and NOT opened in this milestone. Keeping a later ESS round untouched preserves the option of an independent replication that this evaluation has not already shaped."
+  },
+  "role": "new_instrument_multicountry_validation",
+  "schema_version": "6b1-governance-v1",
+  "source": "European Social Survey Round 7 integrated main data file, edition 2.3 (ESS7e02_3)"
+}

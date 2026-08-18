@@ -1,0 +1,1961 @@
+{
+  "analysis": "SHARE_A",
+  "bootstrap": {
+    "interval": "percentile 0.025/0.975",
+    "min_stable_n": 30,
+    "n": 200,
+    "seed": 6500,
+    "unit": "participant"
+  },
+  "charter": "configs/model/share_master_validation_charter.json",
+  "cohort": {
+    "person_overlap_w9_w8_complete": {
+      "count": 38071,
+      "definition": "|{mergeid complete in w9} intersection {mergeid complete in w8}|",
+      "note": "outcome-blind aggregate for the charter replication_disclosure: the primary and replication cohorts are the same panel observed two years apart, NOT independent samples"
+    },
+    "rows_excluded_incomplete": 1963,
+    "rows_kept": 51732,
+    "rule": "all rows with all 12 official euro items in {0,1} in the target wave (one row per mergeid; duplicate mergeids, if any, surface as an integrity failure)"
+  },
+  "computed_gate_verdict": "PASS",
+  "countries_excluded_silently": [],
+  "country_subsampling_stability": {
+    "available": true,
+    "full_sample_pearson": 0.9846700976872547,
+    "n_repeats": 5,
+    "pearson_max": 0.9848467598387256,
+    "pearson_min": 0.9844622040039143,
+    "pearson_spread": 0.0003845558348113398,
+    "repeats": [
+      {
+        "n": 25860,
+        "pearson": 0.9845677420148508,
+        "repeat": 0,
+        "seed": 6204,
+        "spearman_midrank": 0.9884430228202317
+      },
+      {
+        "n": 25860,
+        "pearson": 0.9844900473207694,
+        "repeat": 1,
+        "seed": 6205,
+        "spearman_midrank": 0.988439577023679
+      },
+      {
+        "n": 25860,
+        "pearson": 0.9848467598387256,
+        "repeat": 2,
+        "seed": 6206,
+        "spearman_midrank": 0.9885564983119687
+      },
+      {
+        "n": 25860,
+        "pearson": 0.9844622040039143,
+        "repeat": 3,
+        "seed": 6207,
+        "spearman_midrank": 0.9885435172907134
+      },
+      {
+        "n": 25860,
+        "pearson": 0.9845429829410498,
+        "repeat": 4,
+        "seed": 6208,
+        "spearman_midrank": 0.9885526958521456
+      }
+    ],
+    "rule": "half of every country's participants per repeat (country-stratified)",
+    "scope": "NON-GATING country-imbalance diagnostic (charter share_a.imbalance_diagnostic). Reuses the pooled METER scores and the pooled specialist fit; nothing here enters any verdict"
+  },
+  "dataset_edition": "SHARE Release 9.0.0 (Stata, ALL datasets), waves 1,2,4,5,6,7,8,9",
+  "dataset_id": "share_rel9_eurod",
+  "disclosure": "AGGREGATE ONLY - no participant-level score, mergeid or household key by any path",
+  "environment": {
+    "package_versions": {
+      "numpy": "2.5.1",
+      "polars": "1.43.1",
+      "pyreadstat": "1.3.5",
+      "python": "3.14.4",
+      "scipy": "1.18.0",
+      "torch": "2.13.0+cpu"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "r": {
+      "available": true,
+      "mirt_version": "1.46.1",
+      "r_version": "R version 4.6.1 (2026-06-24 ucrt)"
+    },
+    "torch_num_threads": 1,
+    "torch_num_threads_pinned": "set_num_threads(1) before any inference (charter disclosures.expected_determinism)"
+  },
+  "frozen_protocols": {
+    "analysis_freeze": {
+      "sha256": "f773c07f1b03b162e0591c868affc8fa1b4b79758344756dd027f2c07a007bd7",
+      "specification": {
+        "comparators": [
+          "sum_score",
+          "principal_component",
+          "mml_grm_eap"
+        ],
+        "freeze_id": "phase6b1_analysis_freeze",
+        "frozen_before_opening": [
+          "nhanes_2017_2018_dpq_j"
+        ],
+        "frozen_on": "2026-08-04",
+        "known_hazard": {
+          "P_DPQ.xpt": "the NHANES 2017-March 2020 pre-pandemic file OVERLAPS DPQ_J: its respondents include the 2017-2018 cycle. Using both would double-count those people. P_DPQ is therefore NOT part of this cycle and is not opened."
+        },
+        "mapping": {
+          "config": "configs/mappings/nhanes_2015_2016_dpq.yaml",
+          "excluded_variables": [
+            "DPQ100"
+          ],
+          "rationale": "DPQ_J carries the identical DPQ variable block - SEQN, DPQ010-DPQ090, the same 0-3 categories and the same 7/9 administrative codes - so the DPQ_I mapping applies unchanged. Reusing it is what makes the comparison a replication rather than two separate analyses; only dataset_id differs.",
+          "reused_for_dpq_j": true
+        },
+        "metrics": {
+          "labelling": "every comparator quantity is AGREEMENT with a conventional estimate, never accuracy against truth",
+          "point_estimate_transfer": [
+            "pearson agreement with each comparator",
+            "rank agreement with each comparator",
+            "cronbach alpha of the item set",
+            "item discrimination summary",
+            "dimensionality diagnostics"
+          ],
+          "stability": [
+            "balanced paired split-half, per STABILITY_PROTOCOL"
+          ],
+          "uncertainty": [
+            "predicted-versus-empirical calibration, per UNCERTAINTY_PROTOCOL"
+          ]
+        },
+        "model_version": "v0.6.0-beta.1",
+        "prohibited_after_opening": [
+          "changing the mapping, any protocol parameter, the comparator set or any metric",
+          "retraining, fine-tuning, recalibrating or re-thresholding the model",
+          "pooling DPQ_J with DPQ_I",
+          "re-running the locked cycle"
+        ],
+        "replication_questions": [
+          "does strong point-estimate transfer replicate in a later population sample?",
+          "does the uncertainty mismatch (L45: conservative intervals, ratio ~2) replicate?",
+          "does the L43 non-monotonicity replicate?",
+          "does the L44 instrument-not-model conclusion replicate?"
+        ],
+        "version": "1.0"
+      }
+    },
+    "real_world_capability": {
+      "contract": {
+        "battery_structure_discovery_1_to_5": {
+          "evidence": "four smoke runs (8d7f044, 4f3999a, 1dc6ef0, 4aead8c) each produced a single-column factor-count confusion matrix - every world reported as one factor - with balanced count accuracy 0.200 and item-clustering ARI 0.158, unchanged through gate-schedule repair, exact Poisson-binomial cardinality supervision, and slot-conditioned gate decoupling that verifiably removed the gate coupling (pairwise correlation 0.992+ down to 0.13-0.82). The DEVELOPMENT fit improved across all four runs while structure never appeared",
+          "mechanism": "the trained one-sample ELBO attenuates the likelihood's gate signal ~24x while parsimony is unattenuated, leaving every optional gate's optimum interior and below the activation threshold; see the exact gate-override audit (c2a6eee) and docs/milestone_7_closure.md",
+          "milestone": "7 (closed 2026-08-06)",
+          "prohibited_uses": [
+            "reporting an automatically discovered factor count as a finding",
+            "citing any Milestone 8 known-structure result as evidence for this capability"
+          ],
+          "real_data_status": "none_established",
+          "reopening": "docs/milestone_7_closure.md section 4 binds the starting point: count-weight recalibration under the frozen f8c9b70 procedure and the Stage A zero-gradient window are the pre-registered untried candidates",
+          "status": "experimental_out_of_support"
+        },
+        "binary_group_dif": {
+          "evidence": "20 two-group reference-country contrasts on ESS7 returned zero flagged items with max |effect| 0.063-0.132 logits against a 0.20 substantive floor, stable under both size-matching and half-sample subsampling",
+          "limitation": [
+            "no_real_data_positive_control_in_ESS7"
+          ],
+          "status": "experimental",
+          "why_experimental": "a uniform null is consistent with genuine invariance AND with an insensitive head, and the ESS7 design contains no contrast with known DIF that could distinguish them. Absence of a positive control is why this is experimental rather than supported, and a SYNTHETIC positive control does not discharge it - it would establish sensitivity on the data the head was trained against, not on real data"
+        },
+        "contract_version": "3.4",
+        "controlled_noise_conflict_person_mismatch_rejection": {
+          "evidence": "at the calibrated Candidate-7 operating point: pure-noise (s1) and conflict (s4) rejection 1.0 with bit-exact fallback at every information level in both the native and T=1 regimes (G3/G4a); seeded between-person permutation rejection 1.0 with genuine same-construct admission 0.972-0.979 (G5). Held across the whole C1-C7 candidate chain and on the fresh calibration regions",
+          "milestone": "10B (synthetic only)",
+          "scope": "SYNTHETIC worlds only, the frozen M10B family set; real-data counterpart is the M10A rejection result above",
+          "status": "supported"
+        },
+        "exact_psychometric_fallback": {
+          "evidence": "every rejection returns the psychometric-only posterior bit-for-bit: M10A real data at all four information levels; M10B c7cal 2,577 rejections plus whole-modality-absence and person-absence probes, all exact (G6)",
+          "milestone": "10A (real data) and 10B (synthetic)",
+          "status": "supported"
+        },
+        "incremental_multimodal_utility": {
+          "evidence": "Candidate 6 met the sparse-utility requirement (G1 5/9 median delta_r 0.0254 dev / 0.0267 fresh, bar 0.02) but failed precision-tail honesty (5 G7b exceedances at every fresh grid point against an allowed count of 4). Candidate 7 repaired the identified precision defect (zero exceedances everywhere measured) but failed the frozen G1 5/9 utility requirement (0.0165 on the development region), replicated on an independent fresh region (0.0172). No measured operating point holds both sides of the contract. The shortfall is not harm: no-harm passes, admission is unchanged, and every paired per-world change is <= 0 - the mechanism shrinks fusion it cannot price honestly at T=1 sparsity",
+          "limitation": [
+            "L52",
+            "L53"
+          ],
+          "milestone": "10B (closed 2026-08-10, ratified; commit 7a28241)",
+          "prohibited_uses": [
+            "citing the precision-honesty demonstration as utility evidence",
+            "citing Candidate 6's utility pass without its precision-tail failure"
+          ],
+          "scope": "the tested M10B architecture and operating region ONLY - the frozen 5E anchor, the M-6/M-6b defence family, the frozen family set and bars. Not evidence about other architectures, mechanisms, regimes, or bars, and not to be generalized",
+          "status": "not_established"
+        },
+        "longitudinal_binary_change_detection": {
+          "evidence": "sensitivity 0.041, specificity 0.997, false-positive rate 0.0032, precision 0.400 pooled over 164 worlds; permanent 0.051 and temporary 0.021 against the same unchanged pool. Detection exceeds 0.3 only above three stationary standard deviations of realized change",
+          "informative_when": "realized change exceeds ~3 stationary SDs",
+          "limitation": [
+            "L48",
+            "L50"
+          ],
+          "prohibited_uses": [
+            "reading a null result as evidence that no change occurred",
+            "reading the continuous change score as a magnitude - attenuated 8-14x"
+          ],
+          "real_data_status": "none_established",
+          "status": "experimental"
+        },
+        "longitudinal_enforcement": {
+          "applied_by": "human_measurement.integrated._apply_longitudinal_boundaries",
+          "closes": "L50 at the interface; the underlying insensitivity is unchanged",
+          "enforced_at": "human_measurement.longitudinal_design",
+          "fail_safe": "a longitudinal request with no design descriptor, or with routing-relevant metadata absent, is routed as OUT of support. An undescribed design is not thereby a supported one",
+          "milestone": "6B.2.3",
+          "warnings": [
+            "longitudinal_design_out_of_validated_support",
+            "longitudinal_trait_share_binary_bias",
+            "continuous_change_magnitude_attenuated",
+            "longitudinal_design_metadata_incomplete",
+            "longitudinal_trait_may_absorb_state_variance"
+          ]
+        },
+        "longitudinal_state": {
+          "evidence": "state recovery r 0.63 at OU decay per wave below 0.05, 0.53 at 0.3-0.6, 0.29 at 0.6-0.85 and 0.05 above 0.85 - weakly identified exactly where the state is persistent relative to the observation schedule",
+          "informative_when": "decay per wave below ~0.6",
+          "limitation": [
+            "L49"
+          ],
+          "not_informative_when": "decay above 0.85; a biennial schedule with realistic symptom persistence sits at r ~ 0.29",
+          "real_data_status": "none_established",
+          "status": "experimental"
+        },
+        "longitudinal_trait": {
+          "evidence": "trait recovery r 0.75-0.94 across all 164 audited synthetic designs, including 2-wave (0.71); degrades gracefully with fewer waves, lower trait share and fewer response categories rather than failing",
+          "informative_when": "broadly, across every audited design",
+          "limitation": [
+            "L49"
+          ],
+          "real_data_status": "none_established",
+          "status": "experimental"
+        },
+        "longitudinal_trait_share": {
+          "evidence": "estimated trait share exceeds the true share in every audited cell, by +0.032 to +0.685. Worst where the true trait share is low (+0.685 at 0.25) and where items are binary (+0.378 at 2 categories against -0.015 at 5). Insensitive to wave count and spacing, so more waves do not fix it",
+          "limitation": [
+            "L49"
+          ],
+          "prohibited_uses": [
+            "variance decomposition reported without the measured bias"
+          ],
+          "real_data_status": "none_established",
+          "status": "not_calibrated"
+        },
+        "model_version": "v0.6.0-beta.1",
+        "multicountry_dif": {
+          "limitation": "L46",
+          "reason": "INEXPRESSIBLE, not merely unvalidated. dif.group_code_from_settings reduces every setting to (setting > 0), so a k-group design collapses to one group against the other k-1 pooled. A many-country request returns a confident number for a contrast nobody asked for",
+          "required_decomposition": "prespecified two-group contrasts with an explicitly declared reference and focal group, each labelled with that scope",
+          "status": "not_supported"
+        },
+        "multimodal_precision_honesty_conservative_mechanism": {
+          "evidence": "under frozen Amendments 9-11: G7b exceedance count ZERO at all 8 calibration grid points on the fresh region (allowed K(n)=4) and at the calibrated point on the development region (allowed K(n)=8), with G7a median RPI 0.977-0.988 against bounds at 1.000-1.001. Candidate 6, without the mechanism, showed 5 exceedances at every fresh grid point. The mechanism is a monotone conservative UCB ceiling deflation of claimed auxiliary precision where T=1 separation cannot be certified; it never loosens a claim",
+          "milestone": "10B Candidate 7 (final conservative mechanism, M-6b)",
+          "scope": "demonstrated within the tested M10B architecture and operating region only; this is a property of the final mechanism on the measured families, not a general warranty of honest precision",
+          "status": "demonstrated"
+        },
+        "real_world_cross_sectional_point_estimation": {
+          "evidence": {
+            "countries_or_cycles": 23,
+            "datasets": [
+              "NHANES_2015_2016",
+              "NHANES_2017_2018_locked",
+              "ESS_Round_7"
+            ],
+            "instruments": [
+              "PHQ-9",
+              "CES-D8"
+            ]
+          },
+          "measured": "agreement with conventional estimators 0.92-0.94 on the two NHANES cycles and 0.97-0.998 on ESS7, no schema revision on any dataset, and 0.95-0.99 against MML-GRM in every one of the 21 ESS countries taken separately",
+          "scope": "cross-sectional only, two instrument families, one construct family (depressive symptomatology), 23 country-cycles. Agreement with conventional estimates is NOT accuracy against truth: the model and its comparators share graded-response assumptions and can be wrong together. No criterion measure has been used",
+          "status": "supported_experimental"
+        },
+        "real_world_interval_scale": {
+          "evidence": "calibration ratio (predicted width / empirical variation) median 2.19 on DPQ_I, 2.18 on DPQ_J, and 3.12-10.54 across the ESS7 masking curve - above 1 at every level of every dataset, i.e. consistently conservative. The shape failure is dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 on ESS7 under an identical measurement (L47)",
+          "limitations": {
+            "scale": "L45",
+            "shape": "L43 (dataset-dependent, see L47)"
+          },
+          "prohibited_uses": [
+            "confidence_interval",
+            "coverage_interval",
+            "literal error_bar",
+            "probability statement",
+            "threshold-based individual decision"
+          ],
+          "status": "not_calibrated",
+          "warning": "real_world_interval_scale_not_calibrated",
+          "why_the_prohibitions_follow": {
+            "confidence_interval": "a frequentist coverage guarantee was never established",
+            "coverage_interval": "nominal coverage is unvalidated; the scale error alone would break it",
+            "literal error_bar": "the width runs 2x to 10x the estimate's actual variation, so the bar drawn would not be the error",
+            "probability statement": "no probability derived from this width is warranted - the scale it would be read off IS the miscalibrated quantity",
+            "threshold-based individual decision": "misplaces every participant relative to a fixed cutoff, and on the NHANES datasets not even consistently between participants. The prohibition with direct consequences for people"
+          }
+        },
+        "real_world_multimodal_utility": {
+          "evidence": "M10A utility gates U1/U2/U4 failed: the single locked real-data run rejected the wearable modality at every level, so no real-world fusion utility was observed; and the M10B synthetic closure removes the synthetic basis on which a real-world utility claim would have been staged. The M10B real-data holdouts (H2/H3) are permanently unopened under the ratified closure",
+          "milestone": "10A (permanent) and 10B (H2/H3 permanently unopened)",
+          "scope": "one wearable modality, one construct, one dataset tested; no real-world multimodal utility claim of any kind is supported",
+          "status": "not_established"
+        },
+        "real_world_relative_uncertainty": {
+          "evidence": "the uncertainty-error relationship is strongly positive WITHIN participants: median r 0.907 (DPQ_I), 0.88 (DPQ_J) and 0.861 (ESS7), positive for 100%, 100% and 98.7% of participants. Across ESS countries the model's own median relative uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is this capability doing useful work rather than merely being self-consistent",
+          "permitted_use": [
+            "ordinal_uncertainty_ranking",
+            "comparative_diagnostic"
+          ],
+          "status": "supported_experimental"
+        },
+        "real_world_safe_modality_rejection_and_fallback": {
+          "evidence": "single locked NHANES 2005-2006 run (N=3,024, T=1): the wearable modality was rejected at every information level (gate snapped to 0 at 9/9 through 3/9) with bit-exact psychometric fallback everywhere (delta_r 0.0, relative precision inflation 1.0, median displacement 0.0); safety gates S1-S4 all held and the negative controls were rejected. All nine evaluability preconditions passed, so this is a scientific outcome, not a technical escape",
+          "limitation": [
+            "L52"
+          ],
+          "milestone": "10A (closed 2026-08-08, permanent)",
+          "scope": "one wearable modality, one construct (depressive symptomatology), one cycle, T=1. Rejection safety is what is supported - not that rejection was the correct scientific verdict on the modality (L52: the gate's own admission evidence degrades with the psychometric anchor)",
+          "status": "supported"
+        },
+        "set_on": "2026-08-10",
+        "supersedes": "3.3 (which superseded 3.2, 3.1, 3.0, 2.0)"
+      },
+      "sha256": "c1eae27a9d10f21264e00cd3a0708cb5ca4a8fae3a9b41b596558e025ffa1e2c"
+    },
+    "schema_version": "6b1-protocols-v1",
+    "stability": {
+      "protocol": {
+        "balancing": "items ordered by endorsement rate; assignment randomised within adjacent pairs",
+        "comparators": [
+          "sum_score",
+          "principal_component",
+          "mml_grm_eap"
+        ],
+        "correction": "none; correlations are uncorrected and compare methods, not absolute reliability",
+        "frozen_on": "2026-08-04",
+        "interpretation": "if every method falls similarly the loss belongs to the INSTRUMENT; if the model falls substantially further it is a MODEL-TRANSFER issue",
+        "n_splits": 60,
+        "n_splits_expensive_comparator": 30,
+        "never": [
+          "report a bare split-half number without comparators on the same splits",
+          "use an unbalanced or ordered split",
+          "infer a model defect from a single split"
+        ],
+        "paired": true,
+        "protocol_id": "balanced_paired_split_stability",
+        "reported": [
+          "per-method median, mean, sd, q10, q90 of the split-half correlation",
+          "paired difference (model minus comparator) with a 95% interval",
+          "fraction of splits on which the model is lower"
+        ],
+        "seed": 6400,
+        "version": "1.0"
+      },
+      "sha256": "2d6c20a063459ff62c85f5d8ac802547fc7f7e8bddc0630cd9bb0ecc880cb6bd"
+    },
+    "uncertainty": {
+      "protocol": {
+        "components": {
+          "calibration_ratio": "predicted / empirical. 1.0 is calibrated; below 1 is overconfident. This is the single number the protocol exists to produce",
+          "comparator_diagnostics": "the same quantities for MML graded response using its EAP posterior standard deviation, where R/mirt is available",
+          "dataset_level_uncertainty_error": "across mask levels: does mean predicted width track RMSE?",
+          "empirical_variation": "the spread of masked estimates around the full-item estimate, across repetitions at the same mask level - what the uncertainty actually is",
+          "held_out_proper_score": "log loss and Brier score on the masked items, scored from the model's own category probabilities - not a correlation, so it cannot be flattered by scale",
+          "item_prediction_degradation": "correlation between the estimate and the held-out responses, by mask level",
+          "participant_level_uncertainty_error": "within participant, across mask levels: does a wider predicted interval accompany a larger actual error?",
+          "predicted_posterior_width": "the model's own interval width per participant at each mask level"
+        },
+        "frozen_on": "2026-08-04",
+        "mask_fractions": [
+          0.0,
+          0.11,
+          0.22,
+          0.33,
+          0.44,
+          0.56,
+          0.67,
+          0.78,
+          0.89
+        ],
+        "n_repetitions": 20,
+        "nesting": "within a repetition each level removes a superset of the previous level's items",
+        "never": [
+          "summarise uncertainty behaviour with a single masking contrast",
+          "read predicted width as an error bar, under any circumstances, whether or not the calibration ratio is known - knowing the ratio is what established that the width is not an error bar, not a licence to treat it as one",
+          "recalibrate the frozen model in response to what this protocol finds"
+        ],
+        "protocol_id": "repeated_nested_mask_uncertainty",
+        "reported_per_dataset": [
+          "the full curve for every component, never endpoints",
+          "participant-level monotonicity rate alongside pooled medians",
+          "mean and median curves together",
+          "local non-monotonicity with location and magnitude",
+          "cross-sectional, trait and state uncertainty separately where applicable"
+        ],
+        "revised_on": "2026-08-04",
+        "revision": {
+          "from_version": "1.0",
+          "superseded_sha256": "the v1.0 hash is recorded in configs/model/phase6b1_protocols.v1.json and in the provenance block of every run made under it; those runs remain valid under v1.0",
+          "what_changed": "one 'never' clause only. No parameter, seed, mask fraction, component or reported quantity was touched, so no run's numbers change and no result is reinterpreted.",
+          "why": "v1.0 said 'never read predicted width as an error bar BEFORE the calibration ratio is known'. That conditional was correct when written - the ratio was unknown. It is now known, published in the same artifacts that carry this clause, and above 1 on every dataset. A reader reaching the clause today satisfies its condition and finds it grants exactly the permission the contract forbids. The prohibition is unconditional and is now written that way."
+        },
+        "seed": 6500,
+        "version": "1.1"
+      },
+      "sha256": "0db0465af37f7db6a8aa798dbf43d2c9da1ccdcbc7bda23e8afd598f655119b4"
+    }
+  },
+  "frozen_provenance": {
+    "calibration_configs": {
+      "phase5d_decision.json": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+      "phase5e1_reference.json": "2709fa550586d7342dc9637f02110111d10655fe98619afee9b67eb7084d6f12",
+      "phase5f1_selected.json": "d8cc82f790c382bcf062bdfa92a347c8a544a151e1b953d424b984b696c0076b",
+      "phase5f_fusion.json": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697"
+    },
+    "change_detector": "likelihood_ratio",
+    "change_detector_status": "conditionally_supported_experimental",
+    "change_score_is_calibrated_probability": false,
+    "dif_model_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+    "dif_operating_threshold": 0.36435567004776,
+    "input_schema_version": "6a-input-v1",
+    "interface_version": "6a-v1",
+    "linking_decision_config_sha256": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+    "linking_model_sha256": "cb43dd8a705609e1ee957100569995651d463dd8aaf33f7c1ff308807d3ebf93",
+    "longitudinal_model_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "longitudinal_status": "experimental_partial",
+    "multimodal_status": "experimental_not_adopted",
+    "multimodal_wearable_validation_claim": false,
+    "output_schema_version": "6a-output-v1"
+  },
+  "gates": {
+    "GATE_SA": {
+      "bootstrap": {
+        "interval": "percentile 0.025/0.975",
+        "min_stable_n": 30,
+        "n": 200,
+        "seed": 6500,
+        "statistic": "pearson",
+        "unit": "participant"
+      },
+      "convergence": {
+        "available": true,
+        "detail": "full-information EAP over 51732 respondents (51732 of them complete); missing cells passed to mirt as NA, not deleted"
+      },
+      "imported_from": "6B.5 Gate A (docs/milestone_6b5_elsa_preregistration.md v2)",
+      "name": "GATE_SA",
+      "observed": {
+        "n_paired": 51732,
+        "pearson": 0.9846700976872547,
+        "pearson_bootstrap_hi": 0.9849481125730446,
+        "pearson_bootstrap_lo": 0.9843660257873107,
+        "spearman_midrank": 0.9885513777502294
+      },
+      "rehearsal_only": false,
+      "spearman_definition": "tie-corrected midrank Spearman rho (charter gated_statistic_definitions); the legacy argsort value is recorded as a non-gating diagnostic",
+      "spearman_legacy_argsort_diagnostic": {
+        "non_gating": true,
+        "note": "inherited unstable-argsort approximation, implementation-defined under ties; recorded for continuity, never gated on",
+        "value": 0.9827309723979746
+      },
+      "thresholds": {
+        "pearson_lower_bound_min": 0.94,
+        "pearson_min": 0.95,
+        "spearman_min": 0.95
+      },
+      "verdict": "PASS"
+    }
+  },
+  "hashes": {
+    "charter_sha256": "764c08212a61ad1c910ef3b5f3b75d44942b1f8ed86d06f236745b526e76d93e",
+    "extract_provenance_sha256": "8307e5bfdc0e4c135b194208a0772ff929e3b4ca66751b338aef825a911eedbc",
+    "fusion_bundle_sha256": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697",
+    "input_csv_sha256": "205c5ee36aa18cc39f3fcd7f18086954e91da04ec0d2ea56bdd95a1619f8ff62",
+    "manifest_sha256": "2ac83f6a5392fbf45fa89ab44b4d2b79d2a67761b9a6314988637378b29eb6c7",
+    "mapping_sha256": "11c3d29d3df254609fbf940a1128b91e55ae5922bca4ecde31d21af8e5c76c81",
+    "model_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "source_gv_health_sha256": "a3b65f1c7d41845c1563c093969f29ecffa5dd20f67373a24ff6b1c19d78e7b7"
+  },
+  "integrity": {
+    "accelerometer_files_opened": "none - the quarantined set is never touched here",
+    "charter_sha256": "764c08212a61ad1c910ef3b5f3b75d44942b1f8ed86d06f236745b526e76d93e",
+    "dataset_checks": {
+      "category_violations": {},
+      "cohort_complete_all_items_observed": true,
+      "duplicate_mergeids": 0,
+      "n_items_is_12": true,
+      "one_row_per_mergeid": true,
+      "passed": true,
+      "row_count_matches_extract_provenance": true
+    },
+    "freeze_pins": {
+      "extract_pin": "scripts/share_a_extract.py",
+      "frozen_invocations": [
+        "python scripts/share_a_extract.py",
+        "python scripts/share_a_run.py --wave 9 --output reports/share/share_a_w9_result.json --i-confirm-share-a-is-unlocked",
+        "python scripts/share_a_run.py --wave 8 --output reports/share/share_a_w8_result.json --i-confirm-share-a-is-unlocked",
+        "python scripts/share_b_extract.py",
+        "python scripts/share_b_run.py --i-confirm-share-b-is-unlocked"
+      ],
+      "hashing": "LF-normalized (human_measurement.frozen_artifacts.content_sha256)",
+      "n_pins_verified": 25,
+      "own_file_pin": "scripts/share_a_run.py",
+      "pin_file_sha256": "d67d69a7e3ea9ac44e96c3f4274f0dd9e2ffac2381b0018d26e61e64cd18ccbd",
+      "status": "verified"
+    },
+    "fusion_bundle_sha256": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697",
+    "input_csv_sha256": "205c5ee36aa18cc39f3fcd7f18086954e91da04ec0d2ea56bdd95a1619f8ff62",
+    "model_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "outcomes_opened_utc": "2026-08-11T16:56:24Z",
+    "prior_lock_superseded": null,
+    "provenance_sha256": "8307e5bfdc0e4c135b194208a0772ff929e3b4ca66751b338aef825a911eedbc",
+    "relaunch_after_incomplete_run": false,
+    "rows_excluded_incomplete": 1963,
+    "rows_kept_in_extract": 51732,
+    "source_input_record": {
+      "bytes": 4970823,
+      "file": "sharew8_rel9-0-0_gv_health.dta",
+      "matches_share_manifest": true,
+      "sha256": "a3b65f1c7d41845c1563c093969f29ecffa5dd20f67373a24ff6b1c19d78e7b7"
+    },
+    "verify_pins": {
+      "checked": 15,
+      "coverage_reason": null,
+      "mismatched": [],
+      "missing": 0,
+      "passed": true,
+      "vacuous": false
+    },
+    "wave_role": "replication"
+  },
+  "licence": "other_restrictive",
+  "model_version": "v0.6.0-beta.1",
+  "model_was_modified": false,
+  "nonchartered_inputs": null,
+  "per_country": {
+    "Austria": {
+      "comparator_runtime_seconds": 3.992,
+      "cronbach_alpha": 0.6428,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.82881,
+          0.17119
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8465081453323364,
+      "meter_pc_r": 0.9740568067254493,
+      "meter_runtime_seconds": 0.0258,
+      "meter_specialist_r": 0.9881950431088017,
+      "meter_specialist_rho_midrank": 0.9936508101267145,
+      "meter_sum_r": 0.9666742204183599,
+      "meter_sum_rho_midrank": 0.9736969636393831,
+      "modelling_status": "modelled",
+      "n_participants": 1880,
+      "runtime_ratio_comparator_over_meter": 154.4,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1880 respondents (1880 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.99
+      },
+      "specialist_sum_r": 0.9701326114758992,
+      "specialist_sum_rho_midrank": 0.9813935542735857,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Belgium": {
+      "comparator_runtime_seconds": 3.886,
+      "cronbach_alpha": 0.6884,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.78694,
+          0.21306
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7842292785644531,
+      "meter_pc_r": 0.9580093934389157,
+      "meter_runtime_seconds": 0.0275,
+      "meter_specialist_r": 0.9843253045308255,
+      "meter_specialist_rho_midrank": 0.9886275999919364,
+      "meter_sum_r": 0.9599880163215905,
+      "meter_sum_rho_midrank": 0.9669707785637515,
+      "modelling_status": "modelled",
+      "n_participants": 2197,
+      "runtime_ratio_comparator_over_meter": 141.3,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2197 respondents (2197 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.885
+      },
+      "specialist_sum_r": 0.9661220818145698,
+      "specialist_sum_rho_midrank": 0.9701661981640266,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Bulgaria": {
+      "comparator_runtime_seconds": 3.709,
+      "cronbach_alpha": 0.8188,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.79279,
+          0.20721
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.9031626582145691,
+      "meter_pc_r": 0.9773173180045001,
+      "meter_runtime_seconds": 0.0175,
+      "meter_specialist_r": 0.976652352415299,
+      "meter_specialist_rho_midrank": 0.9922166963105005,
+      "meter_sum_r": 0.9888705371320546,
+      "meter_sum_rho_midrank": 0.9894201353324377,
+      "modelling_status": "modelled",
+      "n_participants": 892,
+      "runtime_ratio_comparator_over_meter": 212.0,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 892 respondents (892 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.707
+      },
+      "specialist_sum_r": 0.9733682754414074,
+      "specialist_sum_rho_midrank": 0.9917766048913155,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Croatia": {
+      "comparator_runtime_seconds": 3.905,
+      "cronbach_alpha": 0.7449,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.7958,
+          0.2042
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8301911354064941,
+      "meter_pc_r": 0.9531850646093072,
+      "meter_runtime_seconds": 0.025,
+      "meter_specialist_r": 0.9848029330822469,
+      "meter_specialist_rho_midrank": 0.9921375968894495,
+      "meter_sum_r": 0.9697132994222173,
+      "meter_sum_rho_midrank": 0.9777236577894105,
+      "modelling_status": "modelled",
+      "n_participants": 1976,
+      "runtime_ratio_comparator_over_meter": 156.2,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1976 respondents (1976 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.903
+      },
+      "specialist_sum_r": 0.975238740858469,
+      "specialist_sum_rho_midrank": 0.987271507049408,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Cyprus": {
+      "comparator_runtime_seconds": 3.621,
+      "cronbach_alpha": 0.6948,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.82329,
+          0.17671
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8974388837814331,
+      "meter_pc_r": 0.9857875723068655,
+      "meter_runtime_seconds": 0.0105,
+      "meter_specialist_r": 0.9606721337030345,
+      "meter_specialist_rho_midrank": 0.971678610671484,
+      "meter_sum_r": 0.9676673256995955,
+      "meter_sum_rho_midrank": 0.9694837106766165,
+      "modelling_status": "modelled",
+      "n_participants": 506,
+      "runtime_ratio_comparator_over_meter": 345.1,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 506 respondents (506 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.621
+      },
+      "specialist_sum_r": 0.9733818567020412,
+      "specialist_sum_rho_midrank": 0.9844550887606452,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Czech Republic": {
+      "comparator_runtime_seconds": 3.776,
+      "cronbach_alpha": 0.6686,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.81918,
+          0.18082
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8177787661552429,
+      "meter_pc_r": 0.9385394892525619,
+      "meter_runtime_seconds": 0.0436,
+      "meter_specialist_r": 0.9845492673163396,
+      "meter_specialist_rho_midrank": 0.9860562671444179,
+      "meter_sum_r": 0.9643978099923048,
+      "meter_sum_rho_midrank": 0.9742020453795249,
+      "modelling_status": "modelled",
+      "n_participants": 2927,
+      "runtime_ratio_comparator_over_meter": 86.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2927 respondents (2927 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.774
+      },
+      "specialist_sum_r": 0.9803296249097392,
+      "specialist_sum_rho_midrank": 0.9880086845675995,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Denmark": {
+      "comparator_runtime_seconds": 4.063,
+      "cronbach_alpha": 0.6472,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.84439,
+          0.15561
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8613643646240234,
+      "meter_pc_r": 0.9514647904355614,
+      "meter_runtime_seconds": 0.0299,
+      "meter_specialist_r": 0.9850609421183104,
+      "meter_specialist_rho_midrank": 0.9917223787284496,
+      "meter_sum_r": 0.9646404203751955,
+      "meter_sum_rho_midrank": 0.9727699372582111,
+      "modelling_status": "modelled",
+      "n_participants": 2329,
+      "runtime_ratio_comparator_over_meter": 136.1,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2329 respondents (2329 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.061
+      },
+      "specialist_sum_r": 0.9727044694805075,
+      "specialist_sum_rho_midrank": 0.9815201748918503,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Estonia": {
+      "comparator_runtime_seconds": 4.184,
+      "cronbach_alpha": 0.6883,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.76104,
+          0.23896
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7247307896614075,
+      "meter_pc_r": 0.9487332599419993,
+      "meter_runtime_seconds": 0.0413,
+      "meter_specialist_r": 0.9794104281834536,
+      "meter_specialist_rho_midrank": 0.9748188669516312,
+      "meter_sum_r": 0.9783433975937482,
+      "meter_sum_rho_midrank": 0.9796015995860622,
+      "modelling_status": "modelled",
+      "n_participants": 3239,
+      "runtime_ratio_comparator_over_meter": 101.2,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 3239 respondents (3239 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.181
+      },
+      "specialist_sum_r": 0.9874531128234145,
+      "specialist_sum_rho_midrank": 0.9894031412592903,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Finland": {
+      "comparator_runtime_seconds": 3.716,
+      "cronbach_alpha": 0.5767,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.80046,
+          0.19954
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.751487672328949,
+      "meter_pc_r": 0.9449489621677598,
+      "meter_runtime_seconds": 0.0219,
+      "meter_specialist_r": 0.98051595980488,
+      "meter_specialist_rho_midrank": 0.9855596091001998,
+      "meter_sum_r": 0.9381083385125851,
+      "meter_sum_rho_midrank": 0.9503074083581197,
+      "modelling_status": "modelled",
+      "n_participants": 1128,
+      "runtime_ratio_comparator_over_meter": 169.9,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1128 respondents (1128 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.715
+      },
+      "specialist_sum_r": 0.9539830029831552,
+      "specialist_sum_rho_midrank": 0.955597511670936,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "France": {
+      "comparator_runtime_seconds": 3.919,
+      "cronbach_alpha": 0.6639,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.76719,
+          0.23281
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7563239336013794,
+      "meter_pc_r": 0.9580776932021446,
+      "meter_runtime_seconds": 0.0406,
+      "meter_specialist_r": 0.9851138315152744,
+      "meter_specialist_rho_midrank": 0.9876063327287585,
+      "meter_sum_r": 0.9522248973795793,
+      "meter_sum_rho_midrank": 0.9582799711718186,
+      "modelling_status": "modelled",
+      "n_participants": 2914,
+      "runtime_ratio_comparator_over_meter": 96.5,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2914 respondents (2914 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.917
+      },
+      "specialist_sum_r": 0.9660386269797733,
+      "specialist_sum_rho_midrank": 0.9680376608659274,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Germany": {
+      "comparator_runtime_seconds": 4.026,
+      "cronbach_alpha": 0.645,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.80843,
+          0.19157
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.776488184928894,
+      "meter_pc_r": 0.9418444157149749,
+      "meter_runtime_seconds": 0.0464,
+      "meter_specialist_r": 0.9842395263099759,
+      "meter_specialist_rho_midrank": 0.9879610384704505,
+      "meter_sum_r": 0.958266660835799,
+      "meter_sum_rho_midrank": 0.9672120997830902,
+      "modelling_status": "modelled",
+      "n_participants": 3778,
+      "runtime_ratio_comparator_over_meter": 86.8,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 3778 respondents (3778 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.024
+      },
+      "specialist_sum_r": 0.9720428287985657,
+      "specialist_sum_rho_midrank": 0.9782503458889092,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Greece": {
+      "comparator_runtime_seconds": 4.032,
+      "cronbach_alpha": 0.8203,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.83126,
+          0.16874
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 1.0093713998794556,
+      "meter_pc_r": 0.9898598115653111,
+      "meter_runtime_seconds": 0.0382,
+      "meter_specialist_r": 0.9658854748451835,
+      "meter_specialist_rho_midrank": 0.9927429005108172,
+      "meter_sum_r": 0.9843645923446126,
+      "meter_sum_rho_midrank": 0.9888069847664395,
+      "modelling_status": "modelled",
+      "n_participants": 2939,
+      "runtime_ratio_comparator_over_meter": 105.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2939 respondents (2939 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.03
+      },
+      "specialist_sum_r": 0.9656950009216619,
+      "specialist_sum_rho_midrank": 0.9920723212516775,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Hungary": {
+      "comparator_runtime_seconds": 3.905,
+      "cronbach_alpha": 0.7786,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.82336,
+          0.17664
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.9214399456977844,
+      "meter_pc_r": 0.9747663592635394,
+      "meter_runtime_seconds": 0.0158,
+      "meter_specialist_r": 0.9789492349632357,
+      "meter_specialist_rho_midrank": 0.9936203984608303,
+      "meter_sum_r": 0.9744439706247215,
+      "meter_sum_rho_midrank": 0.9795517317039389,
+      "modelling_status": "modelled",
+      "n_participants": 1186,
+      "runtime_ratio_comparator_over_meter": 246.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1186 respondents (1186 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.904
+      },
+      "specialist_sum_r": 0.9661555532777625,
+      "specialist_sum_rho_midrank": 0.9873433912705638,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Israel": {
+      "comparator_runtime_seconds": 4.065,
+      "cronbach_alpha": 0.7527,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.75578,
+          0.24422
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7924747467041016,
+      "meter_pc_r": 0.9686206241243417,
+      "meter_runtime_seconds": 0.0175,
+      "meter_specialist_r": 0.9838938912859649,
+      "meter_specialist_rho_midrank": 0.9894777010748115,
+      "meter_sum_r": 0.9702161878226772,
+      "meter_sum_rho_midrank": 0.9757425445628797,
+      "modelling_status": "modelled",
+      "n_participants": 1255,
+      "runtime_ratio_comparator_over_meter": 232.1,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1255 respondents (1255 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.063
+      },
+      "specialist_sum_r": 0.9802876752773232,
+      "specialist_sum_rho_midrank": 0.9898228056512461,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Italy": {
+      "comparator_runtime_seconds": 3.957,
+      "cronbach_alpha": 0.7668,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.75832,
+          0.24168
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8313918113708496,
+      "meter_pc_r": 0.9917072689094615,
+      "meter_runtime_seconds": 0.0271,
+      "meter_specialist_r": 0.9825797660904555,
+      "meter_specialist_rho_midrank": 0.9942791693554602,
+      "meter_sum_r": 0.9879404874627679,
+      "meter_sum_rho_midrank": 0.9896354010185239,
+      "modelling_status": "modelled",
+      "n_participants": 2063,
+      "runtime_ratio_comparator_over_meter": 145.7,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2063 respondents (2063 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.955
+      },
+      "specialist_sum_r": 0.9811108094881473,
+      "specialist_sum_rho_midrank": 0.9915853045647363,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Latvia": {
+      "comparator_runtime_seconds": 3.936,
+      "cronbach_alpha": 0.7083,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.79117,
+          0.20883
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8120693564414978,
+      "meter_pc_r": 0.9849602164324825,
+      "meter_runtime_seconds": 0.0179,
+      "meter_specialist_r": 0.9846076266183106,
+      "meter_specialist_rho_midrank": 0.9927962284582765,
+      "meter_sum_r": 0.9844287764105861,
+      "meter_sum_rho_midrank": 0.9855343447277207,
+      "modelling_status": "modelled",
+      "n_participants": 1168,
+      "runtime_ratio_comparator_over_meter": 219.8,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1168 respondents (1168 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.935
+      },
+      "specialist_sum_r": 0.9801991996908385,
+      "specialist_sum_rho_midrank": 0.9894038490298184,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Lithuania": {
+      "comparator_runtime_seconds": 3.833,
+      "cronbach_alpha": 0.6948,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.73255,
+          0.26745
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7125368118286133,
+      "meter_pc_r": 0.964696170757217,
+      "meter_runtime_seconds": 0.0178,
+      "meter_specialist_r": 0.9895524734180831,
+      "meter_specialist_rho_midrank": 0.9936215182973483,
+      "meter_sum_r": 0.9377046103988138,
+      "meter_sum_rho_midrank": 0.9504709040298898,
+      "modelling_status": "modelled",
+      "n_participants": 1404,
+      "runtime_ratio_comparator_over_meter": 215.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1404 respondents (1404 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.831
+      },
+      "specialist_sum_r": 0.9604972256588168,
+      "specialist_sum_rho_midrank": 0.9622802638393533,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Luxembourg": {
+      "comparator_runtime_seconds": 3.878,
+      "cronbach_alpha": 0.6617,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.79959,
+          0.20041
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7788134813308716,
+      "meter_pc_r": 0.9396507756258575,
+      "meter_runtime_seconds": 0.0142,
+      "meter_specialist_r": 0.9806603692337683,
+      "meter_specialist_rho_midrank": 0.988725231769598,
+      "meter_sum_r": 0.9561403966498162,
+      "meter_sum_rho_midrank": 0.967679004504132,
+      "modelling_status": "modelled",
+      "n_participants": 899,
+      "runtime_ratio_comparator_over_meter": 272.4,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 899 respondents (899 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.877
+      },
+      "specialist_sum_r": 0.9668046127870876,
+      "specialist_sum_rho_midrank": 0.9705529424753327,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Malta": {
+      "comparator_runtime_seconds": 3.758,
+      "cronbach_alpha": 0.5997,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.7772,
+          0.2228
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7846195101737976,
+      "meter_pc_r": 0.966693050190959,
+      "meter_runtime_seconds": 0.0129,
+      "meter_specialist_r": 0.9813917281374043,
+      "meter_specialist_rho_midrank": 0.9824573677080136,
+      "meter_sum_r": 0.9521266215762887,
+      "meter_sum_rho_midrank": 0.9398147146780413,
+      "modelling_status": "modelled",
+      "n_participants": 772,
+      "runtime_ratio_comparator_over_meter": 291.8,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 772 respondents (772 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.757
+      },
+      "specialist_sum_r": 0.9686425809827945,
+      "specialist_sum_rho_midrank": 0.9641936950154943,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Netherlands": {
+      "comparator_runtime_seconds": 3.873,
+      "cronbach_alpha": 0.6272,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.8322,
+          0.1678
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8286628723144531,
+      "meter_pc_r": 0.9425236389353462,
+      "meter_runtime_seconds": 0.0239,
+      "meter_specialist_r": 0.9872120776768888,
+      "meter_specialist_rho_midrank": 0.9921054721864567,
+      "meter_sum_r": 0.9491849489079959,
+      "meter_sum_rho_midrank": 0.9568983975148959,
+      "modelling_status": "modelled",
+      "n_participants": 1909,
+      "runtime_ratio_comparator_over_meter": 162.0,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1909 respondents (1909 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.871
+      },
+      "specialist_sum_r": 0.9653664692601989,
+      "specialist_sum_rho_midrank": 0.9716690032535551,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Poland": {
+      "comparator_runtime_seconds": 4.22,
+      "cronbach_alpha": 0.7151,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.75811,
+          0.24189
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.7702447175979614,
+      "meter_pc_r": 0.9566787505894658,
+      "meter_runtime_seconds": 0.0372,
+      "meter_specialist_r": 0.9897145160881392,
+      "meter_specialist_rho_midrank": 0.9934856918003101,
+      "meter_sum_r": 0.936834136958382,
+      "meter_sum_rho_midrank": 0.9497541056727181,
+      "modelling_status": "modelled",
+      "n_participants": 2723,
+      "runtime_ratio_comparator_over_meter": 113.4,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2723 respondents (2723 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.218
+      },
+      "specialist_sum_r": 0.9518476463143654,
+      "specialist_sum_rho_midrank": 0.9616998379554295,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Romania": {
+      "comparator_runtime_seconds": 3.994,
+      "cronbach_alpha": 0.7732,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.74657,
+          0.25343
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.779484748840332,
+      "meter_pc_r": 0.9692366218766985,
+      "meter_runtime_seconds": 0.0183,
+      "meter_specialist_r": 0.9857185125892269,
+      "meter_specialist_rho_midrank": 0.9918687352605571,
+      "meter_sum_r": 0.9707070713817422,
+      "meter_sum_rho_midrank": 0.9789878648570045,
+      "modelling_status": "modelled",
+      "n_participants": 1263,
+      "runtime_ratio_comparator_over_meter": 218.3,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1263 respondents (1263 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.992
+      },
+      "specialist_sum_r": 0.9831756664391921,
+      "specialist_sum_rho_midrank": 0.9935866048927874,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Slovakia": {
+      "comparator_runtime_seconds": 4.162,
+      "cronbach_alpha": 0.7309,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.81267,
+          0.18733
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8968079686164856,
+      "meter_pc_r": 0.967884389906439,
+      "meter_runtime_seconds": 0.0162,
+      "meter_specialist_r": 0.9806043427139564,
+      "meter_specialist_rho_midrank": 0.9958806581555552,
+      "meter_sum_r": 0.9436734240475426,
+      "meter_sum_rho_midrank": 0.9442496001857736,
+      "modelling_status": "modelled",
+      "n_participants": 984,
+      "runtime_ratio_comparator_over_meter": 256.5,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 984 respondents (984 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.161
+      },
+      "specialist_sum_r": 0.9546092708763383,
+      "specialist_sum_rho_midrank": 0.9564640443011491,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Slovenia": {
+      "comparator_runtime_seconds": 5.217,
+      "cronbach_alpha": 0.6701,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.81191,
+          0.18809
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8335065841674805,
+      "meter_pc_r": 0.9505787082057077,
+      "meter_runtime_seconds": 0.0431,
+      "meter_specialist_r": 0.9843601334758044,
+      "meter_specialist_rho_midrank": 0.9903128689354923,
+      "meter_sum_r": 0.9478129106202414,
+      "meter_sum_rho_midrank": 0.9632607326426067,
+      "modelling_status": "modelled",
+      "n_participants": 2902,
+      "runtime_ratio_comparator_over_meter": 121.1,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2902 respondents (2902 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 5.214
+      },
+      "specialist_sum_r": 0.9663416754703467,
+      "specialist_sum_rho_midrank": 0.9775801616659681,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Spain": {
+      "comparator_runtime_seconds": 3.819,
+      "cronbach_alpha": 0.755,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.77574,
+          0.22426
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8251258134841919,
+      "meter_pc_r": 0.9701662921401294,
+      "meter_runtime_seconds": 0.0266,
+      "meter_specialist_r": 0.9866224988177936,
+      "meter_specialist_rho_midrank": 0.9919637856992898,
+      "meter_sum_r": 0.975372893854213,
+      "meter_sum_rho_midrank": 0.9778002539763072,
+      "modelling_status": "modelled",
+      "n_participants": 1972,
+      "runtime_ratio_comparator_over_meter": 143.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 1972 respondents (1972 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.818
+      },
+      "specialist_sum_r": 0.9766774901112429,
+      "specialist_sum_rho_midrank": 0.9842358438544615,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Sweden": {
+      "comparator_runtime_seconds": 4.293,
+      "cronbach_alpha": 0.6073,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.82855,
+          0.17145
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8286830186843872,
+      "meter_pc_r": 0.974830071830973,
+      "meter_runtime_seconds": 0.0297,
+      "meter_specialist_r": 0.979796733674655,
+      "meter_specialist_rho_midrank": 0.983798538616807,
+      "meter_sum_r": 0.9719821662769674,
+      "meter_sum_rho_midrank": 0.9741796929963178,
+      "modelling_status": "modelled",
+      "n_participants": 2476,
+      "runtime_ratio_comparator_over_meter": 144.6,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2476 respondents (2476 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 4.29
+      },
+      "specialist_sum_r": 0.9564425936823119,
+      "specialist_sum_rho_midrank": 0.9621596014677434,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    },
+    "Switzerland": {
+      "comparator_runtime_seconds": 3.679,
+      "cronbach_alpha": 0.6061,
+      "eligibility": {
+        "harmonized_category_distribution": [
+          0.84183,
+          0.15817
+        ],
+        "items_below_minimum": [],
+        "meets_minimum_information": true,
+        "minimum_information_failures": [],
+        "never_endorsed_categories": [],
+        "sparse_categories": [],
+        "sparse_categories_report_only": true
+      },
+      "median_relative_uncertainty": 0.8232929110527039,
+      "meter_pc_r": 0.9310697510313184,
+      "meter_runtime_seconds": 0.024,
+      "meter_specialist_r": 0.9829217611149723,
+      "meter_specialist_rho_midrank": 0.9904210811835431,
+      "meter_sum_r": 0.9513351720895449,
+      "meter_sum_rho_midrank": 0.9664883539198621,
+      "modelling_status": "modelled",
+      "n_participants": 2051,
+      "runtime_ratio_comparator_over_meter": 153.4,
+      "specialist_fit": {
+        "attempted": true,
+        "available": true,
+        "converged": true,
+        "detail": "full-information EAP over 2051 respondents (2051 of them complete); missing cells passed to mirt as NA, not deleted",
+        "fit_seconds": 3.677
+      },
+      "specialist_sum_r": 0.9760027347971265,
+      "specialist_sum_rho_midrank": 0.9826270618443029,
+      "sum_spearman_note": "midrank Spearman accompanies every sum-entering Pearson as a descriptive floor/skew guard; non-gating",
+      "support_status": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "suppressed": {},
+        "warnings": [
+          "real_world_interval_scale_not_calibrated"
+        ]
+      }
+    }
+  },
+  "per_country_summary": {
+    "excluded_from_per_country_modelling_named": [],
+    "meter_specialist_r_median": 0.9842395263099759,
+    "meter_specialist_r_range": [
+      0.9606721337030345,
+      0.9897145160881392
+    ],
+    "n_countries": 27,
+    "n_evaluable": 27,
+    "note": "Dual reporting per the frozen ESS7 convention: pooled table plus full per-country table, summarized as range + median + worst evaluable country. NO global country PASS gate exists in any frozen contract and none is created. Country imbalance is reported, not corrected; country is never a resampling unit.",
+    "per_country_not_evaluable_named": [],
+    "worst_evaluable_country": "Cyprus",
+    "worst_evaluable_r": 0.9606721337030345
+  },
+  "pooled": {
+    "capability": "psychometric_1d",
+    "dimensionality": {
+      "assignment_capability": "item_assignment",
+      "assignment_status": "supported",
+      "dimensionality": {
+        "assignment_entropy": 0.20363032817840576,
+        "dimensionality_ambiguous": true,
+        "gate": 0.8594227433204651,
+        "inter_slot_correlation": 0.44938719272613525,
+        "inter_slot_correlation_disattenuated": 0.7829330520943852,
+        "loglik_gain_from_slot2": 0.04242256283760071,
+        "loglik_gate_closed": -0.3857780396938324,
+        "loglik_gate_open": -0.3433554768562317,
+        "predicted_two_dimensional": true,
+        "slot1_mass": 0.7184066772460938,
+        "slot2_mass": 0.28159332275390625,
+        "slot_reliability_1": 0.5891784429550171,
+        "slot_reliability_2": 0.5591718554496765
+      },
+      "item_assignment": [
+        [
+          0.9880357384681702,
+          0.011964322999119759
+        ],
+        [
+          0.00031536805909126997,
+          0.9996846914291382
+        ],
+        [
+          0.9225618839263916,
+          0.07743816822767258
+        ],
+        [
+          0.9796930551528931,
+          0.020306967198848724
+        ],
+        [
+          0.9837052822113037,
+          0.016294727101922035
+        ],
+        [
+          0.3334231376647949,
+          0.6665768027305603
+        ],
+        [
+          0.9850925803184509,
+          0.014907386153936386
+        ],
+        [
+          0.8878351449966431,
+          0.11216486990451813
+        ],
+        [
+          0.9798255562782288,
+          0.02017449215054512
+        ],
+        [
+          0.5736454725265503,
+          0.4263545572757721
+        ],
+        [
+          0.0003294923808425665,
+          0.9996705055236816
+        ],
+        [
+          0.9864176511764526,
+          0.013582387007772923
+        ]
+      ],
+      "multidimensional_capability": "multidimensional",
+      "multidimensional_dimensionality": {
+        "assignment_entropy": 0.20363032817840576,
+        "dimensionality_ambiguous": true,
+        "gate": 0.8594227433204651,
+        "inter_slot_correlation": 0.44938719272613525,
+        "inter_slot_correlation_disattenuated": 0.7829330520943852,
+        "loglik_gain_from_slot2": 0.04242256283760071,
+        "loglik_gate_closed": -0.3857780396938324,
+        "loglik_gate_open": -0.3433554768562317,
+        "predicted_two_dimensional": true,
+        "slot1_mass": 0.7184066772460938,
+        "slot2_mass": 0.28159332275390625,
+        "slot_reliability_1": 0.5891784429550171,
+        "slot_reliability_2": 0.5591718554496765
+      },
+      "multidimensional_status": "supported"
+    },
+    "hmm_seconds": 2.5092,
+    "n_scored": 51732,
+    "relative_uncertainty": {
+      "contract": "relative ranking and diagnostics only; not a confidence interval, coverage interval, error bar, probability statement, or threshold input",
+      "iqr_width": [
+        0.7977868318557739,
+        0.8731949925422668
+      ],
+      "median_width": 0.8261927962303162,
+      "ranking_status": "supported_experimental",
+      "scale_status": "not_calibrated"
+    },
+    "route": [
+      "waves=1"
+    ],
+    "score_summary": {
+      "extremes_note": "1st/99th interpolated percentiles per the charter privacy clause; min/max are never reported",
+      "mean": -0.6438299417495728,
+      "p01": -1.4764341115951538,
+      "p99": 1.2373631000518799,
+      "sd": 0.7289264798164368
+    },
+    "status": "supported",
+    "suppressed": {},
+    "warnings": [
+      "real_world_interval_scale_not_calibrated"
+    ]
+  },
+  "pooled_agreement": {
+    "mml_grm_eap": {
+      "available": true,
+      "fit_seconds": 7.377,
+      "pearson_agreement": 0.9846700976872547,
+      "rank_agreement_legacy_argsort": 0.9827309723979746,
+      "spearman_agreement_midrank": 0.9885513777502294
+    },
+    "principal_component": {
+      "available": true,
+      "fit_seconds": 0.032,
+      "pearson_agreement": 0.9517811367110984,
+      "rank_agreement_legacy_argsort": 0.9591083578112177,
+      "spearman_agreement_midrank": 0.9667013694029518
+    },
+    "sum_score": {
+      "available": true,
+      "fit_seconds": 0.007,
+      "pearson_agreement": 0.9623206766496478,
+      "rank_agreement_legacy_argsort": 0.9544431488217706,
+      "spearman_agreement_midrank": 0.9701355913426899
+    }
+  },
+  "pooled_agreement_note": "spearman_agreement_midrank is the definitional tie-corrected statistic; rank_agreement_legacy_argsort is the inherited approximation, kept as a non-gating diagnostic (charter gated_statistic_definitions)",
+  "pooled_cronbach_alpha": 0.7067,
+  "replication_discipline": "the replication wave is executed exactly as chartered regardless of the primary result; nothing changes between the two runs",
+  "required_citation": "Survey of Health, Ageing and Retirement in Europe (SHARE), Release 9.0.0. SHARE Wave 1 (DOI: 10.6103/SHARE.w1.900), Wave 2 (DOI: 10.6103/SHARE.w2.900), Wave 4 (DOI: 10.6103/SHARE.w4.900), Wave 5 (DOI: 10.6103/SHARE.w5.900), Wave 6 (DOI: 10.6103/SHARE.w6.900), Wave 7 (DOI: 10.6103/SHARE.w7.900), Wave 8 (DOI: 10.6103/SHARE.w8.900), Wave 9 (DOI: 10.6103/SHARE.w9.900). Methodology: Boersch-Supan, A., Brandt, M., Hunkler, C., Kneip, T., Korbmacher, J., Malter, F., Schaan, B., Stuck, S., Zuber, S. (2013). Data Resource Profile: The Survey of Health, Ageing and Retirement in Europe (SHARE). International Journal of Epidemiology, 42(4), 992-1001. doi:10.1093/ije/dyt088.",
+  "role": "external_validation_zero_shot_and_longitudinal",
+  "sensitivity_bootstraps": {
+    "household_clustered_n200_seed6501": {
+      "cluster": "opaque household key (hh_key; couples-within-households dependence)",
+      "hi": 0.9849476685169336,
+      "lo": 0.9843608441113165,
+      "n_draws": 200,
+      "n_households": 36603,
+      "n_persons": 51732,
+      "non_verdict_carrying": true,
+      "point": 0.9846700976872547,
+      "seed": 6501
+    },
+    "label": "NON-VERDICT-CARRYING sensitivity intervals. The verdict-carrying interval is exclusively the frozen N=200/seed-6500 person-unit percentile interval (charter dependence_disclosure and mc_precision_disclosure)",
+    "person_bootstrap_n2000_seed6502": {
+      "hi": 0.9849400019891456,
+      "lo": 0.9843749313094525,
+      "n": 51732,
+      "n_draws": 2000,
+      "non_verdict_carrying": true,
+      "point": 0.9846700976872547,
+      "purpose": "Monte-Carlo precision context for the frozen N=200 interval",
+      "seed": 6502
+    }
+  },
+  "superiority_note": "METER-vs-raw-total superiority is NOT a success criterion",
+  "timings": {
+    "comparator_pooled_seconds": 7.421,
+    "hmm_pooled_seconds": 2.5092,
+    "speedup_versus_comparators": 3.0,
+    "workflow_seconds": 139.06
+  },
+  "uncertainty_contract": {
+    "interval_scale": {
+      "evidence": "calibration ratio (predicted width / empirical variation) median 2.19 on DPQ_I, 2.18 on DPQ_J, and 3.12-10.54 across the ESS7 masking curve - above 1 at every level of every dataset, i.e. consistently conservative. The shape failure is dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 on ESS7 under an identical measurement (L47)",
+      "limitations": {
+        "scale": "L45",
+        "shape": "L43 (dataset-dependent, see L47)"
+      },
+      "prohibited_uses": [
+        "confidence_interval",
+        "coverage_interval",
+        "literal error_bar",
+        "probability statement",
+        "threshold-based individual decision"
+      ],
+      "status": "not_calibrated",
+      "warning": "real_world_interval_scale_not_calibrated",
+      "why_the_prohibitions_follow": {
+        "confidence_interval": "a frequentist coverage guarantee was never established",
+        "coverage_interval": "nominal coverage is unvalidated; the scale error alone would break it",
+        "literal error_bar": "the width runs 2x to 10x the estimate's actual variation, so the bar drawn would not be the error",
+        "probability statement": "no probability derived from this width is warranted - the scale it would be read off IS the miscalibrated quantity",
+        "threshold-based individual decision": "misplaces every participant relative to a fixed cutoff, and on the NHANES datasets not even consistently between participants. The prohibition with direct consequences for people"
+      }
+    },
+    "relative_uncertainty": {
+      "evidence": "the uncertainty-error relationship is strongly positive WITHIN participants: median r 0.907 (DPQ_I), 0.88 (DPQ_J) and 0.861 (ESS7), positive for 100%, 100% and 98.7% of participants. Across ESS countries the model's own median relative uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is this capability doing useful work rather than merely being self-consistent",
+      "permitted_use": [
+        "ordinal_uncertainty_ranking",
+        "comparative_diagnostic"
+      ],
+      "status": "supported_experimental"
+    }
+  },
+  "verdict": "PASS",
+  "verdict_forced_by": null,
+  "verdict_scope": "this artifact adjudicates ONE wave; SHARE-A PASS requires GATE_SA independently on the primary wave AND the replication wave (charter share_a.primary_gate.pass_rule). The two waves are an overlapping panel, not independent samples (replication_disclosure)",
+  "wave": 8,
+  "wave_role": "replication"
+}

@@ -1,0 +1,126 @@
+{
+  "charter": "D9A",
+  "artifact": "D9A_CHARTER_FROZEN",
+  "title": "Real-Data Dense Multidimensional Transfer",
+  "status": "FROZEN_AND_APPROVED - D9 sign-off granted by the project owner on 2026-08-07, effective upon the commit of amendment 1 below; no analytic outcome existed at approval time",
+  "date_frozen": "2026-08-07",
+  "amendment_1": {
+    "date": "2026-08-07",
+    "authorized_by": "project owner, as the condition of D9A approval; recorded BEFORE the runner reads Data.sav and BEFORE any outcome exists; the scientific design (manifest, hashes, sample definition, item mapping, coding, comparator, model assertion, metrics, role) is UNCHANGED by this amendment",
+    "midus_producer_conditions": [
+      "no redistributed tabulation may contain a cell or stratum with n < 10",
+      "no redistribution of the data; no re-identification of research subjects"
+    ],
+    "policy_provenance": {
+      "midus_conditions_of_use": "current MIDUS (Midlife in the United States, University of Wisconsin Institute on Aging) Conditions of Use as applicable on 2026-08-07, per the project owner's direction; the producer's n<10 tabulation rule above is transcribed from that direction",
+      "icpsr_ai_notice": "ICPSR notice on the use of AI with ICPSR data, April 2026, as applicable on 2026-08-07, per the project owner's direction",
+      "icpsr_terms_local_copy": "TermsOfUse.html, sha256 de78e737fb1b03d87702530261be072a5f0d67ec26b868958028c83cb2acfa24 (agreed 2026-08-07)"
+    },
+    "tier_1_clarification": "the Tier 1 label here means exactly: public-use data analyzed LOCALLY, in code, WITHOUT participant-level exposure to the AI orchestrator. It is NOT permission for the orchestrator to inspect the dataset: no participant-level record, value or row may appear in prompts, transcripts, logs, printed output, test fixtures or committed artifacts. Analysis code reads rows; every reported quantity is an aggregate; any reported count below 10 is suppressed as '<10' per the producer's tabulation rule.",
+    "operational_consequences_for_the_runner": [
+      "no participant-level logging anywhere, enforced structurally and by test",
+      "aggregate-output disclosure guard: any tabulated cell, stratum or count with n < 10 is suppressed in every output",
+      "any temporary extraction file holds item columns only (no identifiers) and is deleted before the run ends"
+    ]
+  },
+  "supersedes": "configs/model/d9a_charter_draft.json (preserved; every TO_BE_FROZEN slot now filled)",
+  "scientific_question": "Can the bit-identical frozen M8B model estimate five-dimensional scores and factor correlations on an unfamiliar real battery, without dataset-specific psychometric fitting, with close agreement to a separately fitted confirmatory multidimensional psychometric model?",
+  "dataset": {
+    "study": "Midlife in the United States (MIDUS 1), 1995-1996",
+    "release": "ICPSR02760-v19, Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2020-09-28. doi:10.3886/ICPSR02760.v19",
+    "dataset_unit": "DS0001 'Main, Siblings and Twin Data': 7,108 records, 2,098 variables (ICPSR manifest)",
+    "local_root": "data/public/ICPSR_02760-V19 (MIDUS)/ICPSR_02760 (NEVER committed; hashes below are the binding reference)",
+    "file_hashes_sha256": {
+      "DS0001/02760-0001-Data.sav": "1875ca617d0f652f2a7abd15f8c2b5f3311ec3b704f585e0619b1be7b07655a5",
+      "DS0001/02760-0001-Codebook-ICPSR.pdf": "ff303eb8cf0a0d511b30674e6e59e9cb3b01c42f5db7695c2267c819d6a12167",
+      "DS0001/02760-0001-Documentation-scales.pdf": "20768d91d6a12989cef98c90db3617848295068042076ace674c8137cdac3abb",
+      "DS0001/02760-0001-Questionnaire-saq.pdf": "ba046220e6a2160d06cf2aca413d6c3bcf50e95b13a3f8c7e1556e64fe84c492",
+      "TermsOfUse.html": "de78e737fb1b03d87702530261be072a5f0d67ec26b868958028c83cb2acfa24",
+      "02760-manifest.txt": "10a164953ddd78708a4c7f42bd95758744994af7ff000d12afd3b4d1b6ae8ce9"
+    },
+    "integrity": "local Data.sav and Codebook MD5s verified EQUAL to ICPSR's own distributed manifest checksums (a0a4b1a9..., 704ca821...)",
+    "access_tier": {
+      "determination": "TIER 1: public-use, de-identified, disclosure-controlled release distributed by ICPSR for research and statistical use to registered users; terms agreed by the account holder on 2026-08-07 (recorded in TermsOfUse.html, hashed above)",
+      "terms_key_language": "'To use these datasets solely for research or statistical purposes and not for investigation of specific RESEARCH SUBJECTS'; no re-identification; no redistribution without agreement",
+      "obligations": "no re-identification or cross-source linkage to that end; raw participant-level files never committed; participant-level values never in logs, tests, fixtures, prompts, transcripts or committed artifacts - analysis reads rows in code, outputs report aggregates only"
+    },
+    "role_predeclaration": "DEVELOPMENT for real-data gate derivation. Single-role rule: MIDUS is permanently excluded from serving as the locked independent replication.",
+    "d9_sign_off": "the approval of this frozen charter by the project owner constitutes the D9 sign-off for opening DS0001 under the stated role"
+  },
+  "sample_definition": {
+    "population": "all DS0001 records (N=7,108: main RDD, siblings, twins - one pooled sample; no subsample selection)",
+    "inclusion": "respondents with at least 2 of the 25 mapped items observed after missing-code handling (the M8 canonical minimum-observed rule)",
+    "exclusions_stated_prospectively": "respondents with fewer than 2 observed mapped items - which includes the 783 'Respondent does not have SAQ data' (-1) cases documented in the codebook; the exact excluded count is REPORTED by the run, never adjusted",
+    "weights": "unweighted; this is a measurement-agreement evaluation, not a population-descriptive analysis"
+  },
+  "item_mapping": {
+    "source": "transcribed verbatim from 02760-0001-Documentation-scales.pdf pp. 32-33 (PERSONALITY TRAITS; Lachman & Weaver 1997 MIDI scales) and the ICPSR codebook variable entries",
+    "instrument": "Self-Administered Questionnaire, Section F, Question 4 (a-dd): 'Please indicate how well each of the following describes you.'",
+    "response_coding_raw": "1 A lot; 2 Some; 3 A little; 4 Not at all",
+    "missing_codes": [-1, 8],
+    "missing_code_labels": {"-1": "Respondent does not have SAQ data", "8": "Refused"},
+    "k": 5,
+    "factors": {
+      "neuroticism": {
+        "items": {"A1SF4C": "Moody", "A1SF4H": "Worrying", "A1SF4M": "Nervous", "A1SF4S": "Calm"},
+        "within_scale_negative": ["A1SF4S"]
+      },
+      "extraversion": {
+        "items": {"A1SF4A": "Outgoing", "A1SF4F": "Friendly", "A1SF4K": "Lively", "A1SF4W": "Active", "A1SF4AA": "Talkative"},
+        "within_scale_negative": []
+      },
+      "openness": {
+        "items": {"A1SF4N": "Creative", "A1SF4Q": "Imaginative", "A1SF4U": "Intelligent", "A1SF4V": "Curious", "A1SF4Y": "Broad-minded", "A1SF4BB": "Sophisticated", "A1SF4CC": "Adventurous"},
+        "within_scale_negative": []
+      },
+      "conscientiousness": {
+        "items": {"A1SF4D": "Organized", "A1SF4I": "Responsible", "A1SF4P": "Hardworking", "A1SF4X": "Careless"},
+        "within_scale_negative": ["A1SF4X"]
+      },
+      "agreeableness": {
+        "items": {"A1SF4B": "Helpful", "A1SF4G": "Warm", "A1SF4L": "Caring", "A1SF4R": "Softhearted", "A1SF4Z": "Sympathetic"},
+        "within_scale_negative": []
+      }
+    },
+    "n_items": 25,
+    "excluded_from_mapping": "the 5 Agency adjectives (A1SF4E Self-confident, A1SF4J Forceful, A1SF4O Assertive, A1SF4T Outspoken, A1SF4DD Dominant) - Agency is not a Big Five factor and is outside this charter",
+    "recode_rule_frozen": "for every item, recoded = 5 - raw (so higher = more descriptive of the trait pole), EXCEPT the within_scale_negative items (A1SF4S Calm within Neuroticism; A1SF4X Careless within Conscientiousness) which keep recoded = raw; then categories map 1..4 -> 0..3 as canonical response indices; the IDENTICAL recoded matrix feeds both the model and the comparator",
+    "factor_labels_order_frozen": ["neuroticism", "extraversion", "openness", "conscientiousness", "agreeableness"]
+  },
+  "model": {
+    "state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "rule": "the bit-identical M8B model, reproduced from the frozen trainer config and seeds and hash-asserted at launch; NO retraining, fine-tuning, calibration, threshold adjustment or any dataset-specific psychometric fitting on MIDUS",
+    "regime_notes_recorded_prospectively": [
+      "dense by design: every SAQ respondent was administered all 30 adjectives - inside the validated dense regime; item-level refusals are ordinary missingness, not planned sparseness",
+      "items-per-factor is UNBALANCED (4/5/7/4/5) whereas training used balanced 5/8/12 - recorded as a transfer condition, not adjusted for",
+      "4 response categories: inside training support; N ~ 6,300 exceeds the training worlds' n <= 2,000, which is unproblematic for amortized inference and is recorded"
+    ]
+  },
+  "comparator": {
+    "specification": "confirmatory five-factor graded-response model in mirt with the SAME frozen mapping: mirt.model with pairwise COV only, graded itemtype, QMCEM (K=5), NCYCLES 2000 TOL 1e-4, one MHRM retry then recorded nonconvergence, EAP scores with QMC, NA full-information, per-fit wall clock - the frozen M8 comparator specification unchanged",
+    "timeout": "3600 s under the repaired whole-tree enforcement",
+    "input": "the identical recoded 25-item matrix the model receives"
+  },
+  "prespecified_metrics_no_gates": {
+    "note": "D9A is DEVELOPMENT for real-data gate derivation: all metrics are prespecified REPORTING with no pass/fail gate; thresholds for the later locked replication are frozen afterward, in their own charter, and never adjudicated against D9A",
+    "factor_specific_agreement": [
+      "per-factor Pearson and Spearman correlation between model posterior means and comparator EAP scores, all five factors separately, never pooled; worst factor highlighted",
+      "per-factor correlation of both score sets with unit-weighted recoded scale composites (the Lachman-Weaver scoring), as a model-free anchor"
+    ],
+    "phi_agreement": [
+      "element-wise absolute differences between the model Phi and the comparator's estimated factor-correlation matrix: mean and max off-diagonal; PD and shrink usage of the model Phi reported"
+    ],
+    "uncertainty_behavior": "distribution of model posterior SDs per factor; ordinal association between SD and number of items answered; reported only",
+    "runtime": "model inference wall-clock for the full sample vs comparator fit wall-clock, same machine",
+    "convergence_and_refusals": "comparator convergence/retry recorded; model factor_adequacy status counts and warning counts reported as refusal behavior",
+    "aggregates_only": "every reported quantity is an aggregate over respondents; no participant-level value appears in the report"
+  },
+  "governance": {
+    "evaluated_once": "one run against this charter, preserved verbatim; a pre-existing D9A report refuses a second run",
+    "no_sparse_datasets": "SAPA and ICAR remain untouched; sparse multidimensional administration is unsupported and out of scope",
+    "training_prohibition": "no training, fine-tuning, architecture selection, threshold alteration, recalibration or refusal-rule revision may use MIDUS",
+    "raw_data_never_committed": "the ICPSR package stays outside git; this charter carries its hashes as the binding reference",
+    "runner_requirements": "the M8B refusal pattern: charter committed-clean by byte-integrity, launch-path code at HEAD, model hash asserted, charter schema parsed at preflight, dataset file sha256 verified against this charter before reading, report-exists refusal"
+  },
+  "stop_condition": "no analytic outcome is computed until this frozen charter is explicitly approved; approval is the D9 sign-off"
+}

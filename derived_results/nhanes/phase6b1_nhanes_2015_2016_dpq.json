@@ -1,0 +1,549 @@
+{
+  "agreement": {
+    "mml_grm_eap": {
+      "available": true,
+      "fit_seconds": 7.103,
+      "n_scored": 5134,
+      "pearson_agreement": 0.9329516191706088,
+      "rank_agreement": 0.854495388003311
+    },
+    "principal_component": {
+      "available": true,
+      "fit_seconds": 0.003,
+      "n_scored": 5735,
+      "pearson_agreement": 0.9043987683646295,
+      "rank_agreement": 0.9329321653564674
+    },
+    "sum_score": {
+      "available": true,
+      "fit_seconds": 0.001,
+      "n_scored": 5735,
+      "pearson_agreement": 0.9241457146877775,
+      "rank_agreement": 0.9465391290244292
+    }
+  },
+  "claim_boundary": "role=pipeline_development: these results exercise the pipeline and are NOT a zero-shot transfer claim. Agreement is agreement with a conventional estimate, not accuracy against truth.",
+  "comparators": {
+    "mml_grm_eap": {
+      "available": true,
+      "detail": "EAP over 5134 complete cases",
+      "family": "irt",
+      "fit_seconds": 7.1026,
+      "n_scored": 5735,
+      "name": "mml_grm_eap"
+    },
+    "principal_component": {
+      "available": true,
+      "detail": "first principal component of standardized items",
+      "family": "factor",
+      "fit_seconds": 0.0033,
+      "n_scored": 5735,
+      "name": "principal_component"
+    },
+    "sum_score": {
+      "available": true,
+      "detail": "mean of 46425 observed responses",
+      "family": "simple",
+      "fit_seconds": 0.0008,
+      "n_scored": 5735,
+      "name": "sum_score"
+    }
+  },
+  "conversion": {
+    "column_names_match": true,
+    "converted_path": "C:\\Users\\tayku\\AppData\\Local\\Temp\\hmm6b1_nhanes\\nhanes_2015_2016_dpq.parquet",
+    "converted_sha256": "3f2e34caea0f70183fce9d202bddfb5dbc8eb09adeabb3b1fd3c7266536f97e4",
+    "max_absolute_difference": {
+      "DPQ010": 0.0,
+      "DPQ020": 0.0,
+      "DPQ030": 0.0,
+      "DPQ040": 0.0,
+      "DPQ050": 0.0,
+      "DPQ060": 0.0,
+      "DPQ070": 0.0,
+      "DPQ080": 0.0,
+      "DPQ090": 0.0,
+      "DPQ100": 0.0,
+      "SEQN": 0.0
+    },
+    "n_columns_converted": 11,
+    "n_columns_source": 11,
+    "n_rows_converted": 5735,
+    "n_rows_source": 5735,
+    "non_missing_counts": {
+      "DPQ010": [
+        5164,
+        5164
+      ],
+      "DPQ020": [
+        5164,
+        5164
+      ],
+      "DPQ030": [
+        5164,
+        5164
+      ],
+      "DPQ040": [
+        5162,
+        5162
+      ],
+      "DPQ050": [
+        5162,
+        5162
+      ],
+      "DPQ060": [
+        5162,
+        5162
+      ],
+      "DPQ070": [
+        5161,
+        5161
+      ],
+      "DPQ080": [
+        5161,
+        5161
+      ],
+      "DPQ090": [
+        5161,
+        5161
+      ],
+      "DPQ100": [
+        3579,
+        3579
+      ],
+      "SEQN": [
+        5735,
+        5735
+      ]
+    },
+    "platform": "CPython 3.14.4 on Windows",
+    "reader": "pyreadstat",
+    "reader_version": "1.3.5",
+    "source_bytes": 507040,
+    "source_path": "DPQ_I.xpt",
+    "source_sha256": "6f4561aab077b9fd199a414fc516d6fedf40967266b81f1ab7b7d75afb72232d",
+    "values_preserved": true,
+    "variable_labels": {
+      "DPQ010": "Have little interest in doing things",
+      "DPQ020": "Feeling down, depressed, or hopeless",
+      "DPQ030": "Trouble sleeping or sleeping too much",
+      "DPQ040": "Feeling tired or having little energy",
+      "DPQ050": "Poor appetite or overeating",
+      "DPQ060": "Feeling bad about yourself",
+      "DPQ070": "Trouble concentrating on things",
+      "DPQ080": "Moving or speaking slowly or too fast",
+      "DPQ090": "Thought you would be better off dead",
+      "DPQ100": "Difficulty these problems have caused",
+      "SEQN": "Respondent sequence number"
+    },
+    "version": "6b1-sas-v1"
+  },
+  "cronbach_alpha": 0.8318828201643438,
+  "inference": {
+    "capability": "psychometric_1d",
+    "dimensionality": {
+      "assignment_entropy": 0.2889867126941681,
+      "dimensionality_ambiguous": false,
+      "gate": 0.7262957096099854,
+      "inter_slot_correlation": 0.8257315754890442,
+      "inter_slot_correlation_disattenuated": 1.5,
+      "loglik_gain_from_slot2": 0.013193070888519287,
+      "loglik_gate_closed": -0.6106666326522827,
+      "loglik_gate_open": -0.5974735617637634,
+      "predicted_two_dimensional": false,
+      "slot1_mass": 0.7711467146873474,
+      "slot2_mass": 0.2288532853126526,
+      "slot_reliability_1": 0.5383065938949585,
+      "slot_reliability_2": 0.3498387634754181
+    },
+    "item_discrimination_summary": {
+      "max": 1.7962076663970947,
+      "mean": 1.4453973770141602,
+      "min": 1.2143760919570923,
+      "n": 9,
+      "sd": 0.23129428923130035
+    },
+    "person_score_summary": {
+      "deciles": [
+        -1.9995665550231934,
+        -1.8702768087387085,
+        -1.8702768087387085,
+        -1.637099027633667,
+        -1.5164211988449097,
+        -1.2447452545166016,
+        -1.0166718959808334,
+        -0.6547635793685913,
+        -0.060228352248669036,
+        -0.046419836580753326,
+        3.553121566772461
+      ],
+      "max": 3.553121566772461,
+      "mean": -1.0059062242507935,
+      "min": -1.9995665550231934,
+      "n": 5735,
+      "sd": 0.8952603936195374
+    },
+    "status": "supported",
+    "suppressed": {},
+    "warnings": []
+  },
+  "manifest": {
+    "access_tier": "public_use",
+    "approved": true,
+    "dataset_id": "nhanes_2015_2016_dpq",
+    "direct_analysis_permitted": true,
+    "instrument": "PHQ-9 depression screener (NHANES DPQ module)",
+    "manifest_sha256": "35f89fbbb5db80930957e13d611d33f8fbb521aac1e14f74455bc0a181f55696",
+    "missing_approvals": [],
+    "model_version": "v0.6.0-beta.1",
+    "role": "pipeline_development",
+    "schema_version": "6b1-governance-v1",
+    "source": "CDC/NCHS public-use National Health and Nutrition Examination Survey, 2015-2016 cycle, questionnaire file DPQ_I"
+  },
+  "profile": null,
+  "provenance": {
+    "calibration_configs": {
+      "phase5d_decision.json": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+      "phase5e1_reference.json": "2709fa550586d7342dc9637f02110111d10655fe98619afee9b67eb7084d6f12",
+      "phase5f1_selected.json": "d8cc82f790c382bcf062bdfa92a347c8a544a151e1b953d424b984b696c0076b",
+      "phase5f_fusion.json": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697"
+    },
+    "canonical_sha256": "74eeb34cb751ba6d5e7ba2a48e3b755d07558ca0accd92f5c4cbcdf8edf60fba",
+    "change_detector": "likelihood_ratio",
+    "change_detector_status": "conditionally_supported_experimental",
+    "change_score_is_calibrated_probability": false,
+    "dif_model_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+    "dif_operating_threshold": 0.36435567004776,
+    "input_schema_version": "6a-input-v1",
+    "interface_version": "6a-v1",
+    "linking_decision_config_sha256": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+    "linking_model_sha256": "cb43dd8a705609e1ee957100569995651d463dd8aaf33f7c1ff308807d3ebf93",
+    "longitudinal_model_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "longitudinal_status": "experimental_partial",
+    "manifest_sha256": "35f89fbbb5db80930957e13d611d33f8fbb521aac1e14f74455bc0a181f55696",
+    "mapping_sha256": "0efdf3f6e17a815fccaa2bfccb6af65a85f3936a5ad4cfc5f2732c9beac818a3",
+    "multimodal_status": "experimental_not_adopted",
+    "multimodal_wearable_validation_claim": false,
+    "output_schema_version": "6a-output-v1"
+  },
+  "stopped_at": null,
+  "stress": {
+    "nested_masking_curve": {
+      "design": "nested item masking; each level removes a superset of the previous",
+      "extreme_mask_response": {
+        "fraction_removed": 0.89,
+        "widened": true,
+        "width_ratio": 1.3761463165283203
+      },
+      "l43_note": "L43 is an observed limitation with an OPEN mechanism; this curve characterises the behaviour and does not diagnose its cause",
+      "levels": [
+        {
+          "fraction_removed": 0.0,
+          "level_correlation_with_full": 1.0,
+          "masked_item_prediction": NaN,
+          "mean_interval_width": 2.9502949714660645,
+          "median_interval_width": 2.8789408206939697,
+          "n_items_removed": 0,
+          "n_items_retained": 9,
+          "rmse_vs_full_information": 0.0,
+          "width_ratio_median": 1.0
+        },
+        {
+          "fraction_removed": 0.11,
+          "level_correlation_with_full": 0.9774248368622248,
+          "masked_item_prediction": 0.5614016954954613,
+          "mean_interval_width": 2.9821224212646484,
+          "median_interval_width": 2.8894705772399902,
+          "n_items_removed": 1,
+          "n_items_retained": 8,
+          "rmse_vs_full_information": 0.1900578886270523,
+          "width_ratio_median": 1.0036574602127075
+        },
+        {
+          "fraction_removed": 0.22,
+          "level_correlation_with_full": 0.9708740586370951,
+          "masked_item_prediction": 0.5303441704756383,
+          "mean_interval_width": 2.927294969558716,
+          "median_interval_width": 2.8175854682922363,
+          "n_items_removed": 2,
+          "n_items_retained": 7,
+          "rmse_vs_full_information": 0.2219448834657669,
+          "width_ratio_median": 0.9786882400512695
+        },
+        {
+          "fraction_removed": 0.33,
+          "level_correlation_with_full": 0.9509616876844571,
+          "masked_item_prediction": 0.5172327274372934,
+          "mean_interval_width": 2.940638542175293,
+          "median_interval_width": 2.8247768878936768,
+          "n_items_removed": 3,
+          "n_items_retained": 6,
+          "rmse_vs_full_information": 0.2898659408092499,
+          "width_ratio_median": 0.9811861515045166
+        },
+        {
+          "fraction_removed": 0.44,
+          "level_correlation_with_full": 0.9433095301337066,
+          "masked_item_prediction": 0.47036349841464553,
+          "mean_interval_width": 2.9311797618865967,
+          "median_interval_width": 2.795659303665161,
+          "n_items_removed": 4,
+          "n_items_retained": 5,
+          "rmse_vs_full_information": 0.3645476698875427,
+          "width_ratio_median": 0.9710721969604492
+        },
+        {
+          "fraction_removed": 0.56,
+          "level_correlation_with_full": 0.9338499609605969,
+          "masked_item_prediction": 0.5019545149716934,
+          "mean_interval_width": 2.934462785720825,
+          "median_interval_width": 2.7933919429779053,
+          "n_items_removed": 5,
+          "n_items_retained": 4,
+          "rmse_vs_full_information": 0.4036746621131897,
+          "width_ratio_median": 0.9702845811843872
+        },
+        {
+          "fraction_removed": 0.67,
+          "level_correlation_with_full": 0.9137706803675665,
+          "masked_item_prediction": 0.47591807440090583,
+          "mean_interval_width": 2.9923653602600098,
+          "median_interval_width": 2.9879634380340576,
+          "n_items_removed": 6,
+          "n_items_retained": 3,
+          "rmse_vs_full_information": 0.5388535261154175,
+          "width_ratio_median": 1.0378689765930176
+        },
+        {
+          "fraction_removed": 0.78,
+          "level_correlation_with_full": 0.8607930408014165,
+          "masked_item_prediction": 0.436827800225731,
+          "mean_interval_width": 3.129352331161499,
+          "median_interval_width": 3.1594231128692627,
+          "n_items_removed": 7,
+          "n_items_retained": 2,
+          "rmse_vs_full_information": 0.7829932570457458,
+          "width_ratio_median": 1.0974254608154297
+        },
+        {
+          "fraction_removed": 0.89,
+          "level_correlation_with_full": 0.6802456953907187,
+          "masked_item_prediction": 0.34968179106159564,
+          "mean_interval_width": 3.937169313430786,
+          "median_interval_width": 3.961843967437744,
+          "n_items_removed": 8,
+          "n_items_retained": 1,
+          "rmse_vs_full_information": 1.066043734550476,
+          "width_ratio_median": 1.3761463165283203
+        }
+      ],
+      "local_non_monotonicity": [
+        {
+          "decrease": 0.0718851089477539,
+          "from_fraction": 0.11,
+          "to_fraction": 0.22
+        },
+        {
+          "decrease": 0.029117584228515625,
+          "from_fraction": 0.33,
+          "to_fraction": 0.44
+        },
+        {
+          "decrease": 0.0022673606872558594,
+          "from_fraction": 0.44,
+          "to_fraction": 0.56
+        }
+      ],
+      "mean_curve": [
+        2.9502949714660645,
+        2.9821224212646484,
+        2.927294969558716,
+        2.940638542175293,
+        2.9311797618865967,
+        2.934462785720825,
+        2.9923653602600098,
+        3.129352331161499,
+        3.937169313430786
+      ],
+      "median_curve": [
+        2.8789408206939697,
+        2.8894705772399902,
+        2.8175854682922363,
+        2.8247768878936768,
+        2.795659303665161,
+        2.7933919429779053,
+        2.9879634380340576,
+        3.1594231128692627,
+        3.961843967437744
+      ],
+      "participant_monotonicity_rate": 0.1006102877070619,
+      "pooled_monotone": false
+    },
+    "participant_subsampling": [
+      {
+        "fraction_kept": 0.5,
+        "level_correlation_with_full": 0.999893253664271,
+        "median_interval_width": 2.8632359504699707,
+        "n_participants": 2867
+      },
+      {
+        "fraction_kept": 0.25,
+        "level_correlation_with_full": 0.9997145914038387,
+        "median_interval_width": 2.8314311504364014,
+        "n_participants": 1433
+      }
+    ],
+    "split_half_level_correlation": 0.6907124397481691
+  },
+  "timing": {
+    "comparator_fitting_seconds": 7.107,
+    "hmm_inference_seconds": 0.084,
+    "preprocessing_seconds": 0.728,
+    "stress_seconds": 0.567,
+    "total_workflow_seconds": 9.004
+  },
+  "validation": {
+    "available_capabilities": [
+      "psychometric_1d"
+    ],
+    "canonical_sha256": "74eeb34cb751ba6d5e7ba2a48e3b755d07558ca0accd92f5c4cbcdf8edf60fba",
+    "dataset_id": "nhanes_2015_2016_dpq",
+    "distributions": {
+      "category_counts": {
+        "DPQ010": [
+          3805,
+          852,
+          255,
+          239
+        ],
+        "DPQ020": [
+          3920,
+          872,
+          210,
+          159
+        ],
+        "DPQ030": [
+          3192,
+          1195,
+          355,
+          419
+        ],
+        "DPQ040": [
+          2464,
+          1794,
+          465,
+          438
+        ],
+        "DPQ050": [
+          3810,
+          867,
+          243,
+          238
+        ],
+        "DPQ060": [
+          4319,
+          557,
+          147,
+          136
+        ],
+        "DPQ070": [
+          4322,
+          523,
+          147,
+          167
+        ],
+        "DPQ080": [
+          4612,
+          348,
+          100,
+          98
+        ],
+        "DPQ090": [
+          4964,
+          126,
+          37,
+          30
+        ]
+      },
+      "constant_items": [],
+      "item_missing_fraction": {
+        "DPQ010": 0.101831,
+        "DPQ020": 0.100087,
+        "DPQ030": 0.100087,
+        "DPQ040": 0.100087,
+        "DPQ050": 0.10061,
+        "DPQ060": 0.100436,
+        "DPQ070": 0.100436,
+        "DPQ080": 0.10061,
+        "DPQ090": 0.100785
+      },
+      "near_empty_items": [],
+      "sparse_category_items": [
+        "DPQ090"
+      ]
+    },
+    "findings": [
+      {
+        "code": "sparse_categories",
+        "columns": [
+          "DPQ090"
+        ],
+        "detail": "1 item(s) have a category observed fewer than 3 times",
+        "severity": "warning"
+      }
+    ],
+    "mapping_sha256": "0efdf3f6e17a815fccaa2bfccb6af65a85f3936a5ad4cfc5f2732c9beac818a3",
+    "n_refusals": 0,
+    "notes": [],
+    "passed": true,
+    "structure": {
+      "continuous_modalities": {},
+      "group_variables": [],
+      "instrument_names": [
+        "PHQ-9"
+      ],
+      "item_names": [
+        "DPQ010",
+        "DPQ020",
+        "DPQ030",
+        "DPQ040",
+        "DPQ050",
+        "DPQ060",
+        "DPQ070",
+        "DPQ080",
+        "DPQ090"
+      ],
+      "n_categories": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_instruments": 1,
+      "n_items": 9,
+      "n_participants": 5735,
+      "n_waves": 1,
+      "observed_cells": 46425,
+      "observed_fraction": 0.8994478349317059,
+      "setting_labels": [
+        "all"
+      ],
+      "version": "6b0-canonical-v1",
+      "wave_labels": [
+        "1"
+      ]
+    },
+    "suppressed_capabilities": {
+      "binary_change_detection": "requires at least two observed waves",
+      "dif_comparability": "no group variable declared",
+      "instrument_linking": "fewer than two distinguishable instruments",
+      "longitudinal_trait_state": "requires at least two observed waves"
+    },
+    "version": "6b0-validation-v1"
+  }
+}

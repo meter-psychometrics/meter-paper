@@ -1,0 +1,161 @@
+{
+  "charter": "D9E",
+  "artifact": "D9E_CHARTER_POPULATED_IPIP50",
+  "title": "Cross-Instrument Personality Transfer - IPIP-50 Big-Five Factor Markers",
+  "status": "FROZEN_AND_APPROVED - single locked execution authorized against commit 274e572; approval recorded in the approval block; no scientific or sampling specification changed",
+  "date_populated": "2026-08-07",
+  "supersedes": "configs/model/d9e_charter_draft_ipip50.json (design draft, preserved)",
+  "scientific_question": "Can the same bit-identical frozen METER model reproduce separately fitted five-dimensional psychometric scores on a DIFFERENT Big Five personality instrument - the 50-item IPIP Big-Five Factor Markers - without dataset-specific fitting?",
+  "why_this_test": "the post-D9D contract records cross-instrument transfer as NOT YET ESTABLISHED (D9C returned NOT_EVALUABLE and never produced an evaluable read). D9E holds the construct domain fixed - personality, where the evidence is strongest - and varies ONLY the instrument: IPIP adjective-phrase markers on a 1-5 agreement scale, versus MIDUS's MIDI adjective checklist on a 1-4 description scale, in an unrelated internet sample rather than a national probability cohort.",
+  "dataset": {
+    "selected": "IPIP-FFM-data-8Nov2018 (Open-Source Psychometrics Project), collected 2016-2018, published 8 Nov 2018",
+    "url": "https://openpsychometrics.org/_rawdata/IPIP-FFM-data-8Nov2018.zip",
+    "file_hashes_sha256": {
+      "data/public/IPIP-FFM-data-8Nov2018.zip": {"sha256": "d19ca933d974c371a48896c7dce61c005780953c21fe88bb9a95382d8ef22904", "bytes": 150967824},
+      "data/public/IPIP/data-final.csv": {"sha256": "dfbd5253f3f21f0569b34f2d1f47fbb71f5324ed26c3debbe29e84d42ce6d563", "bytes": 416273844},
+      "data/public/IPIP/codebook.txt": {"sha256": "56aac37ecf1c54531b6e9f85ad69fbb8e104fc8ff7853570fb25742839a85322", "bytes": 3951},
+      "configs/model/d9e_ipip_key_reference.txt": {"sha256": "d61b92e977a4c54d", "sha256_note": "full value recorded in the selection artifact", "bytes": 3489}
+    },
+    "archive_member_sizes_verified": "codebook.txt 3,951 / data-final.csv 416,273,844 / .directory 60 - all three match the pre-download inspection of the archive's central directory exactly",
+    "EXCLUDED_BY_NAME": {
+      "dataset": "BIG5 / BIG5.zip (Open-Source Psychometrics Project, c. 2012, N=19,719)",
+      "reason": "the IPIP maintainers say 'we recommend avoiding it' (https://ipip.ori.org/newNorms.htm): NEO-PI-R labels (N, O) applied to lexical Emotional Stability and Intellect/Imagination markers, leaving it 'not clear whether factor IV is scored in the direction of Neuroticism or Emotional Stability'; an unconventional scoring method; item-mean rather than scale-mean norms. Its N block is item-for-item identical to the 2018 EST block, so N2 ('I am relaxed most of the time') and N4 ('I seldom feel blue') are stability-POSITIVE items under an 'N' label. The publisher does not mark it obsolete and its test page still resolves, so exclusion is BY NAME. It may not be used under D9E in any capacity."
+    },
+    "licence_and_use_conditions": {
+      "publisher_terms": "openpsychometrics.org states NO explicit licence for its raw-data dumps: no copyright notice, no citation requirement, and NO AI-use restriction. The only terms-like statement is that data are dumped 'for general public edification', are anonymous, and that non-consenting users were removed.",
+      "instrument_terms": "the IPIP items are PUBLIC DOMAIN (ipip.ori.org)",
+      "determination": "analysis is permitted; no AI-use, redistribution or commercial-use restriction applies. Recorded ONCE per the standing governance rule. Stated honestly: this is an ABSENCE of restriction, not an affirmative CC0 grant; third-party mirrors asserting CC0/CC-BY are uploader claims and are NOT the source of record.",
+      "orchestrator_boundary": "rows read by code only; aggregates only; every tabulated count below 10 suppressed as '<10'"
+    },
+    "role_predeclaration": "cross-instrument personality transfer - single role, single run, evaluated once"
+  },
+  "verified_pre_analysis_invariants": {
+    "delimiter_and_shape": "TAB-delimited despite the .csv extension; header parsed to EXACTLY 110 columns (verified). A comma separator yields a single column and is refused.",
+    "record_count": {
+      "actual_rows_counted": 1015341,
+      "publisher_stated": 1015342,
+      "disposition": "the publisher's index page states 1,015,342; the canonical file contains 1,015,341 data rows by direct count. The counted value is authoritative and is what the hashes bind. Recorded rather than reconciled - the discrepancy is the publisher's, not this analysis's."
+    },
+    "item_value_set": "{0, 1, 2, 3, 4, 5} across all 50 item columns (verified); valid responses are 1-5 and 0 is the skip code",
+    "lexical_match": "all 50 codebook item texts matched the published IPIP key reference by normalised exact text (first-person codebook form vs stem-form key), programmatically, never from memory",
+    "keying_totals": "26 positively keyed / 24 negatively keyed - matching the published counts; per factor EXT 5+/5-, EST 2+/8-, AGR 6+/4-, CSN 6+/4-, OPN 7+/3-",
+    "items_per_factor": "10 each, all five factors"
+  },
+  "undocumented_hazards_frozen_by_hand": [
+    {
+      "hazard": "missing-value code absent from the 2018 codebook",
+      "detail": "the 2012 codebook documented '0=missed'; the 2018 one silently dropped that line. Confirmed empirically at preparation: item columns take exactly {0,1,2,3,4,5}, so 0 is the skip code. Frozen by hand."
+    },
+    {
+      "hazard": "TAB delimiter behind a .csv extension",
+      "detail": "the reader must specify a tab separator and refuse unless 110 columns parse"
+    },
+    {
+      "hazard": "literal 'NULL' strings in item cells - FOUND AT PREPARATION, documented nowhere",
+      "detail": "89,150 item cells across 1,783 rows carry a literal NULL/NA token rather than a numeric code. Neither codebook mentions this. Both NULL and 0 are treated as missing, so every affected row fails the completeness rule and is excluded. Recorded because a naive numeric parse crashes on it, and a coercing parse would silently turn it into a valid-looking value."
+    }
+  ],
+  "item_mapping": {
+    "instrument": "IPIP 50-item Big-Five Factor Markers (Goldberg 1992 lexical markers, IPIP version)",
+    "k": 5,
+    "items_per_factor": [10, 10, 10, 10, 10],
+    "factor_labels_order_frozen": ["extraversion", "emotional_stability", "agreeableness", "conscientiousness", "intellect_imagination"],
+    "column_blocks": {"extraversion": "EXT1..EXT10", "emotional_stability": "EST1..EST10", "agreeableness": "AGR1..AGR10", "conscientiousness": "CSN1..CSN10", "intellect_imagination": "OPN1..OPN10"},
+    "label_note": "the 2018 file uses the CORRECT lexical labels - EST is Emotional Stability, OPN is Intellect/Imagination - which is exactly what the excluded 2012 file gets wrong",
+    "response_coding_raw": "1..5 agreement; codebook verbatim: 'The scale was labeled 1=Disagree, 3=Neutral, 5=Agree'",
+    "missing_codes": [0, "literal NULL/NA token"],
+    "reverse_keying_frozen": {
+      "source": "configs/model/d9e_ipip_key_reference.txt, fetched 2026-08-07 from https://ipip.ori.org/newBigFive5broadKey.htm and hashed; all 50 items matched programmatically",
+      "positively_keyed": {
+        "extraversion": ["EXT1", "EXT3", "EXT5", "EXT7", "EXT9"],
+        "emotional_stability": ["EST2", "EST4"],
+        "agreeableness": ["AGR2", "AGR4", "AGR6", "AGR8", "AGR9", "AGR10"],
+        "conscientiousness": ["CSN1", "CSN3", "CSN5", "CSN7", "CSN9", "CSN10"],
+        "intellect_imagination": ["OPN1", "OPN3", "OPN5", "OPN7", "OPN8", "OPN9", "OPN10"]
+      },
+      "negatively_keyed": {
+        "extraversion": ["EXT2", "EXT4", "EXT6", "EXT8", "EXT10"],
+        "emotional_stability": ["EST1", "EST3", "EST5", "EST6", "EST7", "EST8", "EST9", "EST10"],
+        "agreeableness": ["AGR1", "AGR3", "AGR5", "AGR7"],
+        "conscientiousness": ["CSN2", "CSN4", "CSN6", "CSN8"],
+        "intellect_imagination": ["OPN2", "OPN4", "OPN6"]
+      },
+      "recode_rule": "reverse-scoring is 6 - x on the 1-5 scale, applied ONLY after missing has been set to null; then 0-based canonical categories 0..4 (5 response categories, inside METER's trained support 2-6)"
+    }
+  },
+  "sample_definition_frozen": {
+    "rule": "IPC == 1 AND all 50 mapped items observed (no 0, no NULL)",
+    "ipc_rationale": "the codebook's own cleanliness guidance, verbatim: 'For max cleanliness, only use records where this value is 1. High values can be because of shared networks (e.g. entire universities) or multiple submissions'",
+    "no_latency_or_carelessness_filter": "deliberately none. Published analyses of this same raw file report analytic Ns of 548,389 and 515,708 from undisclosed preprocessing - a ~33,000 swing. Any threshold we invented would be a free parameter; excluding them keeps the rule fully documentation-derived. The consequence, that some careless responders remain, degrades BOTH channels identically and is recorded as a transfer condition, not corrected for.",
+    "counts_verified": {
+      "total_rows": 1015341,
+      "n_ipc_1": 696845,
+      "n_all_50_observed": 874434,
+      "eligible_both": 603322
+    },
+    "minimum_n_precondition": "PASSED: 603,322 >= the 500 floor",
+    "eligible_identifier_list_sha256": "54f5349d284ca065",
+    "identifier_definition": "0-based row index in canonical file order of data-final.csv; the file has no respondent ID column, and its byte-identical hash makes the index stable",
+    "weights": "unweighted; demographics, latencies and geolocation columns are not read"
+  },
+  "frozen_selection": {
+    "artifact": "configs/model/d9e_sample_selection.json",
+    "artifact_sha256": "b0bc94569688f77512528643f53fbe87c0a1e2a6bd36c6d8c1996265360b2525",
+    "subsample_size": 20000,
+    "seed": 9500,
+    "method": "numpy default_rng(9500).choice over the sorted eligible index array, without replacement, result sorted ascending",
+    "selected_identifier_list_sha256": "5b8a9c39bdf11471",
+    "rationale": "a COMPUTE bound for the largest confirmatory MIRT fit attempted in this project (50 items x K=5), frozen before the eligible N was known; never an outcome-dependent choice",
+    "guard": "the eligible identifier list was hashed BEFORE subsampling and the selected list after, both recorded in the artifact together with the full 20,000 indices - so the exact rows are reproducible and no different sample can later be regenerated under the same nominal seed and configuration",
+    "no_redraw_rule": "this selection is FINAL: no replacement of excluded respondents, no redraw, and no re-derivation under any circumstance, including inconvenient results"
+  },
+  "model": {
+    "state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "rule": "the bit-identical M8B METER model, reproduced from frozen seeds and hash-asserted; no retraining, no calibration, no IPIP-specific fitting; K=5 and 5 response categories inside trained support; 10 items per factor inside the trained 5/8/12 range",
+    "phi_status": "Phi is DESCRIPTIVE only, remains NOT SUPPORTED, and cannot become supported through D9E"
+  },
+  "comparator": {
+    "specification": "the frozen confirmatory mirt specification at K=5 (pairwise COV, graded itemtype, QMCEM, NCYCLES 2000 TOL 1e-4, one MHRM retry then recorded nonconvergence, EAP with QMC, NA full-information), fitted to the identical recoded 50-item matrix of the frozen 20,000-row sample",
+    "timeout": "3600 s under the repaired whole-tree enforcement",
+    "compute_note": "50 items x K=5 x 20,000 respondents is the largest comparator fit in this project; the frozen subsample exists to keep it inside the timeout"
+  },
+  "comparator_adequacy_routing_rule": {
+    "frozen_prospectively": true,
+    "rule": "nonconvergence OR an inadmissible/non-distinguishable comparator solution routes MECHANICALLY to D9E_NOT_EVALUABLE - never to scientific FAIL",
+    "inadmissible_defined_numerically": [
+      "nonconvergence under the frozen specification (one MHRM retry included)",
+      "any comparator factor-correlation |value| >= 0.95",
+      "comparator factor-correlation matrix not positive definite",
+      "any comparator factor with EAP score variance below 1e-4"
+    ],
+    "prohibited_responses": "no item substitution, no factor merging, no residual correlations, no mapping change, no bifactor rescue, no alternative IPIP form (IPIP-NEO-120/300 and the 20-item mini-markers are different instruments and are out of scope), no alternate Big Five key, no changed screening - before or after outcomes"
+  },
+  "guards": {
+    "snapshot_binding": "execution binds to the data file, codebook, key reference and selection artifact by sha256 and byte size; any change is a refusal, never a re-hash",
+    "sample_binding": "the run reads EXACTLY the 20,000 row indices in the selection artifact and refuses if the recomputed selected-identifier hash differs",
+    "deterministic_alignment": "no permutation exists (factor k vs factor k, both anchored to the frozen mapping); each side's factor signs aligned INDEPENDENTLY against that side's own unit-weighted recoded composites; flips recorded; gate correlations SIGNED, computed after alignment; no absolute value in the gate path",
+    "separator_guard": "tab separator required; refuse unless 110 columns parse"
+  },
+  "gates": {
+    "rule": "ALL-OR-NOTHING at the frozen criteria; pure adjudication function pinned by test before the run; no 'close enough', no factor-specific exception, no post-outcome gate change",
+    "primary": {
+      "per_factor_pearson_model_vs_mirt_at_least": 0.90,
+      "median_pearson_model_vs_mirt_at_least": 0.93,
+      "no_collapse_nan_degeneracy": "the D9B numeric definitions: no model |Phi_ij| >= 0.95, no factor score variance below 1e-4, no NaN agreement"
+    },
+    "descriptive_not_gated": ["Phi agreement", "uncertainty directionality", "runtime"],
+    "verdicts_pre_frozen": {
+      "D9E_PASS": "every primary gate passes: the frozen model's factor scores transfer ACROSS INSTRUMENTS within personality, reproducing separately fitted confirmatory scores on the IPIP-50 markers at the prespecified operating point - establishing cross-instrument transfer, which the post-D9D contract records as not yet established.",
+      "D9E_FAIL": "any primary gate fails: cross-instrument transfer at the prespecified operating point is not established; the supported claim remains scoped to same-instrument cohort replication; the model is not tuned against IPIP afterward.",
+      "D9E_NOT_EVALUABLE": "the comparator-adequacy routing rule fired; no claim either way; re-charter required."
+    }
+  },
+  "stop_condition": "SATISFIED - approval received 2026-08-07; the single locked execution may proceed",
+  "approval": {
+    "approved": true,
+    "date": "2026-08-07",
+    "approved_against_commit": "274e572",
+    "directive_verbatim": "D9E APPROVED FOR SINGLE LOCKED EXECUTION against commit 274e572. Build and test the runner without changing any scientific or sampling specification. The runner must independently reproduce the eligible population and frozen 20,000-row sample hashes before METER inference. Then execute exactly once using the bit-identical frozen METER model and frozen K=5 comparator. Preserve the complete aggregate report verbatim before adjudication. Only after preservation apply the pre-frozen D9E_PASS / D9E_FAIL / D9E_NOT_EVALUABLE rules mechanically. No redraw, alternate preprocessing, alternate IPIP key/form, remapping, permutation, model tuning or gate changes are permitted after outcomes exist.",
+    "constitutes": "the D9 sign-off for this dataset under the CLAUDE.md real-data evaluation exception"
+  }
+}

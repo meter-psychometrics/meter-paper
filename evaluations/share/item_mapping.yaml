@@ -1,0 +1,139 @@
+# SHARE Release 9.0.0 EURO-D 12 mapping — SHARE master validation charter
+#
+# Every field below is DECLARED from the SHARE gv_health value labels and
+# variable labels recorded in reports/share/share_manifest.json (built
+# outcome-blind under the Tier-2 operator quarantine) before any analysis
+# CSV was opened. Nothing here was inferred from observed values, which is
+# the standing rule for direction and missing codes.
+#
+# Provenance for each decision:
+#
+#   categories 0/1   Every one of the twelve official generated items
+#                    (euro1..euro12) carries the identical value-label
+#                    table in gv_health: 0 "Not selected", 1 "Selected".
+#                    Recorded per wave in the manifest metadata; verified
+#                    individually, not assumed from the first.
+#
+#   missing -1/-2    The gv_health value labels mark -1 "Don't know" and
+#                    -2 "Refusal" on every euro item. These are
+#                    administrative codes, never responses. NaN/empty is
+#                    the not-asked/absent form. Declared from the value
+#                    labels recorded in the manifest, not inferred.
+#
+#   no reversal      The official generated items are already
+#                    direction-harmonized: 1 = symptom present. Verified
+#                    against the raw mh derivation in share_manifest.json
+#                    stage2.mapping_verification: 4,239,482/4,239,482
+#                    item-cell agreement across all eight waves and exact
+#                    reproduction of the official eurod sum (0-12, high is
+#                    depressed). Canonical direction: distress presence,
+#                    higher = more distress (ELSA CES-D precedent).
+#
+#   person key       mergeid is SHARE's cross-wave person identifier and a
+#                    SINGLE-column key (unlike ESS cntry+idno). Per the
+#                    mapping schema, a single-column key sets
+#                    participant_id alone; participant_id_columns is the
+#                    composite-key declaration and stays empty. mergeid is
+#                    opaque and never emitted. Duplicate mergeids within a
+#                    wave surface as an integrity failure in the runner.
+#
+# Item TEXT is deliberately absent (D8). Variable names, category codes and
+# a direction declaration are metadata; EURO-D wording is not reproduced.
+
+dataset_id: share_rel9_eurod
+mapping_version: '1.0'
+schema_version: 6b0-mapping-v1
+
+# --- identity -------------------------------------------------------------
+participant_id: mergeid
+
+# --- the twelve official generated EURO-D items ---------------------------
+item_columns:
+- euro1
+- euro2
+- euro3
+- euro4
+- euro5
+- euro6
+- euro7
+- euro8
+- euro9
+- euro10
+- euro11
+- euro12
+
+valid_categories:
+- 0
+- 1
+
+missing_codes:
+- -1
+- -2
+- '-1'
+- '-2'
+- '.'
+- ''
+- 'NaN'
+- 'nan'
+
+# --- declared harmonized direction ----------------------------------------
+# The official generated items already point the canonical way: position 1 =
+# symptom selected = MORE depressive symptomatology. No item is reversed.
+reverse_scored_items: []
+
+# --- country and design metadata ------------------------------------------
+# Country is the setting: the unit of generalization for transfer. It is
+# kept out of the ordinal item container entirely. No group variable is
+# declared: cross-country DIF is not chartered for SHARE-A.
+setting_variables:
+- country
+group_variables: []
+
+instrument_id: EUROD12
+instrument_version: SHARE Release 9.0.0 gv_health generated variables
+
+wide_or_long_format: wide
+
+requested_capabilities:
+- psychometric_1d
+
+user_confirmations:
+  participant_identity: 'mergeid is SHARE''s cross-wave person identifier, declared
+    from the SHARE release documentation and the manifest metadata. It is a single-column
+    key (no composite declaration), treated as an opaque string, and never emitted
+    into any report, log or committed artifact. The charter cohort is one row per
+    mergeid; duplicates surface as an integrity failure.'
+  item_columns: 'euro1-euro12 are the twelve official generated EURO-D items in the
+    gv_health module, declared from the manifest metadata (variable labels name the
+    EURO-D facet of each item). The official eurod total (0-12) and eurodcat are
+    present but are derived quantities, not items, and are excluded from the item
+    set by design.'
+  missing_codes: 'Declared from the gv_health value labels recorded in reports/share/share_manifest.json:
+    -1 Don''t know, -2 Refusal, footnoted on every euro item. NaN/empty is the
+    not-asked/absent form. Numeric and string forms are both listed because the
+    CSV reader may yield either. Not inferred from observed values.'
+  reverse_scoring: 'None. The official generated items are already direction-harmonized
+    (1 = symptom selected = more distress). Verified in share_manifest.json
+    stage2.mapping_verification: 4,239,482/4,239,482 agreement with the raw mh
+    derivation across all eight waves and exact reproduction of the official eurod
+    sum. Canonical direction: distress presence 0/1, higher = more distress.'
+  category_ranges: '0 = symptom not selected, 1 = selected, identical for all twelve
+    items, per the gv_health value labels recorded in the manifest.'
+  instrument_identity: 'EURO-D 12-item depression scale (SHARE generated variables),
+    declared by the operator from the SHARE documentation. The ingestion layer does
+    not infer instrument identity from column names.'
+  construct_identity: 'Late-life depressive symptomatology (EURO-D). Same construct
+    family and response regime as the frozen model''s prior binary-scored distress
+    validations (ELSA/UKHLS CES-D precedent); the zero-shot claim is scoring
+    transfer, not construct equivalence.'
+  survey_design: 'SHARE design weights live in separate gv_weights modules and are
+    recorded as metadata only. They are NOT applied to the frozen model''s inference:
+    the model has no weighting capability, and weighting its input would be an
+    undeclared modification of a frozen system (frozen 6B.1 protocol import).'
+
+schema_notes: 'SHARE Release 9.0.0, gv_health module, waves 9 (SHARE-A primary) and
+  8 (SHARE-A replication) extracted by scripts/share_a_extract.py to one CSV per
+  wave with columns mergeid, country, euro1-euro12; charter cohort = rows with all
+  12 items in {0,1}. Item text is not stored (D8). Tier-2 operator quarantine:
+  participant-level values never enter the AI session; this mapping was written
+  from manifest metadata only.'

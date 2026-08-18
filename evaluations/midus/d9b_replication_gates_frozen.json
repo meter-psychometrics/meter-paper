@@ -1,0 +1,67 @@
+{
+  "charter": "D9B",
+  "artifact": "D9B_REPLICATION_GATES_FROZEN",
+  "title": "Locked Real-Data Dense Replication - the prospective gates",
+  "date_frozen": "2026-08-07",
+  "status": "FROZEN. These gates are committed BEFORE any replication dataset is selected, opened or manifested - they are dataset-independent by construction and may not be revised after a candidate dataset is known.",
+  "relationship_to_d9a": "D9A (MIDUS 1) was development for gate derivation and is permanently excluded from replication. These gates are informed by D9A but deliberately NOT set equal to its observed values - encoding the development result would make the replication circular. Observed D9A values are recorded beside each gate for the audit trail.",
+  "model": {
+    "state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "rule": "the bit-identical frozen model, reproduced from the frozen trainer config and seeds, hash-asserted at launch; no new model fitting, calibration, recalibration, mapping change, threshold movement or factor-specific adjustment of any kind, before or after outcomes exist"
+  },
+  "replication_dataset_requirements": {
+    "regime": "dense multidimensional administration (all mapped items administered to all respondents; item-level refusals are ordinary missingness), K between 3 and 5, an externally defined item-to-factor mapping transcribed verbatim from the instrument's own documentation",
+    "exclusions": "MIDUS 1 (development, spent), SAPA and ICAR (sparse; unsupported regime), and any dataset previously touched by this project in any role",
+    "manifest": "the dataset is selected and frozen in its own later charter with file hashes, sample rule, mapping, coding, missing-data rules and tier determination, all BEFORE any outcome is computed - these gates bind that charter and may not be amended by it",
+    "role_predeclaration": "independent locked replication - single role, single run, evaluated once"
+  },
+  "measurement_procedure": "identical to D9A by construction: the same recoded matrix feeds the frozen model (zero-shot) and the frozen confirmatory MIRT specification (the M8 gate freeze's confirmatory_mirt_specification, unchanged); metrics computed exactly as defined in the D9A charter; aggregates only; every tabulated count below 10 suppressed; producer conditions recorded by amendment before data access",
+  "gates": {
+    "rule": "EVERY criterion below must pass. Binary. No 'closely approaches', no small-n exception, no rationalization from comparator-relative performance, instrument reliability, or any other post hoc argument. All comparisons unrounded.",
+    "factor_agreement": {
+      "per_factor_pearson_model_vs_mirt_at_least": 0.90,
+      "applies_to": "every mapped factor separately, K factors, never pooled",
+      "d9a_observed_for_audit_trail": "worst factor 0.9048 (conscientiousness) - the floor is a meaningful operating threshold precisely because the development run only just clears it; a replication with any substantially weaker factor cannot be called successful",
+      "median_pearson_model_vs_mirt_at_least": 0.93,
+      "d9a_observed_median": 0.9429
+    },
+    "no_collapse_or_degeneracy": {
+      "definition_numeric": [
+        "no pair of model factors with |estimated Phi off-diagonal| >= 0.95",
+        "no factor whose model-score variance across respondents is below 1e-4",
+        "no per-factor agreement correlation undefined (NaN) through constant scores"
+      ],
+      "note": "operationalized numerically so no clause requires judgment at adjudication - the M8 contract-audit lesson"
+    },
+    "phi_agreement": {
+      "mean_abs_off_diagonal_difference_at_most": 0.12,
+      "max_abs_off_diagonal_difference_at_most": 0.20,
+      "model_phi_positive_definite": true,
+      "d9a_observed_for_audit_trail": "mean 0.0942, max 0.1665"
+    },
+    "comparator": {
+      "requirement": "the confirmatory MIRT fit converges under the frozen specification (the single MHRM retry permitted by that specification counts as convergence if it converges)",
+      "on_nonconvergence": "verdict REPLICATION_NOT_EVALUABLE - distinct from failure: no claim is established, no gate is scored, and proceeding requires a new chartered decision; the nonconvergent run is preserved verbatim"
+    },
+    "uncertainty_directionality": {
+      "requirement": "Spearman correlation between per-factor posterior SD and number of items answered is strictly negative for EVERY factor",
+      "magnitude": "reported descriptively, not gated",
+      "d9a_observed_for_audit_trail": "-0.13 to -0.19 across all five factors"
+    },
+    "runtime": {
+      "status": "DESCRIPTIVE ONLY - reported (model wall-clock vs comparator wall-clock, same machine), never a validity gate"
+    }
+  },
+  "verdicts_pre_frozen": {
+    "REPLICATION_PASS": "every gate passes. The supported claim becomes: dense known-structure multidimensional inference by the frozen model, validated on synthetic benchmarks and demonstrated on a development instrument, REPLICATED on an independent real instrument under prospectively frozen criteria - with the development-stage results (including the disclosed M8 smoke failure and its M8B resolution) carried in the record.",
+    "REPLICATION_FAIL": "any gate fails. The claim closes as: zero-shot transfer agrees closely with fitted confirmatory models on development data, but replication at the prespecified operating point on an independent instrument has not been established. The model is not tuned against the replication dataset afterward; any further attempt requires a new charter, a new dataset, and disclosure of this failure.",
+    "REPLICATION_NOT_EVALUABLE": "the comparator did not converge; no claim either way; re-charter required."
+  },
+  "prohibitions": [
+    "no new model fitting, calibration, mapping change or factor-specific adjustment at any point",
+    "no gate revision after a candidate replication dataset is known",
+    "no reuse of the replication dataset for anything else beforehand",
+    "runtime never argued as a validity criterion",
+    "no inspection of any replication outcome before the dataset charter is frozen and approved"
+  ]
+}

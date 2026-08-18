@@ -1,0 +1,120 @@
+{
+  "adjudication": {
+    "all_or_nothing": true,
+    "checks": {
+      "every_factor_r_at_least": false,
+      "median_r_at_least": false,
+      "no_nan_agreement": true,
+      "no_phi_collapse": true,
+      "no_variance_degeneracy": true
+    },
+    "gates_applied": {
+      "median_r": 0.93,
+      "per_factor_r": 0.9,
+      "phi_collapse_ceiling": 0.95,
+      "variance_floor": 0.0001
+    },
+    "verdict": "D9D_FAIL",
+    "verdict_language": "any primary gate fails: cross-domain score transfer to cognitive ability at the prespecified operating point is not established; the supported claim remains scoped as before; the model is not tuned against ICAR afterward."
+  },
+  "aggregates_only": true,
+  "alignment": {
+    "comparator_factor_flips": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "model_factor_flips": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "rule": "per-side sign alignment against own proportion-correct composites; no permutation exists"
+  },
+  "artifact": "D9D_TRANSFER_REPORT",
+  "charter": "D9D",
+  "charter_sha256": "87bac1390d7a6ffcbe34a9fbd4c3a0501c08fe1e5ed5a51fae281e912cda6d67",
+  "comparator": {
+    "admissible": true,
+    "converged": true,
+    "error": null,
+    "fit_seconds": 102.6,
+    "inadmissibility_reasons": [],
+    "retried": false
+  },
+  "disclosure_rule": "every tabulated count below 10 is suppressed as '<10'",
+  "elapsed_seconds": 214.1,
+  "factor_agreement_signed": {
+    "letter_number_series": {
+      "model_sd_quantiles": {
+        "q05": 0.5518,
+        "q25": 0.5526,
+        "q50": 0.5821,
+        "q75": 0.588,
+        "q95": 0.6558
+      },
+      "pearson_model_vs_mirt": 0.929
+    },
+    "matrix_reasoning": {
+      "model_sd_quantiles": {
+        "q05": 0.5928,
+        "q25": 0.5939,
+        "q50": 0.5964,
+        "q75": 0.6259,
+        "q95": 0.6748
+      },
+      "pearson_model_vs_mirt": 0.861
+    },
+    "three_d_rotation": {
+      "model_sd_quantiles": {
+        "q05": 0.5612,
+        "q25": 0.5818,
+        "q50": 0.5825,
+        "q75": 0.5825,
+        "q95": 0.7354
+      },
+      "pearson_model_vs_mirt": 0.9439
+    },
+    "verbal_reasoning": {
+      "model_sd_quantiles": {
+        "q05": 0.6106,
+        "q25": 0.6117,
+        "q50": 0.619,
+        "q75": 0.6285,
+        "q95": 0.7423
+      },
+      "pearson_model_vs_mirt": 0.8755
+    }
+  },
+  "median_pearson_model_vs_mirt": 0.9023,
+  "model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+  "phi_descriptive_not_gated": {
+    "max_abs_off_diagonal_difference": 0.1251,
+    "mean_abs_off_diagonal_difference": 0.1059,
+    "mirt_phi_off_diagonal_quantiles": {
+      "q05": 0.5816,
+      "q25": 0.6145,
+      "q50": 0.7055,
+      "q75": 0.7751,
+      "q95": 0.7804
+    },
+    "model_phi_off_diagonal_quantiles": {
+      "q05": 0.4859,
+      "q25": 0.5007,
+      "q50": 0.5839,
+      "q75": 0.6521,
+      "q95": 0.6994
+    },
+    "model_phi_pd": true,
+    "model_phi_shrink_weight": 1.0
+  },
+  "runtime_descriptive": {
+    "model_inference_seconds_full_subgroup": 0.054
+  },
+  "sample": {
+    "analytic_subgroup_n": 4574,
+    "rule": "answered set exactly equal to the ICAR-16 Sample-Test set (reconstructed; charter amendment 1)"
+  }
+}

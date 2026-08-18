@@ -1,0 +1,1418 @@
+{
+  "artifact": "P4B_FULLY_WIRED_CAPABILITY_ROUTER",
+  "generated_utc": "2026-08-14T19:18:17Z",
+  "framing": "P4 identified declaration-enforcement gaps in the capability router. P4B prospectively tested the fully wired runtime implementation against a frozen protocol. The historical P4 artifact is immutable and is not characterized as erroneous: it measured the router as it was",
+  "protocol": {
+    "path": "configs/model/p4b_router_closeout_protocol.json",
+    "sha256": "14340cb75adc93d77daa145940fc2d80b197073ccab2bbb9e17279cfb46b6b94",
+    "freeze_commit": "d8871c8"
+  },
+  "commits": {
+    "baseline_commit": "ec2c0f3",
+    "implementation_commit": "e13f7f7",
+    "closeout_commit_head": "e13f7f7"
+  },
+  "digests": {
+    "longitudinal_5e_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "mapped_model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "fusion_bundle_sha256": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697",
+    "capability_contract_version": "3.5",
+    "capability_contract_sha256": "47903adbe6a8a9068957df008d289d0054fb9a4ee955e3cd332c3f48cbf4739d"
+  },
+  "historical_p4": {
+    "path": "reports/planned/p4_router_challenge.json",
+    "sha256": "4db0f37af672be2ed4ed0823edf7c6d8a9c5d2ac4ef30b5f0ed10b07074c575c",
+    "commit": "33f11f2",
+    "untouched": true,
+    "per_axis_summary": {
+      "response_category_count": {
+        "false_accepts": 80,
+        "n_unsupported": 120,
+        "false_rejects": 0,
+        "n_supported": 120
+      },
+      "latent_dimensionality": {
+        "false_accepts": 120,
+        "n_unsupported": 120,
+        "false_rejects": 0,
+        "n_supported": 80
+      },
+      "observed_cell_fraction": {
+        "false_accepts": 80,
+        "n_unsupported": 80,
+        "false_rejects": 0,
+        "n_supported": 80
+      },
+      "factor_count": {
+        "false_accepts": 80,
+        "n_unsupported": 80,
+        "false_rejects": 0,
+        "n_supported": 80
+      },
+      "auxiliary_modality_no_signal": {
+        "false_accepts": 0,
+        "n_unsupported": 40,
+        "false_rejects": 0,
+        "n_supported": 40
+      }
+    }
+  },
+  "original_p4_rerun_unchanged_cases": {
+    "path": "reports/planned/p4b_rerun_original_p4.json",
+    "sha256": "51d15a7f15f6ea0281bdfb4cad1fa25bf52e8818fedd4ee73c06dfad8ec35a8f",
+    "before_after_by_axis": {
+      "response_category_count": {
+        "supported_challenges": 120,
+        "unsupported_challenges": 120,
+        "before": {
+          "false_accepts": 80,
+          "false_rejects": 0,
+          "false_accept_rate": 0.6666666666666666,
+          "false_reject_rate": 0.0
+        },
+        "after": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        }
+      },
+      "latent_dimensionality": {
+        "supported_challenges": 80,
+        "unsupported_challenges": 120,
+        "before": {
+          "false_accepts": 120,
+          "false_rejects": 0,
+          "false_accept_rate": 1.0,
+          "false_reject_rate": 0.0
+        },
+        "after": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        }
+      },
+      "observed_cell_fraction": {
+        "supported_challenges": 80,
+        "unsupported_challenges": 80,
+        "before": {
+          "false_accepts": 80,
+          "false_rejects": 0,
+          "false_accept_rate": 1.0,
+          "false_reject_rate": 0.0
+        },
+        "after": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        }
+      },
+      "factor_count": {
+        "supported_challenges": 80,
+        "unsupported_challenges": 80,
+        "before": {
+          "false_accepts": 80,
+          "false_rejects": 0,
+          "false_accept_rate": 1.0,
+          "false_reject_rate": 0.0
+        },
+        "after": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        }
+      },
+      "auxiliary_modality_no_signal": {
+        "supported_challenges": 40,
+        "unsupported_challenges": 40,
+        "before": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        },
+        "after": {
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "false_accept_rate": 0.0,
+          "false_reject_rate": 0.0
+        }
+      }
+    },
+    "seed_region_disposition": {
+      "what": "the frozen P4 scan refused because scripts/planned_p7_equal_weighting.py (written after P4) declares P4's region in its DECLARED_REGIONS avoid-list and disjointness note",
+      "verification": "every P4-region literal in that file was verified to be an avoidance declaration (the entry naming planned_p4_router_challenge, or the P4 disjointness note); the scan was re-run with only that file excluded and found zero other collisions. The guarantee the scan protects - no source file generates worlds from P4's seed region - holds",
+      "cases_thresholds_seeds_unchanged": true
+    }
+  },
+  "fresh_challenge": {
+    "path": "reports/planned/p4b_fresh_challenge.json",
+    "sha256": "7b513ba62d99b1207367a2ba277f4e0076858994c32b0f7c716a6cb3a5934cae",
+    "false_accepts": {
+      "count": 0,
+      "n_unsupported": 63,
+      "rate": 0.0
+    },
+    "false_refusals": {
+      "count": 0,
+      "n_supported": 41,
+      "rate": 0.0
+    },
+    "per_cell": {
+      "format_x_capability_binary_1d": {
+        "expected": "accept",
+        "n": 8,
+        "accept": 8,
+        "refuse": 0,
+        "correct": 8
+      },
+      "format_x_capability_binary_longitudinal": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "format_x_capability_6cat_longitudinal": {
+        "expected": "accept",
+        "n": 8,
+        "accept": 8,
+        "refuse": 0,
+        "correct": 8
+      },
+      "format_x_capability_8cat": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "density_x_output_sparse_1d": {
+        "expected": "accept",
+        "n": 8,
+        "accept": 8,
+        "refuse": 0,
+        "correct": 8
+      },
+      "density_x_output_sparse_longitudinal": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "density_x_longitudinal_in_band": {
+        "expected": "accept",
+        "n": 8,
+        "accept": 8,
+        "refuse": 0,
+        "correct": 8
+      },
+      "runnable_but_unsupported": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "multimodal_x_longitudinal_out_of_support": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "multimodal_x_longitudinal_in_support": {
+        "expected": "refuse",
+        "n": 8,
+        "accept": 0,
+        "refuse": 8,
+        "correct": 8
+      },
+      "factor_x_density_dense_in_range": {
+        "expected": "accept",
+        "n": 3,
+        "accept": 3,
+        "refuse": 0,
+        "correct": 3
+      },
+      "factor_x_density_sparse": {
+        "expected": "refuse",
+        "n": 3,
+        "accept": 0,
+        "refuse": 3,
+        "correct": 3
+      },
+      "factor_x_output_scores": {
+        "expected": "accept",
+        "n": 3,
+        "accept": 3,
+        "refuse": 0,
+        "correct": 3
+      },
+      "factor_x_output_phi_real": {
+        "expected": "refuse",
+        "n": 3,
+        "accept": 0,
+        "refuse": 3,
+        "correct": 3
+      },
+      "factor_x_output_phi_synthetic": {
+        "expected": "accept",
+        "n": 3,
+        "accept": 3,
+        "refuse": 0,
+        "correct": 3
+      },
+      "factor_x_output_discovery": {
+        "expected": "refuse",
+        "n": 3,
+        "accept": 0,
+        "refuse": 3,
+        "correct": 3
+      },
+      "factor_x_output_count_discovery": {
+        "expected": "refuse",
+        "n": 3,
+        "accept": 0,
+        "refuse": 3,
+        "correct": 3
+      },
+      "factor_x_output_k6": {
+        "expected": "refuse",
+        "n": 3,
+        "accept": 0,
+        "refuse": 3,
+        "correct": 3
+      }
+    }
+  },
+  "numerical_nonregression": {
+    "path": "reports/planned/p4b_numerical_nonregression.json",
+    "all_supported_outputs_bit_identical": true,
+    "fixtures": {
+      "longitudinal_989450": {
+        "bit_identical": true,
+        "n_outputs_compared": 4
+      },
+      "longitudinal_989451": {
+        "bit_identical": true,
+        "n_outputs_compared": 4
+      },
+      "longitudinal_989452": {
+        "bit_identical": true,
+        "n_outputs_compared": 4
+      },
+      "longitudinal_989453": {
+        "bit_identical": true,
+        "n_outputs_compared": 4
+      },
+      "longitudinal_989454": {
+        "bit_identical": true,
+        "n_outputs_compared": 4
+      },
+      "cross_sectional_989455": {
+        "bit_identical": true,
+        "n_outputs_compared": 2
+      },
+      "cross_sectional_989456": {
+        "bit_identical": true,
+        "n_outputs_compared": 2
+      },
+      "fusion_noise": {
+        "bit_identical": true,
+        "n_outputs_compared": 7
+      },
+      "fusion_genuine": {
+        "bit_identical": true,
+        "n_outputs_compared": 7
+      }
+    }
+  },
+  "fallback_regression": {
+    "exact_fallback_remains_exact": true,
+    "auxiliary_gate_before_after": {
+      "before": {
+        "false_accepts": 0,
+        "false_rejects": 0
+      },
+      "after": {
+        "false_accepts": 0,
+        "false_rejects": 0
+      }
+    }
+  },
+  "representative_output_granular_examples": [
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989056,
+      "corpus_seed": 1989056,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989057,
+      "corpus_seed": 1989057,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989058,
+      "corpus_seed": 1989058,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989059,
+      "corpus_seed": 1989059,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989060,
+      "corpus_seed": 1989060,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989061,
+      "corpus_seed": 1989061,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989062,
+      "corpus_seed": 1989062,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "runnable_but_unsupported",
+      "corpus_offset": 989063,
+      "corpus_seed": 1989063,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 60,
+        "max_categories": 5,
+        "n_constructs": 6,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "none"
+      },
+      "delivered": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "capability_status": "supported_experimental",
+        "out_of_support": true,
+        "warnings": [
+          "longitudinal_construct_count_outside_trained_envelope",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "level",
+          "level_sd",
+          "state",
+          "trait"
+        ],
+        "suppressed": [
+          "trait_share",
+          "trait_variance_share",
+          "variance_decomposition",
+          "wave_constant_drift"
+        ],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "level",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "level_sd",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "state",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "trait_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "trait_variance_share",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "variance_decomposition",
+            "action": "refuse",
+            "refusal_code": "out_of_support:longitudinal_trait_share"
+          },
+          {
+            "output_type": "wave_constant_drift",
+            "action": "refuse",
+            "refusal_code": "out_of_support"
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C3_design_driven_suppression_or_rename"
+      ],
+      "decision": "refuse",
+      "exact_fallback": null,
+      "expected": "refuse",
+      "correct": true,
+      "frozen_model_numerically_executes_this_input": true
+    },
+    {
+      "cell": "multimodal_x_longitudinal_out_of_support",
+      "corpus_offset": 989064,
+      "corpus_seed": 1989064,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 10,
+        "max_categories": 2,
+        "n_constructs": 1,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "pure_noise_block"
+      },
+      "delivered": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "capability_status": "experimental_out_of_support",
+        "out_of_support": true,
+        "warnings": [
+          "continuous_modality_rejected_psychometric_only_result",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "conflict_score",
+          "effective_continuous_precision",
+          "fallback",
+          "fused_mean",
+          "fused_precision",
+          "modality_displacement",
+          "reliability_gate"
+        ],
+        "suppressed": [],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "conflict_score",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "effective_continuous_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fallback",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_mean",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "modality_displacement",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "reliability_gate",
+            "action": "limit",
+            "refusal_code": null
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C4_auxiliary_modality_rejected"
+      ],
+      "decision": "refuse",
+      "exact_fallback": true,
+      "expected": "refuse",
+      "correct": true,
+      "longitudinal_boundary_applied_to_fused_result": true
+    },
+    {
+      "cell": "multimodal_x_longitudinal_out_of_support",
+      "corpus_offset": 989065,
+      "corpus_seed": 1989065,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 10,
+        "max_categories": 2,
+        "n_constructs": 1,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "pure_noise_block"
+      },
+      "delivered": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "capability_status": "experimental_out_of_support",
+        "out_of_support": true,
+        "warnings": [
+          "continuous_modality_rejected_psychometric_only_result",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "conflict_score",
+          "effective_continuous_precision",
+          "fallback",
+          "fused_mean",
+          "fused_precision",
+          "modality_displacement",
+          "reliability_gate"
+        ],
+        "suppressed": [],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "conflict_score",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "effective_continuous_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fallback",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_mean",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "modality_displacement",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "reliability_gate",
+            "action": "limit",
+            "refusal_code": null
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C4_auxiliary_modality_rejected"
+      ],
+      "decision": "refuse",
+      "exact_fallback": true,
+      "expected": "refuse",
+      "correct": true,
+      "longitudinal_boundary_applied_to_fused_result": true
+    },
+    {
+      "cell": "multimodal_x_longitudinal_out_of_support",
+      "corpus_offset": 989066,
+      "corpus_seed": 1989066,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 10,
+        "max_categories": 2,
+        "n_constructs": 1,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "pure_noise_block"
+      },
+      "delivered": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "capability_status": "experimental_out_of_support",
+        "out_of_support": true,
+        "warnings": [
+          "continuous_modality_rejected_psychometric_only_result",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "conflict_score",
+          "effective_continuous_precision",
+          "fallback",
+          "fused_mean",
+          "fused_precision",
+          "modality_displacement",
+          "reliability_gate"
+        ],
+        "suppressed": [],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "conflict_score",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "effective_continuous_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fallback",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_mean",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "modality_displacement",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "reliability_gate",
+            "action": "limit",
+            "refusal_code": null
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C4_auxiliary_modality_rejected"
+      ],
+      "decision": "refuse",
+      "exact_fallback": true,
+      "expected": "refuse",
+      "correct": true,
+      "longitudinal_boundary_applied_to_fused_result": true
+    },
+    {
+      "cell": "multimodal_x_longitudinal_out_of_support",
+      "corpus_offset": 989067,
+      "corpus_seed": 1989067,
+      "realised": {
+        "n_waves": 4,
+        "n_items": 10,
+        "max_categories": 2,
+        "n_constructs": 1,
+        "observed_cell_fraction": 1.0,
+        "auxiliary": "pure_noise_block"
+      },
+      "delivered": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "capability_status": "experimental_out_of_support",
+        "out_of_support": true,
+        "warnings": [
+          "continuous_modality_rejected_psychometric_only_result",
+          "longitudinal_design_out_of_validated_support",
+          "longitudinal_trait_share_binary_bias",
+          "continuous_change_magnitude_attenuated",
+          "longitudinal_trait_may_absorb_state_variance"
+        ],
+        "outputs": [
+          "conflict_score",
+          "effective_continuous_precision",
+          "fallback",
+          "fused_mean",
+          "fused_precision",
+          "modality_displacement",
+          "reliability_gate"
+        ],
+        "suppressed": [],
+        "all_outputs_finite": true,
+        "output_decisions": [
+          {
+            "output_type": "conflict_score",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "effective_continuous_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fallback",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_mean",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "fused_precision",
+            "action": "fallback",
+            "refusal_code": null
+          },
+          {
+            "output_type": "modality_displacement",
+            "action": "limit",
+            "refusal_code": null
+          },
+          {
+            "output_type": "reliability_gate",
+            "action": "limit",
+            "refusal_code": null
+          }
+        ]
+      },
+      "refusal_channels_fired": [
+        "C2_out_of_validated_support",
+        "C4_auxiliary_modality_rejected"
+      ],
+      "decision": "refuse",
+      "exact_fallback": true,
+      "expected": "refuse",
+      "correct": true,
+      "longitudinal_boundary_applied_to_fused_result": true
+    }
+  ],
+  "remaining_declaration_only_boundaries": [
+    "permitted/prohibited-use lists (e.g. interval-scale prohibited uses, longitudinal contract use lists) are declarations by nature: the warning and the suppression are enforced, the downstream USE of an emitted number cannot be",
+    "the D9D cognition-like construct condition is a warning flag, not a refusal, exactly as the frozen D9D record specifies (scores emitted for methodological comparison only)",
+    "direct imports of research modules (battery.*, mapped.*) bypass every router by construction; the enforced surfaces are interface.route/integrated.infer and meter.score, and the M7/M8 boundaries are enforced there",
+    "per-person coverage rules used in D9A analysis (minimum observed items per person) are analysis-protocol rules, not wired output predicates"
+  ],
+  "acceptance_criteria": {
+    "original_p4_rerun_fa0_fr0_all_axes": true,
+    "fresh_challenge_fa0_fr0": true,
+    "longitudinal_x_multimodal_bypass_closed": true,
+    "runnable_but_unsupported_refused": true,
+    "supported_numerics_bit_identical": true,
+    "exact_fallback_remains_exact": true,
+    "auxiliary_gate_regression_preserved": true
+  },
+  "verdict": "PASS"
+}

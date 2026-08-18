@@ -1,0 +1,6 @@
+# Frozen analysis environment (paper_manifest.json). The scoring path needs
+# only numpy + torch; pytest runs the verification suite. Comparators
+# additionally need R 4.6.1 + mirt 1.46.1 (see comparators/README.md).
+numpy>=1.26
+torch>=2.0
+pytest>=8

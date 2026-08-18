@@ -1,0 +1,13 @@
+# Conda environment mirroring the frozen analysis pins (paper_manifest.json).
+# Exact frozen versions given; nearby versions reproduce all shipped tests,
+# and bit-identity of the fixture outputs is asserted by the suite either way.
+name: meter-nmi-paper
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - numpy=2.5
+  - pytorch=2.13
+  - pytest
+  - r-base=4.6      # comparators only
+  - r-mirt=1.46     # comparators only

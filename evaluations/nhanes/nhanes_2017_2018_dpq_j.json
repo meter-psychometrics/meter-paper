@@ -1,0 +1,40 @@
+{
+  "access_tier": "public_use",
+  "approval": {
+    "approved_by": "Alvin K. Tay (project owner), authorised in session 2026-08-04",
+    "approved_on": "2026-08-04",
+    "d8_instrument_licensing": true,
+    "d8_reference": "No instrument text stored; mapping holds variable names and codes only.",
+    "d9_data_governance": true,
+    "d9_reference": "NHANES public-use release terms permit secondary analysis. Tier: public_use.",
+    "notes": "LOCKED zero-shot validation, opened once under the analysis frozen in commit 2757ce8. No parameter, mapping, comparator or metric may change after this run."
+  },
+  "attribution": "Centers for Disease Control and Prevention (CDC), National Center for Health Statistics (NCHS). National Health and Nutrition Examination Survey Data, 2015-2016. Hyattsville, MD: U.S. Department of Health and Human Services.",
+  "converted_data_location": null,
+  "cycle_completed_on": "2026-08-04",
+  "cycle_result_reference": "reports/milestone_6/phase6b1_dpqj_*.json; report section 6",
+  "dataset_id": "nhanes_2017_2018_dpq_j",
+  "instrument": "PHQ-9 depression screener (NHANES DPQ module)",
+  "instrument_family": "PHQ",
+  "model_version": "v0.6.0-beta.1",
+  "notes": "LOCKED zero-shot validation. Opened exactly once, under the protocols frozen in src/human_measurement/workbench/protocols.py. The two questions are prespecified: does strong point-estimate transfer replicate, and does the uncertainty mismatch replicate. No parameter, threshold or criterion may be changed after opening.",
+  "permissions": {
+    "architecture_selection_allowed": false,
+    "benchmark_criteria_selection_allowed": false,
+    "fine_tuning_allowed": false,
+    "neural_training_allowed": false,
+    "recalibration_allowed": false,
+    "schema_development_use": true,
+    "threshold_modification_allowed": false
+  },
+  "publication_use_status": "NHANES public-use data carry no restriction on analysis or publication; NCHS asks that the data be cited and that no attempt be made to re-identify respondents. PHQ-9 item TEXT is copyrighted and is not reproduced here or in any template (D8 governs; see instrument licensing).",
+  "raw_data_excluded_from_benchmarks": true,
+  "raw_data_excluded_from_git": true,
+  "raw_data_location": "data/public/DPQ_J.xpt (gitignored)",
+  "reserved_datasets": {
+    "nhanes_2015_2016_dpq": "Used for pipeline development. Its results informed the two frozen protocols but must not be pooled with this dataset's, and no threshold or criterion here was chosen after seeing DPQ_J."
+  },
+  "role": "zero_shot_validation",
+  "schema_version": "6b1-governance-v1",
+  "source": "CDC/NCHS public-use NHANES 2017-2018 cycle, questionnaire file DPQ_J"
+}

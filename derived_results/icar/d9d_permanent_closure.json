@@ -1,0 +1,35 @@
+{
+  "artifact": "D9D_PERMANENT_CLOSURE",
+  "date": "2026-08-07",
+  "verdict": "D9D_FAIL - permanent",
+  "adjudicated_report_sha256": "d8661fbc59258bfa9cce5e8b3a4302e00c68a698e9bc48f8018f7db3bd299d07",
+  "recorded_result": {
+    "subgroup_n": 4574,
+    "comparator": "converged and ADMISSIBLE - phi off-diagonals 0.58-0.78, well clear of the 0.95 indistinguishability ceiling; the routing rule did NOT fire, so this is a scientific outcome and not a technical escape",
+    "signed_per_factor_r": {
+      "three_d_rotation": 0.9439,
+      "letter_number_series": 0.929,
+      "verbal_reasoning": 0.8755,
+      "matrix_reasoning": 0.861
+    },
+    "median_r": 0.9023,
+    "failed_checks": [
+      "every_factor_r_at_least (0.90)",
+      "median_r_at_least (0.93)"
+    ],
+    "passed_checks": [
+      "no_nan_agreement",
+      "no_phi_collapse",
+      "no_variance_degeneracy"
+    ],
+    "alignment": "zero sign flips on either side; no permutation; correlations signed - nothing was arranged to flatter agreement"
+  },
+  "prohibitions_permanent": [
+    "no tuning of METER against ICAR",
+    "no change to the ICAR mapping",
+    "no alteration of gates",
+    "no bifactor model",
+    "no alternative ICAR specification or re-run"
+  ],
+  "preservation": "the failure is preserved exactly as recorded; the report and console log are byte-identical to what the machinery wrote (commit e2bf57f)"
+}

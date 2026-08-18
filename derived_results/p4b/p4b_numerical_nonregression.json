@@ -1,0 +1,711 @@
+{
+  "artifact": "P4B_NUMERICAL_NONREGRESSION",
+  "method": "the identical probe script was run once against the baseline commit (clean worktree) and once against the implementation commit; every supported output is compared as a sha256 of its float64 bytes - BIT IDENTITY, no tolerance",
+  "baseline_commit": "ec2c0f3",
+  "baseline_probe": {
+    "probe": "P4B_NUMERICAL_NONREGRESSION_PROBE",
+    "model_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "torch": "2.13.0+cpu",
+    "numpy": "2.5.1",
+    "fixtures": {
+      "longitudinal_989450": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "ab21d9d5704871118afd12687dd8d3ff3177169910172d65c61c3abe66be908c",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "e9ad9751b38fa563352828de0002cbc00bb511259184a4d3eb9d5f3ea067922c",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "66265f8f44c3802833766516fcb9c9ec2b4dd1138c24e1cae33f8888fdf0d424",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "727e4d7880881e04f583a6163445a9bfe8b57e59b9e9f155eec247c3795121b0",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989451": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "0e9036003386ee120cdafa9d4238dbab4beda6a7edcfa57a18fb09803260c441",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "445d7d0da12412895d5702a268d11e10d2be2926e5480624569f3286c91e17eb",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "8e1f37783447c9080e579e6c6507cf132f1e05f7d3e587a84c6dc646ff3ba925",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "6d58e8f64fc4a6bfb631ceffac521bcbb560e74942e39d1628f029b2f81f5507",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989452": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "c5d9f053dff8c3787781e013a03564a5400eec7929087af766133ed10da387c6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "86160666a74f1b744923594645d9a8ef83e53d2df9527f2f7a7a03c587d5748a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "5bdc0dceb811f1d93253a7c48e1efcb94378b0f7619b59c5dd07fd94d549fc96",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "13960b7eba259b30110b6d3ba13b2be09740f2f9c43eea042cd99e8b6b6db332",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989453": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "e4824a694b2270686ec58044a8b00ae1d78699703ab3f6ecb93dd09285bd7bb5",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "d8f1feb6492939fb430be51fb4124f1c872b910d83341d85ec960c939819abc9",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "2c0f348ec864b078db4be0d924b8fef8b126a624d981825ea9ea9818c1de03a7",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "273b485fe0abbbee59e0f303ef35ccf7c4c41b1d71b3e1e87b8817306b311f34",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989454": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "8e8e42153899bcb1f020536bc89b945b719dc2037df03119bd52b54d76b115c8",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "5c2ea73b6de4e37a911c4015c796143950ce632227f1e3f5deff0d1b2db2d8bd",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "d0baf66ec1cde8143a3e57411ed8e21a192085c639122e4ada91a3f0febe36d3",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "027b80f9928c4a45f990a1fb52f96a454e96a099e134dcb13189aed2f09c5e9c",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "cross_sectional_989455": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "outputs": {
+          "person_score": {
+            "sha256_float64": "d16a9d4a65224d7b5ff46d99c4461f25d6e1b0c54a32718fd90955e33876abae",
+            "shape": [
+              200,
+              1
+            ]
+          },
+          "person_sd": {
+            "sha256_float64": "bf08d80c979930c85d8432ca26277fa21f439339a5351b47fe590911bffd2a75",
+            "shape": [
+              200,
+              1
+            ]
+          }
+        }
+      },
+      "cross_sectional_989456": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "outputs": {
+          "person_score": {
+            "sha256_float64": "c4a55b1bed72541473b667a52c059264fc8d7d4eb349348c5f947eb01a1623b0",
+            "shape": [
+              200,
+              1
+            ]
+          },
+          "person_sd": {
+            "sha256_float64": "e850ddc35ef3c170f891aa2906c114cee6ba8d554f860b66fd3c4dc49bd37eda",
+            "shape": [
+              200,
+              1
+            ]
+          }
+        }
+      },
+      "fusion_noise": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "outputs": {
+          "conflict_score": {
+            "sha256_float64": "6c0b2fbabadc2573d783cda8cf8406a573316459f81584152067f10024b7f62a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "effective_continuous_precision": {
+            "sha256_float64": "56a43ef88ddfcd0f56f7dd973312c0e73d62f59655c01d7b4e59aaa3be8b3fb6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fallback": {
+            "value": true
+          },
+          "fused_mean": {
+            "sha256_float64": "be41dcc8832b33c87fc42991d4634916e4e2aee061971ec4e21a16554c997bca",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fused_precision": {
+            "sha256_float64": "447e5e7b27220c9b10dfec1c61a3db4cfdd7b86e511759da8ae5680d6d442c3d",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "modality_displacement": {
+            "sha256_float64": "56a43ef88ddfcd0f56f7dd973312c0e73d62f59655c01d7b4e59aaa3be8b3fb6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "reliability_gate": {
+            "sha256_float64": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "shape": []
+          }
+        },
+        "exact_fallback": true
+      },
+      "fusion_genuine": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "outputs": {
+          "conflict_score": {
+            "sha256_float64": "be88c5b378025cac18c7844d6784f96806e43adecf46f3f4066925d19d33908a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "effective_continuous_precision": {
+            "sha256_float64": "1f4bd3f0db4b90b24680dd0c189cfc2d7a7ef2ef37da2fe2c29d0d5f295cedb5",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fallback": {
+            "value": false
+          },
+          "fused_mean": {
+            "sha256_float64": "9051f59e484028394ec6920146c18de4508b0ac103fa3c36f2a19c72deacc453",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fused_precision": {
+            "sha256_float64": "09aaa64c305a51ac61e9de54dfcce7ae82a6b2763c92dcd5f6351ebc84f325bb",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "modality_displacement": {
+            "sha256_float64": "156f75d9095cda3a49988f5a36647635ac4cf97cd872230a3e7829f83c9c2fec",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "reliability_gate": {
+            "sha256_float64": "00e5ff3ed265cde3d03d22d898c48e186a26000c60dc88788b4c52cafd8c19c5",
+            "shape": []
+          }
+        }
+      }
+    }
+  },
+  "current_probe": {
+    "probe": "P4B_NUMERICAL_NONREGRESSION_PROBE",
+    "model_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "torch": "2.13.0+cpu",
+    "numpy": "2.5.1",
+    "fixtures": {
+      "longitudinal_989450": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "ab21d9d5704871118afd12687dd8d3ff3177169910172d65c61c3abe66be908c",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "e9ad9751b38fa563352828de0002cbc00bb511259184a4d3eb9d5f3ea067922c",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "66265f8f44c3802833766516fcb9c9ec2b4dd1138c24e1cae33f8888fdf0d424",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "727e4d7880881e04f583a6163445a9bfe8b57e59b9e9f155eec247c3795121b0",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989451": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "0e9036003386ee120cdafa9d4238dbab4beda6a7edcfa57a18fb09803260c441",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "445d7d0da12412895d5702a268d11e10d2be2926e5480624569f3286c91e17eb",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "8e1f37783447c9080e579e6c6507cf132f1e05f7d3e587a84c6dc646ff3ba925",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "6d58e8f64fc4a6bfb631ceffac521bcbb560e74942e39d1628f029b2f81f5507",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989452": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "c5d9f053dff8c3787781e013a03564a5400eec7929087af766133ed10da387c6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "86160666a74f1b744923594645d9a8ef83e53d2df9527f2f7a7a03c587d5748a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "5bdc0dceb811f1d93253a7c48e1efcb94378b0f7619b59c5dd07fd94d549fc96",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "13960b7eba259b30110b6d3ba13b2be09740f2f9c43eea042cd99e8b6b6db332",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989453": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "e4824a694b2270686ec58044a8b00ae1d78699703ab3f6ecb93dd09285bd7bb5",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "d8f1feb6492939fb430be51fb4124f1c872b910d83341d85ec960c939819abc9",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "2c0f348ec864b078db4be0d924b8fef8b126a624d981825ea9ea9818c1de03a7",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "273b485fe0abbbee59e0f303ef35ccf7c4c41b1d71b3e1e87b8817306b311f34",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "longitudinal_989454": {
+        "capability": "longitudinal_trait_state",
+        "status": "supported_experimental",
+        "outputs": {
+          "level": {
+            "sha256_float64": "8e8e42153899bcb1f020536bc89b945b719dc2037df03119bd52b54d76b115c8",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "level_sd": {
+            "sha256_float64": "5c2ea73b6de4e37a911c4015c796143950ce632227f1e3f5deff0d1b2db2d8bd",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "state": {
+            "sha256_float64": "d0baf66ec1cde8143a3e57411ed8e21a192085c639122e4ada91a3f0febe36d3",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "trait": {
+            "sha256_float64": "027b80f9928c4a45f990a1fb52f96a454e96a099e134dcb13189aed2f09c5e9c",
+            "shape": [
+              200
+            ]
+          }
+        }
+      },
+      "cross_sectional_989455": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "outputs": {
+          "person_score": {
+            "sha256_float64": "d16a9d4a65224d7b5ff46d99c4461f25d6e1b0c54a32718fd90955e33876abae",
+            "shape": [
+              200,
+              1
+            ]
+          },
+          "person_sd": {
+            "sha256_float64": "bf08d80c979930c85d8432ca26277fa21f439339a5351b47fe590911bffd2a75",
+            "shape": [
+              200,
+              1
+            ]
+          }
+        }
+      },
+      "cross_sectional_989456": {
+        "capability": "psychometric_1d",
+        "status": "supported",
+        "outputs": {
+          "person_score": {
+            "sha256_float64": "c4a55b1bed72541473b667a52c059264fc8d7d4eb349348c5f947eb01a1623b0",
+            "shape": [
+              200,
+              1
+            ]
+          },
+          "person_sd": {
+            "sha256_float64": "e850ddc35ef3c170f891aa2906c114cee6ba8d554f860b66fd3c4dc49bd37eda",
+            "shape": [
+              200,
+              1
+            ]
+          }
+        }
+      },
+      "fusion_noise": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "outputs": {
+          "conflict_score": {
+            "sha256_float64": "6c0b2fbabadc2573d783cda8cf8406a573316459f81584152067f10024b7f62a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "effective_continuous_precision": {
+            "sha256_float64": "56a43ef88ddfcd0f56f7dd973312c0e73d62f59655c01d7b4e59aaa3be8b3fb6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fallback": {
+            "value": true
+          },
+          "fused_mean": {
+            "sha256_float64": "be41dcc8832b33c87fc42991d4634916e4e2aee061971ec4e21a16554c997bca",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fused_precision": {
+            "sha256_float64": "447e5e7b27220c9b10dfec1c61a3db4cfdd7b86e511759da8ae5680d6d442c3d",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "modality_displacement": {
+            "sha256_float64": "56a43ef88ddfcd0f56f7dd973312c0e73d62f59655c01d7b4e59aaa3be8b3fb6",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "reliability_gate": {
+            "sha256_float64": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "shape": []
+          }
+        },
+        "exact_fallback": true
+      },
+      "fusion_genuine": {
+        "capability": "multimodal_fusion",
+        "status": "supported_experimental",
+        "outputs": {
+          "conflict_score": {
+            "sha256_float64": "be88c5b378025cac18c7844d6784f96806e43adecf46f3f4066925d19d33908a",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "effective_continuous_precision": {
+            "sha256_float64": "1f4bd3f0db4b90b24680dd0c189cfc2d7a7ef2ef37da2fe2c29d0d5f295cedb5",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fallback": {
+            "value": false
+          },
+          "fused_mean": {
+            "sha256_float64": "9051f59e484028394ec6920146c18de4508b0ac103fa3c36f2a19c72deacc453",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "fused_precision": {
+            "sha256_float64": "09aaa64c305a51ac61e9de54dfcce7ae82a6b2763c92dcd5f6351ebc84f325bb",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "modality_displacement": {
+            "sha256_float64": "156f75d9095cda3a49988f5a36647635ac4cf97cd872230a3e7829f83c9c2fec",
+            "shape": [
+              200,
+              4
+            ]
+          },
+          "reliability_gate": {
+            "sha256_float64": "00e5ff3ed265cde3d03d22d898c48e186a26000c60dc88788b4c52cafd8c19c5",
+            "shape": []
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "fixtures": {
+      "longitudinal_989450": {
+        "capability": "longitudinal_trait_state",
+        "n_outputs_compared": 4,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "longitudinal_989451": {
+        "capability": "longitudinal_trait_state",
+        "n_outputs_compared": 4,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "longitudinal_989452": {
+        "capability": "longitudinal_trait_state",
+        "n_outputs_compared": 4,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "longitudinal_989453": {
+        "capability": "longitudinal_trait_state",
+        "n_outputs_compared": 4,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "longitudinal_989454": {
+        "capability": "longitudinal_trait_state",
+        "n_outputs_compared": 4,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "cross_sectional_989455": {
+        "capability": "psychometric_1d",
+        "n_outputs_compared": 2,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "cross_sectional_989456": {
+        "capability": "psychometric_1d",
+        "n_outputs_compared": 2,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      },
+      "fusion_noise": {
+        "capability": "multimodal_fusion",
+        "n_outputs_compared": 7,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": true,
+        "exact_fallback_current": true
+      },
+      "fusion_genuine": {
+        "capability": "multimodal_fusion",
+        "n_outputs_compared": 7,
+        "bit_identical": true,
+        "mismatches": [],
+        "outputs_only_in_current": [],
+        "exact_fallback_baseline": null,
+        "exact_fallback_current": null
+      }
+    },
+    "all_bit_identical": true
+  }
+}

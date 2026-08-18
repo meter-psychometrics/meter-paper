@@ -1,0 +1,130 @@
+{
+  "aggregates_only": true,
+  "artifact": "D9A_TRANSFER_REPORT",
+  "charter": "D9A",
+  "charter_sha256": "2a8b4fa96863c823d43267739018d9a4ef9ceff5fa0f5b56aed4c07c2a56c5ea",
+  "disclosure_rule": "every tabulated count below 10 is suppressed as '<10'",
+  "elapsed_seconds": 528.6,
+  "factor_agreement": {
+    "agreeableness": {
+      "model_sd_quantiles": {
+        "q05": 0.4893,
+        "q25": 0.4929,
+        "q50": 0.5021,
+        "q75": 0.5269,
+        "q95": 0.5269
+      },
+      "pearson_mirt_vs_composite": 0.9291,
+      "pearson_model_vs_composite": 0.9985,
+      "pearson_model_vs_mirt": 0.9339,
+      "spearman_model_vs_mirt": 0.9586
+    },
+    "conscientiousness": {
+      "model_sd_quantiles": {
+        "q05": 0.5841,
+        "q25": 0.5864,
+        "q50": 0.5915,
+        "q75": 0.6007,
+        "q95": 0.6078
+      },
+      "pearson_mirt_vs_composite": 0.8648,
+      "pearson_model_vs_composite": 0.9768,
+      "pearson_model_vs_mirt": 0.9048,
+      "spearman_model_vs_mirt": 0.9022
+    },
+    "extraversion": {
+      "model_sd_quantiles": {
+        "q05": 0.4891,
+        "q25": 0.4921,
+        "q50": 0.4994,
+        "q75": 0.5229,
+        "q95": 0.5401
+      },
+      "pearson_mirt_vs_composite": 0.9416,
+      "pearson_model_vs_composite": 0.9984,
+      "pearson_model_vs_mirt": 0.9429,
+      "spearman_model_vs_mirt": 0.96
+    },
+    "neuroticism": {
+      "model_sd_quantiles": {
+        "q05": 0.7124,
+        "q25": 0.7151,
+        "q50": 0.724,
+        "q75": 0.7357,
+        "q95": 0.7802
+      },
+      "pearson_mirt_vs_composite": 0.9654,
+      "pearson_model_vs_composite": 0.9906,
+      "pearson_model_vs_mirt": 0.9807,
+      "spearman_model_vs_mirt": 0.9851
+    },
+    "openness": {
+      "model_sd_quantiles": {
+        "q05": 0.5199,
+        "q25": 0.5214,
+        "q50": 0.5273,
+        "q75": 0.5413,
+        "q95": 0.5744
+      },
+      "pearson_mirt_vs_composite": 0.9676,
+      "pearson_model_vs_composite": 0.9974,
+      "pearson_model_vs_mirt": 0.9698,
+      "spearman_model_vs_mirt": 0.9769
+    }
+  },
+  "model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+  "phi_agreement": {
+    "max_abs_off_diagonal_difference": 0.1665,
+    "mean_abs_off_diagonal_difference": 0.0942,
+    "mirt_phi_off_diagonal_quantiles": {
+      "q05": -0.1834,
+      "q25": -0.1301,
+      "q50": 0.4806,
+      "q75": 0.5608,
+      "q95": 0.7231
+    },
+    "model_phi_off_diagonal_quantiles": {
+      "q05": -0.2852,
+      "q25": -0.1848,
+      "q50": 0.5938,
+      "q75": 0.6505,
+      "q95": 0.8539
+    },
+    "model_phi_pd": true,
+    "model_phi_shrink_weight": 0.85
+  },
+  "refusal_behavior": {
+    "factor_adequacy_status_counts": {
+      "factor_unsupported": "<10",
+      "factor_weak_support": "<10"
+    }
+  },
+  "runtime": {
+    "comparator_converged": true,
+    "comparator_fit_seconds": 367.7,
+    "comparator_retried": false,
+    "model_inference_seconds_full_sample": 0.214
+  },
+  "sample": {
+    "n_excluded_fewer_than_2_observed": 820,
+    "n_included": 6288,
+    "n_records_total": 7108,
+    "observed_items_quantiles": {
+      "q05": 25.0,
+      "q25": 25.0,
+      "q50": 25.0,
+      "q75": 25.0,
+      "q95": 25.0
+    }
+  },
+  "uncertainty_behavior": {
+    "spearman_sd_vs_items_answered_by_factor": {
+      "agreeableness": -0.1354,
+      "conscientiousness": -0.1281,
+      "extraversion": -0.1409,
+      "neuroticism": -0.1537,
+      "openness": -0.1909
+    }
+  },
+  "worst_factor_by_pearson": "conscientiousness"
+}

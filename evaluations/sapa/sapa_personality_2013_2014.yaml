@@ -1,0 +1,248 @@
+# =============================================================================
+# SAPA personality development evaluation — governance and analysis manifest
+# =============================================================================
+# Milestone 6B.3. Real-world BREADTH evaluation of the frozen model: does it
+# transfer from short depression instruments to a different construct family
+# under sparse missing-by-design administration?
+#
+# This is local research inference on a frozen model. It is NOT training,
+# fine-tuning, recalibration or threshold modification.
+
+schema_version: 6b3-sapa-manifest-v1
+manifest_status: complete_pending_scale_key
+dataset_id: sapa_personality_2013_2014
+milestone: 6B.3
+role: real_world_breadth_development_evaluation
+
+# -----------------------------------------------------------------------------
+# POLICY REVIEW — the gate, completed before any analysis
+# -----------------------------------------------------------------------------
+policy_review:
+  policy_checked_on: 2026-08-04
+  official_policy_source: >
+    Harvard Dataverse dataset landing page and native API metadata for
+    doi:10.7910/DVN/SD7SVE, queried 2026-08-04. The JS-rendered HTML page could
+    not be read by automated fetch; the licence was taken from the Dataverse
+    JSON API, which is the authoritative machine-readable record.
+  explicit_ai_policy: >
+    NONE. The dataset metadata contains no termsOfUse, no termsOfAccess, no
+    restrictions field, and no statement about artificial intelligence, large
+    language models, machine learning or automated processing. File access
+    requests are disabled (fileAccessRequest: false), i.e. the files are open.
+  permitted_model_activity: >
+    Unrestricted by licence. CC0 1.0 waives copyright and related rights, so
+    there are no licence terms that neural-model analysis could violate.
+  commercial_use_status: >
+    Permitted by the licence (CC0 imposes no non-commercial restriction). Not
+    exercised here; this milestone is academic research only.
+  external_ai_exposure_permitted: >
+    Yes — no term restricts it. Contrast with HRS, whose AI/LLM Use Policy
+    (updated 2026-02-04) prohibits LLM processing of HRS-distributed data; that
+    prohibition is dataset-specific and does not reach this dataset.
+  local_inference_permitted: true
+  model_training_permitted: >
+    Permitted by the licence, but PROHIBITED BY THIS PROJECT. The frozen-model
+    contract forbids training or fine-tuning on any real dataset, independently
+    of what a licence allows. Licence permission is not project authorisation.
+  citation_required: >
+    Not a licence condition under CC0, but required by scholarly norm and by
+    this project. Recorded verbatim under `source.required_citation`.
+  decision: PROCEED
+  decision_rationale: >
+    CC0 with no dataset-specific terms and no AI clause. No stop condition on
+    licence or AI-use position is triggered.
+  reviewer: null      # REQUIRED — project owner countersignature
+
+# -----------------------------------------------------------------------------
+# MODEL POLICY
+# -----------------------------------------------------------------------------
+permissions:
+  neural_training_allowed: false
+  fine_tuning_allowed: false
+  recalibration_allowed: false
+  threshold_modification_allowed: false
+  architecture_selection_allowed: false
+  benchmark_criteria_selection_allowed: false
+  schema_development_use: true
+model_weight_changes_allowed: false
+model_version: v0.6.0-beta.1
+activity: local_research_inference_on_a_frozen_model
+
+# -----------------------------------------------------------------------------
+# SOURCE
+# -----------------------------------------------------------------------------
+source:
+  title: "Selected personality data from the SAPA-Project: 08Dec2013 to 26Jul2014"
+  doi: 10.7910/DVN/SD7SVE
+  repository: Harvard Dataverse
+  dataset_version: "5 (internal version 20)"
+  publication_date: 2015-04-13
+  authors:
+    - David M. Condon (Northwestern University)
+    - William Revelle (Northwestern University)
+  licence: CC0 1.0 Universal (Public Domain Dedication)
+  licence_uri: http://creativecommons.org/publicdomain/zero/1.0
+  verified_on: 2026-08-04
+  download_date: null          # REQUIRED — operator to record
+  required_citation: >
+    Condon, David M.; Revelle, William, 2015, "Selected personality data from
+    the SAPA-Project: 08Dec2013 to 26Jul2014", https://doi.org/10.7910/DVN/SD7SVE,
+    Harvard Dataverse, V5.
+  local_storage_location: "data/public/SAPA Project/ (gitignored)"
+  raw_data_excluded_from_git: true
+  raw_data_excluded_from_benchmarks: true
+
+  # Verified 2026-08-04. MD5 checked against the Dataverse API record.
+  files:
+    - name: sapaTempData696items08dec2013thru26jul2014.csv
+      bytes: 52638811
+      md5: 5a424c4c7c9e9d6256ac2e96b4eedbb3
+      sha256: a78d53addd8089606f0e7d9dc0e0a2b1f7bbd0e3a2fdb70e0a99e1c47c0a3a08
+      dataverse_match: >
+        MD5 matches the deposited `.tab` entry. The byte count differs because
+        Dataverse reports its ingested tabular size; the checksum is the
+        integrity signal and it agrees.
+    - name: ItemInfo696.csv
+      bytes: 69495
+      md5: e47d0d5cf37951025989b55ea7cdfdf2
+      dataverse_match: exact
+    - name: ItemLists.csv
+      bytes: 9260
+      md5: cf174d9a29fc26ee917bf8cf8a9a1812
+      dataverse_match: exact
+    - name: demographic codes.txt
+      bytes: 5531
+      md5: 420cc1381de6aabb2c955d43d74e78bd
+      dataverse_match: exact
+
+  files_in_dataset_but_NOT_delivered:
+    - name: superKey696.csv
+      bytes: 190705
+      md5: a034593d059ba548c37b16ffe95e61b4
+      consequence: >
+        BLOCKING for the wording-method task (C) and for any reverse-scoring
+        declaration. This is the published scoring key and carries item
+        POLARITY. ItemInfo696.csv gives construct assignment but not sign.
+        Deriving polarity from item text would be inference, which the
+        milestone instruction forbids. Tasks A and B can proceed without it.
+    - name: sapaTempData696items08dec2013thru26jul2014.RData
+      consequence: none — the CSV carries the same content
+
+# -----------------------------------------------------------------------------
+# ESTABLISHED CODING — from the delivered data and published metadata
+# -----------------------------------------------------------------------------
+coding:
+  established_on: 2026-08-04
+  n_respondents: 23679
+  n_item_columns: 696
+  n_non_item_columns: 23
+  valid_response_categories: [1, 2, 3, 4, 5, 6]
+  response_scale: six-point
+  missing_token: "NA"
+  missing_token_note: >
+    The literal string "NA", not an empty cell. A naive null check would count
+    every by-design blank as observed, so the token is declared explicitly.
+  missingness_mechanism: planned_missing_by_design
+  missingness_note: >
+    Each respondent is administered a random subset of the item pool. A blank
+    is NOT a respondent omission. It must be carried as missing, never imputed
+    and never converted into a response category.
+  observed_cell_fraction: 0.123770
+  items_per_respondent: {median: 71, min: 0, max: 311}
+  respondents_per_item: {median: 2554, min: 2304, max: 6096}
+  pairwise_overlap: {median: 519, q05: 394, q95: 762, fraction_below_100: 0.0}
+  pairwise_overlap_note: >
+    Every item pair is co-administered by roughly 400-760 respondents and NO
+    pair falls below 100. Two-construct tasks are therefore estimable; this was
+    the main feasibility risk of a planned-missingness design and it is cleared.
+
+published_item_metadata:
+  source_file: ItemInfo696.csv
+  content: >
+    Per item, the construct assignment within each of eight published
+    inventories, as hierarchical codes (for example "H:A:G" = HEXACO /
+    Agreeableness / Gentleness). NULL where the item is not part of that
+    inventory. This is the prespecification source for task definition.
+  items_with_assignment:
+    EPQr: 79
+    HEXACO: 240
+    IPIP100: 100
+    IPIPneo: 300
+    MPQ: 127
+    PS: 40
+    QB6: 48
+  polarity_available: false
+  polarity_note: >
+    Construct assignment is present; SIGN is not. Polarity lives in
+    superKey696.csv, which was not delivered.
+
+# -----------------------------------------------------------------------------
+# COVERAGE RULES — frozen from design-only summaries, before any inference
+# -----------------------------------------------------------------------------
+coverage_rules:
+  frozen_on: 2026-08-04
+  frozen_before_model_inference: true
+  basis: >
+    Set from the administration-design summaries above and from nothing else.
+    No agreement metric had been computed when these were fixed.
+  min_observed_items_per_respondent_unidimensional: 4
+  min_observed_items_per_respondent_two_dimensional: 6
+  min_respondents_per_item: 300
+  min_pairwise_overlap: 200
+  excluded_respondents: >
+    Respondents with fewer observed items than the task minimum are excluded
+    FROM THAT TASK and the count is reported. Respondents with zero observed
+    items (min observed = 0) are excluded from every task.
+  rationale: >
+    Four items is the floor at which a one-dimensional latent estimate carries
+    more than its prior; six is the floor for a two-slot task, where each slot
+    needs multiple indicators. 300 respondents per item and 200 pairwise
+    overlap sit far below the observed minima (2,304 and ~394), so they exclude
+    nothing here — they are declared so a future SAPA release with thinner
+    coverage is refused rather than silently analysed.
+
+# -----------------------------------------------------------------------------
+# PRIVACY
+# -----------------------------------------------------------------------------
+privacy:
+  participant_rows_printed: false
+  demographics_in_model_input: false
+  demographics_permitted_use: aggregate sample description, or a separately prespecified robustness analysis
+  git_contains: code, manifests, aggregate results, tests, documentation only
+
+# -----------------------------------------------------------------------------
+# RESERVED — must not be accessed, downloaded, inspected, hashed or queried
+# -----------------------------------------------------------------------------
+reserved_datasets:
+  sapa_10.7910/DVN/GU70EV:
+    role: potential_locked_replication
+    status: unopened
+  sapa_10.7910/DVN/TZJGAT:
+    role: potential_locked_replication
+    status: unopened
+  understanding_society_ghq12:
+    role: locked_independent_longitudinal_replication
+    status: unopened
+  ess_round_11:
+    role: reserved_cross_sectional_replication
+    status: unopened
+  hrs:
+    role: longitudinal_development
+    status: halted
+    reason: >
+      HRS AI/LLM Use Policy (updated 2026-02-04) prohibits use of LLMs and AI
+      tools to manage, process or analyse HRS-distributed data. Independent of
+      this project's own rules, that forecloses the planned HRS evaluation on
+      this stack. Recorded here so the prohibition is not lost.
+
+# -----------------------------------------------------------------------------
+# AUTHORISATION
+# -----------------------------------------------------------------------------
+authorisation:
+  project_owner_instruction_dated: 2026-08-04
+  instruction_summary: >
+    Proceed with the SAPA personality evaluation as a real-world breadth
+    development evaluation of the frozen model while ELSA access remains
+    pending; keep the two later SAPA datasets unopened.
+  countersigned_by: null     # REQUIRED
+  countersigned_on: null     # REQUIRED

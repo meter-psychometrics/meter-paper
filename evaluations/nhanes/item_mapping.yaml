@@ -1,0 +1,65 @@
+category_ranges: {}
+continuous_modalities: []
+dataset_id: nhanes_2015_2016_dpq
+group_variables: []
+instrument_id: PHQ-9
+instrument_version: NHANES DPQ_I (2015-2016)
+item_blocks:
+- block_id: phq9
+  columns:
+  - DPQ010
+  - DPQ020
+  - DPQ030
+  - DPQ040
+  - DPQ050
+  - DPQ060
+  - DPQ070
+  - DPQ080
+  - DPQ090
+  instrument_id: PHQ-9
+  instrument_version: NHANES DPQ_I (2015-2016)
+  reverse_scored: []
+  template_id: null
+  valid_categories:
+  - 0
+  - 1
+  - 2
+  - 3
+item_columns: []
+mapping_version: '1.0'
+missing_codes:
+- 7
+- 9
+- .
+- ''
+modality_timestamps: {}
+modality_units: {}
+participant_id: SEQN
+requested_capabilities:
+- psychometric_1d
+reshaping_rules:
+  long_item_column: null
+  long_value_column: null
+  wave_column_groups: {}
+  wave_suffix_pattern: null
+reverse_scored_items: []
+schema_notes: Mapped from the published NHANES DPQ_I codebook, not from inspection
+  of the data. PHQ-9 item TEXT is copyrighted and appears nowhere in this mapping;
+  only variable names, category codes and administrative codes are recorded. DPQ100
+  is excluded from the item set by design.
+schema_version: 6b0-mapping-v1
+setting_variables: []
+timestamp: null
+user_confirmations:
+  category_ranges: 0-3 per codebook; 7 and 9 are administrative, not categories
+  excluded_variables: DPQ100 (difficulty caused by these problems) is a follow-up
+    impairment item, NOT one of the nine scored items, and is deliberately excluded
+  instrument_identity: PHQ-9 depression screener, NHANES DPQ module
+  item_columns: DPQ010-DPQ090 are the nine PHQ-9 items per the codebook
+  missing_codes: 7=Refused, 9=Don't know, blank=Missing, per the codebook
+  participant_id: SEQN, per the DPQ_I codebook (respondent sequence number)
+  reverse_scoring: none; the PHQ-9 has no reverse-keyed items
+  target_sample: DPQ is administered to respondents aged 18 and over
+valid_categories: null
+wave: null
+wide_or_long_format: wide

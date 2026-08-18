@@ -1,0 +1,38 @@
+{
+  "access_tier": "public_use",
+  "approval": {
+    "approved_by": "Alvin K. Tay (project owner), authorised in session 2026-08-04",
+    "approved_on": "2026-08-04",
+    "d8_instrument_licensing": true,
+    "d8_reference": "No instrument text is stored or released. The mapping records only NHANES variable names (DPQ010-DPQ090), category codes (0-3) and administrative codes (7, 9), which are metadata, not the copyrighted PHQ-9 item wording. The NCHS codebook PDF is excluded from the repository. Enforced by test: test_no_copyrighted_item_text_in_the_mapping.",
+    "d9_data_governance": true,
+    "d9_reference": "Discharged by the NHANES public-use release terms. CDC/NCHS publishes these files after disclosure control expressly for secondary analysis; no additional consent instrument is required for analysis of the public-use file. Re-identification is prohibited by those terms and is not attempted. Access tier: public_use.",
+    "notes": "Scope: role=pipeline_development on NHANES 2015-2016 DPQ_I only. Does NOT extend to DPQ_J (reserved untouched zero-shot validation), to any restricted dataset, or to training, fine-tuning, recalibration or threshold modification, all of which remain false in permissions and are rejected by the schema."
+  },
+  "attribution": "Centers for Disease Control and Prevention (CDC), National Center for Health Statistics (NCHS). National Health and Nutrition Examination Survey Data, 2015-2016. Hyattsville, MD: U.S. Department of Health and Human Services.",
+  "converted_data_location": "<scratch>/nhanes_2015_2016_dpq.parquet (outside the repository)",
+  "dataset_id": "nhanes_2015_2016_dpq",
+  "instrument": "PHQ-9 depression screener (NHANES DPQ module)",
+  "instrument_family": "PHQ",
+  "model_version": "v0.6.0-beta.1",
+  "notes": "Role is pipeline_development: this dataset exists to exercise and debug the ingestion and evaluation pipeline. Results from it are NOT a zero-shot transfer claim, and no gate criterion may be assessed on it.",
+  "permissions": {
+    "architecture_selection_allowed": false,
+    "benchmark_criteria_selection_allowed": false,
+    "fine_tuning_allowed": false,
+    "neural_training_allowed": false,
+    "recalibration_allowed": false,
+    "schema_development_use": true,
+    "threshold_modification_allowed": false
+  },
+  "publication_use_status": "NHANES public-use data carry no restriction on analysis or publication; NCHS asks that the data be cited and that no attempt be made to re-identify respondents. PHQ-9 item TEXT is copyrighted and is not reproduced here or in any template (D8 governs; see instrument licensing).",
+  "raw_data_excluded_from_benchmarks": true,
+  "raw_data_excluded_from_git": true,
+  "raw_data_location": "data/public/DPQ_I.xpt (gitignored; stays outside the repository index)",
+  "reserved_datasets": {
+    "nhanes_2017_2018_dpq_j": "RESERVED as untouched zero-shot validation data. Must not be opened, profiled, converted or analysed during pipeline development: a dataset used for schema or pipeline development cannot also be the untouched transfer test."
+  },
+  "role": "pipeline_development",
+  "schema_version": "6b1-governance-v1",
+  "source": "CDC/NCHS public-use National Health and Nutrition Examination Survey, 2015-2016 cycle, questionnaire file DPQ_I"
+}

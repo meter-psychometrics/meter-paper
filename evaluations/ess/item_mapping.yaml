@@ -1,0 +1,121 @@
+# ESS Round 7 (edition 2.3) CES-D 8 mapping — Milestone 6B.2
+#
+# Every field below is DECLARED from the published ESS Round 7 codebook, read
+# before the data file was opened. Nothing here was inferred from observed
+# values, which is the standing rule for direction and missing codes.
+#
+# Codebook provenance for each decision:
+#
+#   categories 1-4   Every one of the eight items shares the identical value
+#                    table: 1 "None or almost none of the time", 2 "Some of
+#                    the time", 3 "Most of the time", 4 "All or almost all of
+#                    the time". Verified individually for all eight, not
+#                    assumed from the first.
+#
+#   missing 7/8/9    Codebook marks 7 (Refusal), 8 (Don't know) and 9 (No
+#                    answer) with the "*) Missing value" footnote on every
+#                    item. These are administrative codes, never responses.
+#                    Note this differs from NHANES DPQ, which uses 7 and 9
+#                    only — a reminder that missing codes are per-instrument
+#                    and must be read, never carried over.
+#
+#   reverse scoring  wrhpp ("Were happy") and enjlf ("Enjoyed life") are the
+#                    two positively worded items. On the shared scale, a high
+#                    code on these means MORE positive affect, i.e. LESS
+#                    depressive symptomatology — the opposite direction from
+#                    the other six. Harmonizing them is required before any
+#                    sum, factor or IRT model is meaningful.
+#
+#   composite key    ESS `idno` is a within-country serial number and repeats
+#                    across countries. `cntry` + `idno` is the person key.
+#                    Declared, not detected.
+#
+# Item TEXT is deliberately absent (D8). Variable names, category codes and a
+# direction declaration are metadata; the CES-D wording is not reproduced.
+
+dataset_id: ess_round7_cesd8
+mapping_version: '1.0'
+schema_version: 6b0-mapping-v1
+
+# --- identity -------------------------------------------------------------
+participant_id: person_key
+participant_id_columns:
+- cntry
+- idno
+
+# --- the eight CES-D items ------------------------------------------------
+item_columns:
+- fltdpr
+- flteeff
+- slprl
+- wrhpp
+- fltlnl
+- enjlf
+- fltsd
+- cldgng
+
+valid_categories:
+- 1
+- 2
+- 3
+- 4
+
+missing_codes:
+- 7
+- 8
+- 9
+- '7'
+- '8'
+- '9'
+- '.'
+- ''
+
+# --- declared harmonized direction ----------------------------------------
+# Higher canonical position = MORE depressive symptomatology, for all eight
+# items after this transformation.
+reverse_scored_items:
+- wrhpp
+- enjlf
+
+# --- country and design metadata ------------------------------------------
+# Country is a setting AND a group: setting because it is the unit of
+# generalization for transfer, group because it is the DIF contrast variable.
+# It is kept out of the ordinal item container entirely.
+setting_variables:
+- cntry
+group_variables:
+- cntry
+
+instrument_id: CESD8
+instrument_version: ESS Round 7 wellbeing module
+
+wide_or_long_format: wide
+
+requested_capabilities:
+- psychometric_1d
+- multidimensional
+- item_assignment
+- dif_comparability
+
+user_confirmations:
+  missing_codes: 'Declared from the ESS7 codebook: 7 Refusal, 8 Don''t know, 9 No
+    answer, footnoted as missing values on every item. String and numeric forms are
+    both listed because the CSV reader may yield either.'
+  reverse_scoring: 'Declared from the ESS7 codebook. wrhpp and enjlf are positively
+    worded; the other six are negatively worded. Harmonized direction: higher = more
+    depressive symptomatology.'
+  participant_identity: 'Declared composite key. ESS idno is unique within country
+    only; cntry+idno identifies a person. Confirmed against the file: 40,185 records
+    carry only 18,859 distinct idno values.'
+  survey_design: 'dweight, pspwght, pweight and anweight are present in the integrated
+    file and are recorded as design metadata. psu and stratum are NOT present in the
+    integrated file — they are distributed separately in the ESS sample design data
+    files (SDDF) and are recorded as not supplied rather than substituted.'
+  instrument_identity: 'Declared by the operator from the ESS documentation. The
+    ingestion layer does not infer instrument identity from column names.'
+
+schema_notes: 'ESS Round 7 integrated file, edition 2.3. Single wave, 21 countries.
+  Item text is not stored (D8). Weights are recorded as metadata and are NOT applied
+  to the frozen model''s inference: the model has no weighting capability, and
+  applying weights to its input would be an undeclared modification of a frozen
+  system. Weighted comparator estimates, where reported, are labelled as such.'

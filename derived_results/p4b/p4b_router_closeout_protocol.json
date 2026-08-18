@@ -1,0 +1,114 @@
+{
+  "artifact": "P4B_FULLY_WIRED_CAPABILITY_ROUTER_PROTOCOL",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "date": "2026-08-14",
+  "authority": "prospective close-out protocol; frozen in git before any implementation change",
+  "relationship_to_p4": {
+    "historical_p4_artifact": "reports/planned/p4_router_challenge.json",
+    "historical_p4_commit": "33f11f2",
+    "immutability": "The historical P4 artifact, its cases, thresholds, per-axis results and refusal-channel definitions are IMMUTABLE and are not rewritten, corrected or erased by anything under this protocol. P4 measured the frozen router as it was: refusal real on 2 of 5 axes (response_category_count partially: only binary refused; auxiliary_modality_no_signal fully) and ABSENT on 3 (latent_dimensionality FA 120/120, observed_cell_fraction FA 80/80, factor_count FA 80/80). The longitudinal-boundary bypass for multimodal-routed requests (boundary application keyed to the answering capability, not the design) is part of the same historical record.",
+    "framing": "P4 identified declaration-enforcement gaps. P4B prospectively tests the fully wired runtime implementation. P4 is not characterized as erroneous."
+  },
+  "objective": "Determine whether runtime-derived target-design descriptors are correctly bound to output-specific executable predicates so that unsupported requested scientific outputs are suppressed, limited, or routed to fallback without altering supported METER numerical outputs.",
+  "scope_restrictions": [
+    "router wiring only: no retraining, no weight change, no threshold recalibration",
+    "no new scientific support boundary is created; every wired predicate cites an already-frozen record",
+    "no capability is broadened; no failed benchmark is reinterpreted",
+    "the auxiliary admission gate is not redesigned or retuned - regression-tested only",
+    "frozen verification artifacts are not modified"
+  ],
+  "wired_boundaries_and_their_frozen_anchors": {
+    "response_category_count": {
+      "decoder_ceiling": "max item categories <= CMAX = 7 for every capability; anchor: frozen feature space (src/human_measurement/model/features.py CMAX=7, 'largest response scale in the corpus (categories 2..7)') and the release contract (release/meter/meter/api.py MAX_CATEGORIES=7). Above the ceiling the frozen decoder cannot express the item; the request is REFUSED before inference (inexpressible, same class as L46 multigroup DIF).",
+      "longitudinal_trained_band": "for the longitudinal capabilities only, category counts outside the 5E trained band [4, 7] route the design OUT of validated support; anchor: the frozen 5E family table draws categories from {(4,), (5,), (5,7)} (src/human_measurement/model/longitudinal_worlds.py); binary (<=2) keeps its stronger measured-bias reason (6B.2.2: +0.378 share bias at 2 categories).",
+      "capability_specificity": "cross-sectional 1D scoring keeps binary support (external_multinational_1d_zero_shot_transfer, SHARE-A EURO-D, contract v3.5) - no global category rule is created."
+    },
+    "latent_dimensionality_and_factor_count": {
+      "definition": "latent_dimensionality is the dimensionality of the REQUESTED scientific operation (1D scoring -> 1, supplied K-factor scoring -> K, unrestricted discovery -> governed by the discovery contract). factor_count for supplied-structure scoring is derived from the supplied item-to-factor map and validated for internal consistency. Neither is ever populated by exploratory structure discovery.",
+      "structural_observable": "on the longitudinal path the runtime observable of construct structure is the declared instrument partition (WorldTensors.item_instrument); the 5E trained envelope contains 1- and 2-construct designs only (family b5_two_construct); a longitudinal 1D scoring request over a >=3-construct battery routes OUT of validated support",
+      "supplied_structure": "supplied-structure factor scoring: 1 <= K <= K_MAX = 5 (M8B; release contract); K in 3..5 confirmatory, K=2 expressible but flagged outside the confirmatory range (existing release warning); K > 5 REFUSED; density and structure conditions still apply - K <= 5 is necessary, not sufficient",
+      "discovery": "unrestricted factor-count discovery and unrestricted item-to-factor discovery remain UNSUPPORTED (M7 closure; battery_structure_discovery_1_to_5 = experimental_out_of_support) and are REFUSED",
+      "requested_multidimensional_longitudinal": "remains refused (L36), unchanged"
+    },
+    "observed_cell_fraction": {
+      "derivation": "deterministic from the observation mask: observed valid response cells / (N x T x J) applicable cells; missing sentinels, structural missing and mask-false cells are excluded by construction (mask is the single source of truth)",
+      "capability_specific_rules": {
+        "supplied_structure_multidimensional": "DENSE required - complete observation, the M8 closeout condition already enforced by the release contract (observed.all()); sparse multidimensional administration remains UNSUPPORTED",
+        "longitudinal_capabilities": "observed cell fraction materially below the trained envelope routes the design OUT of validated support. Trained envelope floor: 0.7 nominal item response rate (frozen 5E family e1_mcar_items; phase3 core floor 0.75). Material multiple: the existing MATERIAL_SPACING_MULTIPLE = 3.0 convention of the frozen 6B.2.3 module, applied on the density axis: fraction < 0.7 / 3.0 = 0.2333... is materially outside. This reuses the module's established material-envelope semantics rather than inventing a universal missingness threshold.",
+        "cross_sectional_scale_wise_1d": "sparse administration remains supported (D9A: SAPA ~25 observed items per person, scale-wise 1D scoring PASS); no density threshold is imposed"
+      },
+      "no_global_threshold": "no single global missingness threshold is created; the three rules above are the existing record"
+    },
+    "auxiliary_admission": {
+      "rule": "UNCHANGED. The frozen reliability gate with GATE_HARD_REJECT = 0.25 clamp and structurally bit-exact psychometric fallback (fuse() returns the identical tensor objects on rejection) is regression-tested, not modified.",
+      "provenance_extension": "the gate decision is additionally recorded as an OutputDecision in the audit structure"
+    },
+    "multimodal_x_longitudinal_composition": {
+      "rule": "compositional, not list-based: a requested output must satisfy ALL applicable support predicates. A multimodal fusion request whose tensors are longitudinal receives the same longitudinal design evaluation as a longitudinal request; an out-of-support longitudinal design attaches the out-of-support routing, statuses and warnings to the fused result exactly as it would to a longitudinal result. No request escapes one capability boundary because another module owns the final output."
+    },
+    "phi_factor_covariance": {
+      "rule": "UNCHANGED from the release contract: real-data Phi interpretation NOT SUPPORTED (D9B REPLICATION_FAIL) - suppressed unless data positively declared synthetic; synthetic dense within the validated regime remains a diagnostic output (M8). Wired as an output-specific decision on the same input that permits factor scores."
+    }
+  },
+  "architecture_under_test": {
+    "canonical_descriptor": "one runtime DesignDescriptor derived from the delivered tensors and request declarations (response category counts from explicit metadata/valid observed levels excluding sentinels and mask values; observed cell fraction from the mask; factor_count from the supplied map with consistency validation; latent_dimensionality from the requested operation; construct structure from the declared instrument partition; longitudinal_design; auxiliary_modality_present; requested_output_types)",
+    "output_specific_authorization": "support is evaluated separately per requested output (no single global boolean); each output receives one of PERMIT / LIMIT / FALLBACK / REFUSE mapped onto the existing status vocabularies (interface.Status for routing, 6B.2.3 capability statuses for design meaning); the same input may receive different decisions for different requested outputs",
+    "emission_control": "a refused scientific quantity is absent from the authoritative outputs (suppression, the existing load-bearing rule), never serialized with a warning attached; internal diagnostics needed to determine support are separated from authorized outputs",
+    "decision_record": "every requested output gets an OutputDecision record: output_type, action, predicates_evaluated, predicate_results, warnings, fallback_used, refusal_code, evidence_refs, contract_version, enforcement_state; carried in result provenance so a single run is auditable",
+    "frozen_status_vocabularies_untouched": "interface.Status stays exactly five values; the 10-capability table and UNSUPPORTED_COMBINATIONS stay unchanged; new vocabulary lives in the router module only"
+  },
+  "evaluation_plan": {
+    "step_1_unit_and_adversarial_tests": "deterministic tests: supported 1D ordinal scoring; supported dense supplied-structure K in range; supported sparse scale-wise 1D; same-input different-output (factor scores permit / Phi refuse / discovery refuse / factor-count discovery refuse); boundary refusals (categories, K, density, missing supplied structure); multimodal admission/no-signal/mismatch/exact-fallback; cross-boundary (multimodal+longitudinal, sparse+multidimensional, supplied structure+covariance request); runnable-but-unsupported refusal; refused outputs asserted absent from authoritative serialized output",
+    "step_2_original_p4_rerun": "rerun the original P4 challenge set with cases, thresholds, seeds, refusal-channel definitions and decision rule UNCHANGED (frozen block read from configs/model/planned_analyses_preregistration.json; P4 seed region reused by import, not retyped); results written to a NEW artifact (reports/planned/p4b_rerun_original_p4.json); the historical artifact is not touched; before/after per-axis table produced",
+    "step_3_fresh_challenge": "a modest fresh challenge set of previously unseen combinations, frozen here in fresh_challenge_design; deterministic synthetic/hand-constructed designs only; seed region [989000, 989499] within the registered validation region, asserted disjoint from every declared region and from the P4 region [988000, 988999]",
+    "step_4_numerical_non_regression": "pre/post-router comparison on supported fixtures: respondent scores, supported item outputs, supported relative uncertainty, exact fallback outputs; BIT IDENTITY required (the existing pipeline is deterministic; no new tolerance rule is introduced)",
+    "step_5_artifact": "single close-out artifact reports/planned/p4b_fully_wired_capability_router.json recording protocol hash, baseline commit, implementation commit, model digests, contract digest, historical P4 results, unchanged-P4 rerun, fresh results, non-regression and fallback results, representative output-granular examples, verdict"
+  },
+  "fresh_challenge_design": {
+    "membership_fixed_in_advance": true,
+    "cells": [
+      {"cell": "factor_x_density_dense_in_range", "construction": "supplied K=4 dense complete ordinal battery, cross-sectional", "requested_output": "factor_scores", "expected": "permit"},
+      {"cell": "factor_x_density_sparse", "construction": "same K=4 battery with 15% of cells masked", "requested_output": "factor_scores", "expected": "refuse (M8 sparse multidimensional)"},
+      {"cell": "format_x_capability_binary_1d", "construction": "binary 12-item single-wave 1D instrument", "requested_output": "person_score", "expected": "permit (SHARE-A record)"},
+      {"cell": "format_x_capability_binary_longitudinal", "construction": "binary 10-item 4-wave design, 30-day spacing", "requested_output": "trait", "expected": "refuse/out-of-support (6B.2.2)"},
+      {"cell": "format_x_capability_6cat_longitudinal", "construction": "6-category 10-item 4-wave design (unseen inside-band value)", "requested_output": "trait", "expected": "permit"},
+      {"cell": "format_x_capability_8cat", "construction": "8-category instrument, any path", "requested_output": "person_score", "expected": "refuse (decoder ceiling CMAX=7)"},
+      {"cell": "factor_x_output_scores", "construction": "supplied K=5 dense battery, real-declared", "requested_output": "factor_scores", "expected": "permit"},
+      {"cell": "factor_x_output_phi_real", "construction": "same K=5 input, real-declared", "requested_output": "factor_correlation_phi", "expected": "refuse (D9B)"},
+      {"cell": "factor_x_output_phi_synthetic", "construction": "same K=5 input, synthetic-declared", "requested_output": "factor_correlation_phi", "expected": "limit (diagnostic only, M8 dense regime)"},
+      {"cell": "factor_x_output_discovery", "construction": "same K=5 input, discovery requested", "requested_output": "item_to_factor_structure", "expected": "refuse (M7 closure)"},
+      {"cell": "factor_x_output_count_discovery", "construction": "same input, factor-count discovery requested", "requested_output": "factor_count", "expected": "refuse (M7 closure)"},
+      {"cell": "factor_x_output_k6", "construction": "supplied K=6 dense battery", "requested_output": "factor_scores", "expected": "refuse (K_MAX=5)"},
+      {"cell": "density_x_output_sparse_1d", "construction": "sparse (0.25 observed) single-wave 1D instrument", "requested_output": "person_score", "expected": "permit (D9A scale-wise record)"},
+      {"cell": "density_x_output_sparse_longitudinal", "construction": "1-construct 4-wave design at 0.15 observed fraction", "requested_output": "trait", "expected": "refuse/out-of-support (materially below trained envelope)"},
+      {"cell": "density_x_longitudinal_in_band", "construction": "1-construct 4-wave design at 0.9 observed fraction", "requested_output": "trait", "expected": "permit"},
+      {"cell": "multimodal_x_longitudinal_out_of_support", "construction": "fusion request (same-construct continuous block) over 4-wave BINARY-item design", "requested_output": "fused_mean", "expected": "longitudinal boundary applies to the fused result (out-of-support routing attached); no bypass"},
+      {"cell": "multimodal_x_longitudinal_in_support", "construction": "fusion request over in-envelope 4-wave 5-category design with pure-noise block", "requested_output": "fused_mean", "expected": "gate rejects, exact psychometric fallback, fallback recorded"},
+      {"cell": "runnable_but_unsupported", "construction": "structurally 6-construct 4-wave battery, 1D longitudinal scoring request - the frozen model numerically executes it", "requested_output": "trait", "expected": "refuse/out-of-support despite numerical executability"}
+    ],
+    "metrics": ["false-accept count and rate", "false-refuse count and rate", "per-cell decision with predicates evaluated"]
+  },
+  "acceptance_criteria": {
+    "primary": [
+      "original P4 rerun: false accepts = 0 and false rejects = 0 on every one of the five frozen axes, under the UNCHANGED P4 decision rule",
+      "fresh challenge: false accepts = 0 and false refusals = 0",
+      "longitudinal x multimodal regression: an out-of-envelope longitudinal design routed through fusion receives the longitudinal out-of-support routing (bypass closed)"
+    ],
+    "safety_and_integrity": [
+      "supported numerical outputs bit-identical pre/post wiring",
+      "exact fallback remains exact (torch.equal on fused mean and precision)",
+      "refused outputs absent from authoritative serialized outputs",
+      "every output decision records provenance: descriptor values, predicates evaluated, results, contract version",
+      "auxiliary gate regression: no-signal rejection preserved, gate decision recorded"
+    ],
+    "verdict_rule": "PASS only if every primary and safety criterion is met; REFINE if wiring is correct but any criterion is unmet for identified reasons; FAIL if unsupported outputs still escape or supported numerics changed"
+  },
+  "baseline": {
+    "baseline_commit": "ec2c0f3",
+    "model_state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "mapped_model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "fusion_bundle_sha256": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697",
+    "capability_contract_version": "3.5"
+  },
+  "append_only": "this protocol is append-only after the freeze commit; any amendment must be a dated append that does not alter the frozen criteria"
+}

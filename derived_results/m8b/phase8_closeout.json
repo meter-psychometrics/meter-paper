@@ -1,0 +1,55 @@
+{
+  "milestone": "8",
+  "artifact": "M8_CLOSEOUT",
+  "date": "2026-08-07",
+  "status": "CLOSED. No further M8 tuning is authorized: no gate, threshold, mapping, benchmark, calibration or model-weight change may be made under the M8 or M8B charters from this commit forward.",
+  "final_capability_scope": {
+    "supported": [
+      "dense known-structure multidimensional inference for supplied 3-5-factor mappings",
+      "Phi/factor-correlation estimation within the validated dense regime"
+    ],
+    "unsupported": [
+      "sparse multidimensional administration"
+    ],
+    "dropped_out_of_support": [
+      "weak-factor detection",
+      "phantom-factor detection",
+      "merged-factor detection"
+    ]
+  },
+  "permanent_record": {
+    "smoke_failure": "The original M8 engineering smoke FAILED its frozen dense recovery criterion at K4 (0.7302) and K5 (0.7754) against the 0.80 per-K gate, from adjudication cells of n=4 and n=2. This failure is preserved permanently and is not reinterpreted or erased by anything that followed.",
+    "contract_audit": "A mechanical audit (commit 35b69ff) established that the frozen M8 contract did not authorize dense-only continuation, and withdrew the original verdict's unauthorized deferral language append-only.",
+    "m8b": "M8B was a separately chartered, prospectively specified independent evaluation (charter commit 7cf9cc9, frozen before any confirmatory task was opened) that opened only the 102 dense standard-family matched tasks. It PASSED every frozen gate at every K with confidence bounds: K3 0.8562 (LCB 0.8132), K4 0.8349 (LCB 0.8086), K5 0.8227 (LCB 0.7700); paired ratios 0.973-0.977 (LCBs 0.957-0.969); collapse 0.0; k5_within_of_k3 0.0335; 66/66 comparator fits converged.",
+    "adopted_claim": "The initial small smoke test failed the preregistered K4/K5 recovery criterion, but a subsequently preregistered, adequately powered independent evaluation established dense known-structure 3-5-factor inference."
+  },
+  "provenance": {
+    "model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "model_rule": "reproduced bit-for-bit from the frozen trainer config and seeds; hash-asserted at the derivation, the smoke and M8B; never retrained, recalibrated or tuned on any evaluation outcome",
+    "gate_freeze_commit": "40f392e",
+    "derivation_report_sha256": "3bf9d795d65649ad (prefix; full value pinned in the freeze)",
+    "smoke_report_sha256": "2e573b0b28a5088e5a56e2e2e0056a0824f2ac72efb07ee719face84c32753c8",
+    "m8b_charter_commit": "7cf9cc9",
+    "m8b_report_sha256": "446a5decf0f3418e62e4651a4ce40643a77e0ee64364fe4fee49b377cfc3f36f",
+    "key_evidence_commits": {
+      "v1_derivation_preserved": "8feeb77",
+      "gate_freeze": "40f392e",
+      "runtime_projection_fallback_decision": "0d22dbd",
+      "smoke_repairs_and_incidents": ["e69ff98", "efbb55d", "8dc9f40"],
+      "smoke_preserved": "330693c",
+      "smoke_verdict": "e3cd989",
+      "contract_audit": "35b69ff",
+      "m8b_charter": "7cf9cc9",
+      "m8b_machinery": ["a312b51", "5d80027"],
+      "m8b_verdict": "93a7b5b"
+    }
+  },
+  "benchmark_state": {
+    "confirmatory_tasks_opened": 102,
+    "confirmatory_tasks_remaining_unopened": 378,
+    "rule": "the 378 unopened tasks stay unopened; any future opening requires its own prospective charter",
+    "comparator_fallback_subset": "the seed-15000 160-task subset remains frozen and UNUSED",
+    "engineering_smoke": "evaluated once, preserved, closed"
+  },
+  "real_data_state": "SAPA, ICAR, MIDUS and all real data remain untouched under M8/M8B. Any real-data step requires its own charter with D9 sign-off; the D9A draft accompanying this close-out is NOT yet frozen or approved."
+}

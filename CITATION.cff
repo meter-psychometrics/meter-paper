@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, cite the METER paper."
+title: "meter-nmi-paper: reproducibility package for METER"
+type: software
+version: 0.1.0
+date-released: "2026-08-18"
+authors:
+  - family-names: "[to be completed before submission]"
+    given-names: "[author list pending]"
+preferred-citation:
+  type: article
+  title: "Pretrained psychometric inference transfers across instruments and populations"
+  journal: "Nature Machine Intelligence (submitted)"
+  year: 2026
+  authors:
+    - family-names: "[to be completed before submission]"
+      given-names: "[author list pending]"

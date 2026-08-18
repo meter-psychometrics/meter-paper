@@ -1,0 +1,164 @@
+{
+  "adjudication": {
+    "all_or_nothing": true,
+    "applied_after_preservation": true,
+    "checks": {
+      "every_factor_r_at_least": true,
+      "median_r_at_least": true,
+      "no_nan_agreement": true,
+      "no_phi_collapse": true,
+      "no_variance_degeneracy": true
+    },
+    "gates_applied": {
+      "median_r": 0.93,
+      "per_factor_r": 0.9,
+      "phi_collapse_ceiling": 0.95,
+      "variance_floor": 0.0001
+    },
+    "verdict": "D9E_PASS",
+    "verdict_language": "every primary gate passes: the frozen model's factor scores transfer ACROSS INSTRUMENTS within personality, reproducing separately fitted confirmatory scores on the IPIP-50 markers at the prespecified operating point - establishing cross-instrument transfer, which the post-D9D contract records as not yet established."
+  },
+  "aggregates_only": true,
+  "alignment": {
+    "comparator_factor_flips": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "model_factor_flips": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "rule": "per-side sign alignment against own unit-weighted recoded composites; no permutation exists"
+  },
+  "artifact": "D9E_TRANSFER_REPORT",
+  "charter": "D9E",
+  "charter_sha256": "b7bceb22200c8c43f0af1385cb4dee688581f2b00421586ae2972ccae45931ba",
+  "comparator": {
+    "admissible": true,
+    "converged": true,
+    "error": null,
+    "fit_seconds": 662.1,
+    "inadmissibility_reasons": [],
+    "retried": false
+  },
+  "disclosure_rule": "every tabulated count below 10 is suppressed as '<10'",
+  "elapsed_seconds": 769.5,
+  "factor_agreement_signed": {
+    "agreeableness": {
+      "model_sd_quantiles": {
+        "q05": 0.5653,
+        "q25": 0.5671,
+        "q50": 0.5728,
+        "q75": 0.5848,
+        "q95": 0.6076
+      },
+      "pearson_model_vs_mirt": 0.9596
+    },
+    "conscientiousness": {
+      "model_sd_quantiles": {
+        "q05": 0.5846,
+        "q25": 0.5861,
+        "q50": 0.5908,
+        "q75": 0.6019,
+        "q95": 0.6294
+      },
+      "pearson_model_vs_mirt": 0.9791
+    },
+    "emotional_stability": {
+      "model_sd_quantiles": {
+        "q05": 0.5252,
+        "q25": 0.5279,
+        "q50": 0.5381,
+        "q75": 0.5611,
+        "q95": 0.6101
+      },
+      "pearson_model_vs_mirt": 0.9796
+    },
+    "extraversion": {
+      "model_sd_quantiles": {
+        "q05": 0.4931,
+        "q25": 0.4963,
+        "q50": 0.5078,
+        "q75": 0.5324,
+        "q95": 0.5867
+      },
+      "pearson_model_vs_mirt": 0.9839
+    },
+    "intellect_imagination": {
+      "model_sd_quantiles": {
+        "q05": 0.6438,
+        "q25": 0.6449,
+        "q50": 0.6474,
+        "q75": 0.653,
+        "q95": 0.6639
+      },
+      "pearson_model_vs_mirt": 0.9597
+    }
+  },
+  "gate_inputs_exact": {
+    "note": "the EXACT unrounded inputs the pure adjudication function consumes - preserved so the verdict is mechanically re-derivable from this file alone (pre-execution review finding); non-finite values encoded as null",
+    "per_factor_r": [
+      0.9839424198441306,
+      0.9795930731148299,
+      0.959608404222204,
+      0.9791468851701546,
+      0.9597243638585342
+    ],
+    "phi_model_off_diagonal": [
+      0.321401983499527,
+      0.5421898365020752,
+      0.11460479348897934,
+      0.4052828252315521,
+      0.0826275572180748,
+      0.41724997758865356,
+      0.23190945386886597,
+      0.2621231973171234,
+      0.2583318054676056,
+      0.15451379120349884
+    ],
+    "score_variances": [
+      0.6593335270881653,
+      0.6372089982032776,
+      0.35572677850723267,
+      0.389171838760376,
+      0.19185622036457062
+    ]
+  },
+  "median_pearson_model_vs_mirt": 0.9791,
+  "model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+  "phi_descriptive_not_gated": {
+    "max_abs_off_diagonal_difference": 0.1544,
+    "mean_abs_off_diagonal_difference": 0.0897,
+    "mirt_phi_off_diagonal_quantiles": {
+      "q05": 0.0346,
+      "q25": 0.1139,
+      "q50": 0.164,
+      "q75": 0.2636,
+      "q95": 0.3718
+    },
+    "model_phi_off_diagonal_quantiles": {
+      "q05": 0.097,
+      "q25": 0.1739,
+      "q50": 0.2602,
+      "q75": 0.3843,
+      "q95": 0.486
+    },
+    "model_phi_pd": true,
+    "model_phi_shrink_weight": 1.0
+  },
+  "preserved_aggregates_sha256": "78f2c6c72ea0c5902c92afe1fcbd92ec7ee0a408c5d4e837bc11c4cc2861887a",
+  "runtime_descriptive": {
+    "model_inference_seconds_full_sample": 0.776
+  },
+  "sample": {
+    "analytic_n": 20000,
+    "eligible_n": 603322,
+    "rule": "IPC == 1 AND all 50 items observed; the frozen seed-9500 selection, independently re-derived and hash-verified against the committed artifact before METER inference"
+  }
+}

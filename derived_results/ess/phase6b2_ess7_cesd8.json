@@ -1,0 +1,3768 @@
+{
+  "cross_country_dif": {
+    "contrasts": {
+      "AT": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.08192,
+          -0.12436
+        ],
+        "impact_unadjusted": [
+          -0.08192,
+          -0.12436
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 5e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.02507,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 9e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.0052,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 4e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.00841,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00037,
+            "direction": "focal_higher",
+            "effect_logits": 0.03341,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00341,
+            "direction": "reference_higher",
+            "effect_logits": -0.06699,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00016,
+            "direction": "reference_higher",
+            "effect_logits": -0.02857,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.0019,
+            "direction": "focal_higher",
+            "effect_logits": 0.05006,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 5e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.0035,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.06699,
+        "n_focal": 1795,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.082,
+        "size_ratio_focal_over_reference": 0.589,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "BE": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.03423,
+          -0.40964
+        ],
+        "impact_unadjusted": [
+          0.03423,
+          -0.40964
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.0033,
+            "direction": "reference_higher",
+            "effect_logits": -0.07639,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.02419,
+            "direction": "focal_higher",
+            "effect_logits": 0.09939,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.0001,
+            "direction": "reference_higher",
+            "effect_logits": -0.01926,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00024,
+            "direction": "focal_higher",
+            "effect_logits": 0.02679,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00349,
+            "direction": "reference_higher",
+            "effect_logits": -0.07053,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00192,
+            "direction": "reference_higher",
+            "effect_logits": -0.06335,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00169,
+            "direction": "reference_higher",
+            "effect_logits": -0.04278,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.0048,
+            "direction": "focal_higher",
+            "effect_logits": 0.07326,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09939,
+        "n_focal": 1769,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.043,
+        "size_ratio_focal_over_reference": 0.581,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "CH": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.14439,
+          -0.47037
+        ],
+        "impact_unadjusted": [
+          -0.14439,
+          -0.47037
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 7e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.03169,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.01154,
+            "direction": "focal_higher",
+            "effect_logits": 0.08145,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 9e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.02063,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00011,
+            "direction": "focal_higher",
+            "effect_logits": 0.01681,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00302,
+            "direction": "reference_higher",
+            "effect_logits": -0.0642,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00264,
+            "direction": "reference_higher",
+            "effect_logits": -0.06627,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00014,
+            "direction": "reference_higher",
+            "effect_logits": -0.00325,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00202,
+            "direction": "focal_higher",
+            "effect_logits": 0.05645,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.08145,
+        "n_focal": 1532,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.042,
+        "size_ratio_focal_over_reference": 0.503,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "CZ": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.36693,
+          -0.0614
+        ],
+        "impact_unadjusted": [
+          0.36693,
+          -0.0614
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.07586,
+            "direction": "reference_higher",
+            "effect_logits": -0.13062,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00043,
+            "direction": "focal_higher",
+            "effect_logits": 0.03284,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.00066,
+            "direction": "reference_higher",
+            "effect_logits": -0.04179,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00026,
+            "direction": "focal_higher",
+            "effect_logits": 0.02156,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.0111,
+            "direction": "reference_higher",
+            "effect_logits": -0.0925,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00149,
+            "direction": "reference_higher",
+            "effect_logits": -0.05647,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.01218,
+            "direction": "focal_higher",
+            "effect_logits": 0.08144,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00497,
+            "direction": "focal_higher",
+            "effect_logits": 0.07731,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.13062,
+        "n_focal": 2148,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.05,
+        "size_ratio_focal_over_reference": 0.705,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "DK": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.17807,
+          -0.27971
+        ],
+        "impact_unadjusted": [
+          -0.17807,
+          -0.27971
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00538,
+            "direction": "reference_higher",
+            "effect_logits": -0.08498,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00253,
+            "direction": "focal_higher",
+            "effect_logits": 0.05538,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 8e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.01676,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00012,
+            "direction": "focal_higher",
+            "effect_logits": 0.01764,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00061,
+            "direction": "reference_higher",
+            "effect_logits": -0.03873,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00025,
+            "direction": "reference_higher",
+            "effect_logits": -0.0315,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00015,
+            "direction": "focal_higher",
+            "effect_logits": 0.00289,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 6e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.01167,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.08498,
+        "n_focal": 1502,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.047,
+        "size_ratio_focal_over_reference": 0.493,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "EE": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.27032,
+          0.0387
+        ],
+        "impact_unadjusted": [
+          0.27032,
+          0.0387
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00054,
+            "direction": "reference_higher",
+            "effect_logits": -0.04963,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00094,
+            "direction": "focal_higher",
+            "effect_logits": 0.04709,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 5e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.01002,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.0001,
+            "direction": "reference_higher",
+            "effect_logits": -0.0061,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.0008,
+            "direction": "reference_higher",
+            "effect_logits": -0.04558,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00215,
+            "direction": "reference_higher",
+            "effect_logits": -0.06284,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00192,
+            "direction": "focal_higher",
+            "effect_logits": 0.04674,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 2e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.0019,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.06284,
+        "n_focal": 2051,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.056,
+        "size_ratio_focal_over_reference": 0.674,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "ES": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.20566,
+          -0.08428
+        ],
+        "impact_unadjusted": [
+          0.20566,
+          -0.08428
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00239,
+            "direction": "reference_higher",
+            "effect_logits": -0.0682,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00015,
+            "direction": "focal_higher",
+            "effect_logits": 0.0055,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.00012,
+            "direction": "reference_higher",
+            "effect_logits": -0.02133,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00139,
+            "direction": "focal_higher",
+            "effect_logits": 0.04868,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00135,
+            "direction": "reference_higher",
+            "effect_logits": -0.05795,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.0126,
+            "direction": "reference_higher",
+            "effect_logits": -0.09267,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00061,
+            "direction": "focal_higher",
+            "effect_logits": 0.02619,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00212,
+            "direction": "focal_higher",
+            "effect_logits": 0.05807,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09267,
+        "n_focal": 1925,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.063,
+        "size_ratio_focal_over_reference": 0.632,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "FI": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.26429,
+          -0.19963
+        ],
+        "impact_unadjusted": [
+          -0.26429,
+          -0.19963
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.06187,
+            "direction": "reference_higher",
+            "effect_logits": -0.129,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00079,
+            "direction": "focal_higher",
+            "effect_logits": 0.04219,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.00057,
+            "direction": "focal_higher",
+            "effect_logits": 0.04566,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00716,
+            "direction": "focal_higher",
+            "effect_logits": 0.08228,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00062,
+            "direction": "reference_higher",
+            "effect_logits": -0.04265,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 4e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.00823,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00035,
+            "direction": "focal_higher",
+            "effect_logits": 0.02517,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00011,
+            "direction": "reference_higher",
+            "effect_logits": -0.02647,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.129,
+        "n_focal": 2087,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.067,
+        "size_ratio_focal_over_reference": 0.685,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "FR": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.11723,
+          -0.29346
+        ],
+        "impact_unadjusted": [
+          0.11723,
+          -0.29346
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 2e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.01896,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.06438,
+            "direction": "focal_higher",
+            "effect_logits": 0.12213,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.00023,
+            "direction": "reference_higher",
+            "effect_logits": -0.02834,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00079,
+            "direction": "focal_higher",
+            "effect_logits": 0.04327,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.0779,
+            "direction": "reference_higher",
+            "effect_logits": -0.12877,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00631,
+            "direction": "reference_higher",
+            "effect_logits": -0.07852,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00187,
+            "direction": "reference_higher",
+            "effect_logits": -0.04203,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00011,
+            "direction": "focal_higher",
+            "effect_logits": 0.02029,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.12877,
+        "n_focal": 1917,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.057,
+        "size_ratio_focal_over_reference": 0.63,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "GB": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.0727,
+          -0.25497
+        ],
+        "impact_unadjusted": [
+          0.0727,
+          -0.25497
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00201,
+            "direction": "reference_higher",
+            "effect_logits": -0.06875,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.0187,
+            "direction": "focal_higher",
+            "effect_logits": 0.09363,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 8e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.01109,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.0001,
+            "direction": "focal_higher",
+            "effect_logits": 0.01179,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00199,
+            "direction": "reference_higher",
+            "effect_logits": -0.05599,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00101,
+            "direction": "reference_higher",
+            "effect_logits": -0.05013,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00245,
+            "direction": "reference_higher",
+            "effect_logits": -0.04613,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00034,
+            "direction": "focal_higher",
+            "effect_logits": 0.03561,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09363,
+        "n_focal": 2264,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.063,
+        "size_ratio_focal_over_reference": 0.744,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "HU": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.43303,
+          0.15994
+        ],
+        "impact_unadjusted": [
+          0.43303,
+          0.15994
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00081,
+            "direction": "reference_higher",
+            "effect_logits": -0.05047,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.0001,
+            "direction": "focal_higher",
+            "effect_logits": 0.01083,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.0043,
+            "direction": "reference_higher",
+            "effect_logits": -0.072,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00614,
+            "direction": "focal_higher",
+            "effect_logits": 0.07352,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00219,
+            "direction": "reference_higher",
+            "effect_logits": -0.05104,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00085,
+            "direction": "reference_higher",
+            "effect_logits": -0.04624,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00026,
+            "direction": "focal_higher",
+            "effect_logits": 0.00912,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 7e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.01768,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.07352,
+        "n_focal": 1698,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.071,
+        "size_ratio_focal_over_reference": 0.558,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "IE": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.07262,
+          -0.35865
+        ],
+        "impact_unadjusted": [
+          -0.07262,
+          -0.35865
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00058,
+            "direction": "reference_higher",
+            "effect_logits": -0.05263,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.01168,
+            "direction": "focal_higher",
+            "effect_logits": 0.08065,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 3e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.0004,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00074,
+            "direction": "focal_higher",
+            "effect_logits": 0.04365,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.01286,
+            "direction": "reference_higher",
+            "effect_logits": -0.09869,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00175,
+            "direction": "reference_higher",
+            "effect_logits": -0.06399,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00109,
+            "direction": "focal_higher",
+            "effect_logits": 0.04202,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00226,
+            "direction": "focal_higher",
+            "effect_logits": 0.05463,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09869,
+        "n_focal": 2390,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.081,
+        "size_ratio_focal_over_reference": 0.785,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "IL": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.05594,
+          0.15763
+        ],
+        "impact_unadjusted": [
+          0.05594,
+          0.15763
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 2e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.0125,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00039,
+            "direction": "reference_higher",
+            "effect_logits": -0.02785,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 6e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.0118,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.0006,
+            "direction": "focal_higher",
+            "effect_logits": 0.03743,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00272,
+            "direction": "reference_higher",
+            "effect_logits": -0.05829,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00221,
+            "direction": "reference_higher",
+            "effect_logits": -0.06088,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.0091,
+            "direction": "focal_higher",
+            "effect_logits": 0.07726,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00062,
+            "direction": "reference_higher",
+            "effect_logits": -0.04515,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.07726,
+        "n_focal": 2562,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.069,
+        "size_ratio_focal_over_reference": 0.841,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "LT": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.43441,
+          0.31033
+        ],
+        "impact_unadjusted": [
+          0.43441,
+          0.31033
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00016,
+            "direction": "reference_higher",
+            "effect_logits": -0.03258,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 6e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.01043,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 5e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.01249,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.08414,
+            "direction": "focal_higher",
+            "effect_logits": 0.13196,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00422,
+            "direction": "reference_higher",
+            "effect_logits": -0.0729,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00568,
+            "direction": "reference_higher",
+            "effect_logits": -0.08013,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.01968,
+            "direction": "focal_higher",
+            "effect_logits": 0.09186,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00037,
+            "direction": "reference_higher",
+            "effect_logits": -0.04138,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.13196,
+        "n_focal": 2250,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.07,
+        "size_ratio_focal_over_reference": 0.739,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "NL": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 3,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.19054,
+          -0.06035
+        ],
+        "impact_unadjusted": [
+          -0.19054,
+          -0.06035
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.07863,
+            "direction": "reference_higher",
+            "effect_logits": -0.11837,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.08065,
+            "direction": "focal_higher",
+            "effect_logits": 0.12142,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 6e-05,
+            "direction": "reference_higher",
+            "effect_logits": -0.00253,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00061,
+            "direction": "focal_higher",
+            "effect_logits": 0.02658,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00047,
+            "direction": "reference_higher",
+            "effect_logits": -0.04707,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00106,
+            "direction": "reference_higher",
+            "effect_logits": -0.05395,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.0002,
+            "direction": "reference_higher",
+            "effect_logits": -0.0009,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.01466,
+            "direction": "focal_higher",
+            "effect_logits": 0.08162,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.12142,
+        "n_focal": 1919,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.073,
+        "size_ratio_focal_over_reference": 0.63,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "NO": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.27873,
+          -0.36517
+        ],
+        "impact_unadjusted": [
+          -0.27873,
+          -0.36517
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00374,
+            "direction": "reference_higher",
+            "effect_logits": -0.08175,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.02841,
+            "direction": "focal_higher",
+            "effect_logits": 0.10303,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.0001,
+            "direction": "focal_higher",
+            "effect_logits": 0.01939,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00369,
+            "direction": "focal_higher",
+            "effect_logits": 0.07033,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00429,
+            "direction": "reference_higher",
+            "effect_logits": -0.06776,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.0005,
+            "direction": "reference_higher",
+            "effect_logits": -0.03909,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00014,
+            "direction": "focal_higher",
+            "effect_logits": 0.00631,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.0003,
+            "direction": "reference_higher",
+            "effect_logits": -0.03872,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.10303,
+        "n_focal": 1436,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.062,
+        "size_ratio_focal_over_reference": 0.472,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "PL": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.12937,
+          -0.2758
+        ],
+        "impact_unadjusted": [
+          0.12937,
+          -0.2758
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.01103,
+            "direction": "reference_higher",
+            "effect_logits": -0.09336,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.02193,
+            "direction": "focal_higher",
+            "effect_logits": 0.08958,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 0.00194,
+            "direction": "reference_higher",
+            "effect_logits": -0.05863,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00021,
+            "direction": "focal_higher",
+            "effect_logits": 0.02158,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00804,
+            "direction": "reference_higher",
+            "effect_logits": -0.0877,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00972,
+            "direction": "reference_higher",
+            "effect_logits": -0.08825,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.0037,
+            "direction": "focal_higher",
+            "effect_logits": 0.05801,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.0006,
+            "direction": "focal_higher",
+            "effect_logits": 0.0305,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09336,
+        "n_focal": 1615,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.071,
+        "size_ratio_focal_over_reference": 0.53,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "PT": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          0.48384,
+          0.00528
+        ],
+        "impact_unadjusted": [
+          0.48384,
+          0.00528
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.01144,
+            "direction": "reference_higher",
+            "effect_logits": -0.09134,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.001,
+            "direction": "focal_higher",
+            "effect_logits": 0.03935,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 5e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.00556,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.02957,
+            "direction": "reference_higher",
+            "effect_logits": -0.09753,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00878,
+            "direction": "reference_higher",
+            "effect_logits": -0.08144,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00657,
+            "direction": "reference_higher",
+            "effect_logits": -0.0779,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00076,
+            "direction": "focal_higher",
+            "effect_logits": 0.02487,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.0013,
+            "direction": "focal_higher",
+            "effect_logits": 0.04814,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09753,
+        "n_focal": 1265,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.154,
+        "size_ratio_focal_over_reference": 0.415,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "SE": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.1267,
+          -0.21317
+        ],
+        "impact_unadjusted": [
+          -0.1267,
+          -0.21317
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.01386,
+            "direction": "reference_higher",
+            "effect_logits": -0.09959,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.0001,
+            "direction": "focal_higher",
+            "effect_logits": 0.00784,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 8e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.0182,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00424,
+            "direction": "focal_higher",
+            "effect_logits": 0.07185,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00513,
+            "direction": "reference_higher",
+            "effect_logits": -0.07346,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00051,
+            "direction": "reference_higher",
+            "effect_logits": -0.04125,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00072,
+            "direction": "focal_higher",
+            "effect_logits": 0.0341,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 0.00027,
+            "direction": "focal_higher",
+            "effect_logits": 0.02867,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.09959,
+        "n_focal": 1791,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.068,
+        "size_ratio_focal_over_reference": 0.588,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      },
+      "SI": {
+        "capability": "dif_comparability",
+        "comparability_status": {
+          "impact_sensitivity_to_adjustment": 0.0,
+          "max_flagged_effect": 0.0,
+          "min_clean_items_per_construct": 2,
+          "n_flagged": 0,
+          "provenance": {
+            "arm": "arm3_label",
+            "comparator_convention": "flag = P(|effect| > 0.2 logits) > operating_threshold; adjustment = drop flagged items and re-infer (>=4 clean items per construct required); statuses per comparability_status: supported / supported_after_adjustment / weak / not_defensible from flagged-information share, clean-item floor, and impact sensitivity to adjustment",
+            "config_sha256": "0f219a4d190a610ae7f69ec16949e12ab2679640c6d71b733f78a117d32b0f56",
+            "effect_threshold_logits": 0.2,
+            "model_state_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+            "operating_threshold": 0.36435567004776,
+            "threshold_used": 0.36435567004776
+          },
+          "status": "supported",
+          "worst_flagged_information_share": 0.0
+        },
+        "dif_prevalence": 0.0,
+        "flagged_items": [],
+        "impact_adjusted": [
+          -0.01616,
+          -0.13243
+        ],
+        "impact_unadjusted": [
+          -0.01616,
+          -0.13243
+        ],
+        "item_effects": {
+          "cldgng": {
+            "dif_probability": 0.00666,
+            "direction": "reference_higher",
+            "effect_logits": -0.08827,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "enjlf": {
+            "dif_probability": 0.00035,
+            "direction": "focal_higher",
+            "effect_logits": 0.02927,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltdpr": {
+            "dif_probability": 4e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.00667,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "flteeff": {
+            "dif_probability": 0.00203,
+            "direction": "focal_higher",
+            "effect_logits": 0.05761,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltlnl": {
+            "dif_probability": 0.00402,
+            "direction": "reference_higher",
+            "effect_logits": -0.06422,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "fltsd": {
+            "dif_probability": 0.00721,
+            "direction": "reference_higher",
+            "effect_logits": -0.07984,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "slprl": {
+            "dif_probability": 0.00049,
+            "direction": "focal_higher",
+            "effect_logits": 0.02588,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          },
+          "wrhpp": {
+            "dif_probability": 3e-05,
+            "direction": "focal_higher",
+            "effect_logits": 0.00938,
+            "flagged": false,
+            "substantive_by_effect_size": false
+          }
+        },
+        "max_absolute_effect_logits": 0.08827,
+        "n_focal": 1224,
+        "n_items_flagged": 0,
+        "n_items_substantive_by_effect_size": 0,
+        "n_reference": 3045,
+        "operating_threshold": 0.36435567004776,
+        "seconds": 0.08,
+        "size_ratio_focal_over_reference": 0.402,
+        "status": "supported",
+        "suppressed": {},
+        "warnings": []
+      }
+    },
+    "country_heterogeneity": {
+      "comparability_statuses": {
+        "AT": "supported",
+        "BE": "supported",
+        "CH": "supported",
+        "CZ": "supported",
+        "DK": "supported",
+        "EE": "supported",
+        "ES": "supported",
+        "FI": "supported",
+        "FR": "supported",
+        "GB": "supported",
+        "HU": "supported",
+        "IE": "supported",
+        "IL": "supported",
+        "LT": "supported",
+        "NL": "supported",
+        "NO": "supported",
+        "PL": "supported",
+        "PT": "supported",
+        "SE": "supported",
+        "SI": "supported"
+      },
+      "countries_contributing_most": [
+        "LT",
+        "CZ",
+        "FI",
+        "FR",
+        "NL"
+      ],
+      "max_absolute_effect_across_contrasts": 0.13196,
+      "n_contrasts_with_any_flag": 0,
+      "n_contrasts_with_substantive_effect": 0,
+      "note": "This is heterogeneity ACROSS PAIRWISE CONTRASTS against one reference, not an omnibus test of country heterogeneity. The frozen capability supports no omnibus test, and none is reported."
+    },
+    "country_subsampling_stability": {
+      "NO": {
+        "flagged_counts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "full_sample_flagged": 0,
+        "n_repeats": 5,
+        "stable": true
+      },
+      "PT": {
+        "flagged_counts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "full_sample_flagged": 0,
+        "n_repeats": 5,
+        "stable": true
+      },
+      "SI": {
+        "flagged_counts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "full_sample_flagged": 0,
+        "n_repeats": 5,
+        "stable": true
+      }
+    },
+    "multiplicity_note": "20 contrasts share one reference and are not independent. No family-wise correction is applied because the frozen decision rule is a prespecified effect-size and information-mass rule, not a p-value; the count of flagged items is reported as a prevalence, never as a significance test.",
+    "n_contrasts": 20,
+    "reference_country": "DE",
+    "reference_selection_rule": "largest national sample",
+    "scope": "PRESPECIFIED TWO-GROUP REFERENCE-COUNTRY CONTRASTS. The frozen DIF capability (SELECTED_MODEL_5A) reduces settings to (setting > 0), so it supports exactly two groups. A 21-country omnibus contrast is OUTSIDE its validated region and was not run or approximated. Each result below is one country against the reference, and means nothing about any other pair.",
+    "substantive_threshold": 0.2,
+    "unequal_size_sensitivity": {
+      "NO": {
+        "max_absolute_effect_matched": 0.11653,
+        "max_absolute_effect_original": 0.10303,
+        "n_items_flagged_matched": 0,
+        "n_items_flagged_original": 0,
+        "n_per_group_after_matching": 1436,
+        "original_size_ratio": 0.472,
+        "verdict_changed": false
+      },
+      "PT": {
+        "max_absolute_effect_matched": 0.07621,
+        "max_absolute_effect_original": 0.09753,
+        "n_items_flagged_matched": 0,
+        "n_items_flagged_original": 0,
+        "n_per_group_after_matching": 1265,
+        "original_size_ratio": 0.415,
+        "verdict_changed": false
+      },
+      "SI": {
+        "max_absolute_effect_matched": 0.0723,
+        "max_absolute_effect_original": 0.08827,
+        "n_items_flagged_matched": 0,
+        "n_items_flagged_original": 0,
+        "n_per_group_after_matching": 1224,
+        "original_size_ratio": 0.402,
+        "verdict_changed": false
+      }
+    }
+  },
+  "dataset_edition": "ESS7e02_3 (edition 2.3)",
+  "dataset_id": "ess_round7_cesd8",
+  "frozen_protocols": {
+    "analysis_freeze": {
+      "sha256": "f773c07f1b03b162e0591c868affc8fa1b4b79758344756dd027f2c07a007bd7",
+      "specification": {
+        "comparators": [
+          "sum_score",
+          "principal_component",
+          "mml_grm_eap"
+        ],
+        "freeze_id": "phase6b1_analysis_freeze",
+        "frozen_before_opening": [
+          "nhanes_2017_2018_dpq_j"
+        ],
+        "frozen_on": "2026-08-04",
+        "known_hazard": {
+          "P_DPQ.xpt": "the NHANES 2017-March 2020 pre-pandemic file OVERLAPS DPQ_J: its respondents include the 2017-2018 cycle. Using both would double-count those people. P_DPQ is therefore NOT part of this cycle and is not opened."
+        },
+        "mapping": {
+          "config": "configs/mappings/nhanes_2015_2016_dpq.yaml",
+          "excluded_variables": [
+            "DPQ100"
+          ],
+          "rationale": "DPQ_J carries the identical DPQ variable block - SEQN, DPQ010-DPQ090, the same 0-3 categories and the same 7/9 administrative codes - so the DPQ_I mapping applies unchanged. Reusing it is what makes the comparison a replication rather than two separate analyses; only dataset_id differs.",
+          "reused_for_dpq_j": true
+        },
+        "metrics": {
+          "labelling": "every comparator quantity is AGREEMENT with a conventional estimate, never accuracy against truth",
+          "point_estimate_transfer": [
+            "pearson agreement with each comparator",
+            "rank agreement with each comparator",
+            "cronbach alpha of the item set",
+            "item discrimination summary",
+            "dimensionality diagnostics"
+          ],
+          "stability": [
+            "balanced paired split-half, per STABILITY_PROTOCOL"
+          ],
+          "uncertainty": [
+            "predicted-versus-empirical calibration, per UNCERTAINTY_PROTOCOL"
+          ]
+        },
+        "model_version": "v0.6.0-beta.1",
+        "prohibited_after_opening": [
+          "changing the mapping, any protocol parameter, the comparator set or any metric",
+          "retraining, fine-tuning, recalibrating or re-thresholding the model",
+          "pooling DPQ_J with DPQ_I",
+          "re-running the locked cycle"
+        ],
+        "replication_questions": [
+          "does strong point-estimate transfer replicate in a later population sample?",
+          "does the uncertainty mismatch (L45: conservative intervals, ratio ~2) replicate?",
+          "does the L43 non-monotonicity replicate?",
+          "does the L44 instrument-not-model conclusion replicate?"
+        ],
+        "version": "1.0"
+      }
+    },
+    "real_world_capability": {
+      "contract": {
+        "binary_group_dif": {
+          "evidence": "20 two-group reference-country contrasts on ESS7 returned zero flagged items with max |effect| 0.063-0.132 logits against a 0.20 substantive floor, stable under both size-matching and half-sample subsampling",
+          "limitation": [
+            "no_real_data_positive_control_in_ESS7"
+          ],
+          "status": "experimental",
+          "why_experimental": "a uniform null is consistent with genuine invariance AND with an insensitive head, and the ESS7 design contains no contrast with known DIF that could distinguish them. Absence of a positive control is why this is experimental rather than supported, and a SYNTHETIC positive control does not discharge it - it would establish sensitivity on the data the head was trained against, not on real data"
+        },
+        "contract_version": "3.0",
+        "model_version": "v0.6.0-beta.1",
+        "multicountry_dif": {
+          "limitation": "L46",
+          "reason": "INEXPRESSIBLE, not merely unvalidated. dif.group_code_from_settings reduces every setting to (setting > 0), so a k-group design collapses to one group against the other k-1 pooled. A many-country request returns a confident number for a contrast nobody asked for",
+          "required_decomposition": "prespecified two-group contrasts with an explicitly declared reference and focal group, each labelled with that scope",
+          "status": "not_supported"
+        },
+        "real_world_cross_sectional_point_estimation": {
+          "evidence": {
+            "countries_or_cycles": 23,
+            "datasets": [
+              "NHANES_2015_2016",
+              "NHANES_2017_2018_locked",
+              "ESS_Round_7"
+            ],
+            "instruments": [
+              "PHQ-9",
+              "CES-D8"
+            ]
+          },
+          "measured": "agreement with conventional estimators 0.92-0.94 on the two NHANES cycles and 0.97-0.998 on ESS7, no schema revision on any dataset, and 0.95-0.99 against MML-GRM in every one of the 21 ESS countries taken separately",
+          "scope": "cross-sectional only, two instrument families, one construct family (depressive symptomatology), 23 country-cycles. Agreement with conventional estimates is NOT accuracy against truth: the model and its comparators share graded-response assumptions and can be wrong together. No criterion measure has been used",
+          "status": "supported_experimental"
+        },
+        "real_world_interval_scale": {
+          "evidence": "calibration ratio (predicted width / empirical variation) median 2.19 on DPQ_I, 2.18 on DPQ_J, and 3.12-10.54 across the ESS7 masking curve - above 1 at every level of every dataset, i.e. consistently conservative. The shape failure is dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 on ESS7 under an identical measurement (L47)",
+          "limitations": {
+            "scale": "L45",
+            "shape": "L43 (dataset-dependent, see L47)"
+          },
+          "prohibited_uses": [
+            "confidence_interval",
+            "coverage_interval",
+            "literal error_bar",
+            "probability statement",
+            "threshold-based individual decision"
+          ],
+          "status": "not_calibrated",
+          "warning": "real_world_interval_scale_not_calibrated",
+          "why_the_prohibitions_follow": {
+            "confidence_interval": "a frequentist coverage guarantee was never established",
+            "coverage_interval": "nominal coverage is unvalidated; the scale error alone would break it",
+            "literal error_bar": "the width runs 2x to 10x the estimate's actual variation, so the bar drawn would not be the error",
+            "probability statement": "no probability derived from this width is warranted - the scale it would be read off IS the miscalibrated quantity",
+            "threshold-based individual decision": "misplaces every participant relative to a fixed cutoff, and on the NHANES datasets not even consistently between participants. The prohibition with direct consequences for people"
+          }
+        },
+        "real_world_relative_uncertainty": {
+          "evidence": "the uncertainty-error relationship is strongly positive WITHIN participants: median r 0.907 (DPQ_I), 0.88 (DPQ_J) and 0.861 (ESS7), positive for 100%, 100% and 98.7% of participants. Across ESS countries the model's own median relative uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is this capability doing useful work rather than merely being self-consistent",
+          "permitted_use": [
+            "ordinal_uncertainty_ranking",
+            "comparative_diagnostic"
+          ],
+          "status": "supported_experimental"
+        },
+        "set_on": "2026-08-04",
+        "supersedes": "2.0"
+      },
+      "sha256": "0692c99b57128bf8d29c25d8b86f43596af39d9f5d9b810cf565fcf77ed114eb"
+    },
+    "schema_version": "6b1-protocols-v1",
+    "stability": {
+      "protocol": {
+        "balancing": "items ordered by endorsement rate; assignment randomised within adjacent pairs",
+        "comparators": [
+          "sum_score",
+          "principal_component",
+          "mml_grm_eap"
+        ],
+        "correction": "none; correlations are uncorrected and compare methods, not absolute reliability",
+        "frozen_on": "2026-08-04",
+        "interpretation": "if every method falls similarly the loss belongs to the INSTRUMENT; if the model falls substantially further it is a MODEL-TRANSFER issue",
+        "n_splits": 60,
+        "n_splits_expensive_comparator": 30,
+        "never": [
+          "report a bare split-half number without comparators on the same splits",
+          "use an unbalanced or ordered split",
+          "infer a model defect from a single split"
+        ],
+        "paired": true,
+        "protocol_id": "balanced_paired_split_stability",
+        "reported": [
+          "per-method median, mean, sd, q10, q90 of the split-half correlation",
+          "paired difference (model minus comparator) with a 95% interval",
+          "fraction of splits on which the model is lower"
+        ],
+        "seed": 6400,
+        "version": "1.0"
+      },
+      "sha256": "2d6c20a063459ff62c85f5d8ac802547fc7f7e8bddc0630cd9bb0ecc880cb6bd"
+    },
+    "uncertainty": {
+      "protocol": {
+        "components": {
+          "calibration_ratio": "predicted / empirical. 1.0 is calibrated; below 1 is overconfident. This is the single number the protocol exists to produce",
+          "comparator_diagnostics": "the same quantities for MML graded response using its EAP posterior standard deviation, where R/mirt is available",
+          "dataset_level_uncertainty_error": "across mask levels: does mean predicted width track RMSE?",
+          "empirical_variation": "the spread of masked estimates around the full-item estimate, across repetitions at the same mask level - what the uncertainty actually is",
+          "held_out_proper_score": "log loss and Brier score on the masked items, scored from the model's own category probabilities - not a correlation, so it cannot be flattered by scale",
+          "item_prediction_degradation": "correlation between the estimate and the held-out responses, by mask level",
+          "participant_level_uncertainty_error": "within participant, across mask levels: does a wider predicted interval accompany a larger actual error?",
+          "predicted_posterior_width": "the model's own interval width per participant at each mask level"
+        },
+        "frozen_on": "2026-08-04",
+        "mask_fractions": [
+          0.0,
+          0.11,
+          0.22,
+          0.33,
+          0.44,
+          0.56,
+          0.67,
+          0.78,
+          0.89
+        ],
+        "n_repetitions": 20,
+        "nesting": "within a repetition each level removes a superset of the previous level's items",
+        "never": [
+          "summarise uncertainty behaviour with a single masking contrast",
+          "read predicted width as an error bar, under any circumstances, whether or not the calibration ratio is known - knowing the ratio is what established that the width is not an error bar, not a licence to treat it as one",
+          "recalibrate the frozen model in response to what this protocol finds"
+        ],
+        "protocol_id": "repeated_nested_mask_uncertainty",
+        "reported_per_dataset": [
+          "the full curve for every component, never endpoints",
+          "participant-level monotonicity rate alongside pooled medians",
+          "mean and median curves together",
+          "local non-monotonicity with location and magnitude",
+          "cross-sectional, trait and state uncertainty separately where applicable"
+        ],
+        "revised_on": "2026-08-04",
+        "revision": {
+          "from_version": "1.0",
+          "superseded_sha256": "the v1.0 hash is recorded in configs/model/phase6b1_protocols.v1.json and in the provenance block of every run made under it; those runs remain valid under v1.0",
+          "what_changed": "one 'never' clause only. No parameter, seed, mask fraction, component or reported quantity was touched, so no run's numbers change and no result is reinterpreted.",
+          "why": "v1.0 said 'never read predicted width as an error bar BEFORE the calibration ratio is known'. That conditional was correct when written - the ratio was unknown. It is now known, published in the same artifacts that carry this clause, and above 1 on every dataset. A reader reaching the clause today satisfies its condition and finds it grants exactly the permission the contract forbids. The prohibition is unconditional and is now written that way."
+        },
+        "seed": 6500,
+        "version": "1.1"
+      },
+      "sha256": "0db0465af37f7db6a8aa798dbf43d2c9da1ccdcbc7bda23e8afd598f655119b4"
+    }
+  },
+  "frozen_provenance": {
+    "calibration_configs": {
+      "phase5d_decision.json": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+      "phase5e1_reference.json": "2709fa550586d7342dc9637f02110111d10655fe98619afee9b67eb7084d6f12",
+      "phase5f1_selected.json": "d8cc82f790c382bcf062bdfa92a347c8a544a151e1b953d424b984b696c0076b",
+      "phase5f_fusion.json": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697"
+    },
+    "change_detector": "likelihood_ratio",
+    "change_detector_status": "conditionally_supported_experimental",
+    "change_score_is_calibrated_probability": false,
+    "dif_model_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+    "dif_operating_threshold": 0.36435567004776,
+    "input_schema_version": "6a-input-v1",
+    "interface_version": "6a-v1",
+    "linking_decision_config_sha256": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+    "linking_model_sha256": "cb43dd8a705609e1ee957100569995651d463dd8aaf33f7c1ff308807d3ebf93",
+    "longitudinal_model_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "longitudinal_status": "experimental_partial",
+    "multimodal_status": "experimental_not_adopted",
+    "multimodal_wearable_validation_claim": false,
+    "output_schema_version": "6a-output-v1"
+  },
+  "hashes": {
+    "manifest_sha256": "5bdd252b8e5b58a2612ca894c9ebb5c4b72e41142cd7fac6eaa51f60a0562935",
+    "mapping_sha256": "2e69224515b3a473768a4858ef63cab301c5e52da3504c3a9011f2617036a120"
+  },
+  "licence": "cc_by_nc_sa_4_0",
+  "milestone": "6B.2",
+  "model_version": "v0.6.0-beta.1",
+  "model_was_modified": false,
+  "nested_masking": {
+    "l43_shape": {
+      "finding": "non-monotone participant-level uncertainty under progressive masking",
+      "local_non_monotonicity": [],
+      "monotonicity_rate": 0.9796192609182531
+    },
+    "l45_scale": {
+      "calibration_ratio_by_level": [
+        null,
+        10.54194,
+        8.18638,
+        6.61733,
+        5.44368,
+        4.45993,
+        3.52899,
+        3.11977
+      ],
+      "empirical_variation_by_level": [
+        0.0,
+        0.16294,
+        0.22593,
+        0.29833,
+        0.38224,
+        0.48293,
+        0.63439,
+        1.15337
+      ],
+      "finding": "predicted width against empirical variation of the estimate",
+      "note": "Empirical variation is measured against the full-item estimate, not truth, so it understates true error and the ratio is an upper bound.",
+      "predicted_median_width_by_level": [
+        1.56777,
+        1.71772,
+        1.84953,
+        1.97412,
+        2.08081,
+        2.15382,
+        2.23875,
+        3.59824
+      ]
+    },
+    "levels": [
+      {
+        "correlation_with_full_information": 1.0,
+        "empirical_score_change_rmse": 0.0,
+        "fraction_removed": 0.0,
+        "masked_item_prediction": NaN,
+        "mean_interval_width": 1.5873609781265259,
+        "median_absolute_displacement": 0.0,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 1.5677714347839355,
+        "n_items_retained": 8
+      },
+      {
+        "correlation_with_full_information": 0.9874766769233078,
+        "empirical_score_change_rmse": 0.16294148564338684,
+        "fraction_removed": 0.125,
+        "masked_item_prediction": 0.5562902874127128,
+        "mean_interval_width": 1.7361928224563599,
+        "median_absolute_displacement": 0.09919875860214233,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 1.7177187204360962,
+        "n_items_retained": 7
+      },
+      {
+        "correlation_with_full_information": 0.9720431709487499,
+        "empirical_score_change_rmse": 0.225927472114563,
+        "fraction_removed": 0.25,
+        "masked_item_prediction": 0.6412107230896432,
+        "mean_interval_width": 1.869044542312622,
+        "median_absolute_displacement": 0.13453638553619385,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 1.8495292663574219,
+        "n_items_retained": 6
+      },
+      {
+        "correlation_with_full_information": 0.9469783865429006,
+        "empirical_score_change_rmse": 0.2983263432979584,
+        "fraction_removed": 0.375,
+        "masked_item_prediction": 0.6950484107064097,
+        "mean_interval_width": 1.9915122985839844,
+        "median_absolute_displacement": 0.16236424446105957,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 1.974122405052185,
+        "n_items_retained": 5
+      },
+      {
+        "correlation_with_full_information": 0.9100782935279187,
+        "empirical_score_change_rmse": 0.38224324584007263,
+        "fraction_removed": 0.5,
+        "masked_item_prediction": 0.6946422953908081,
+        "mean_interval_width": 2.1161491870880127,
+        "median_absolute_displacement": 0.20127660036087036,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 2.0808098316192627,
+        "n_items_retained": 4
+      },
+      {
+        "correlation_with_full_information": 0.858152761019872,
+        "empirical_score_change_rmse": 0.4829259514808655,
+        "fraction_removed": 0.625,
+        "masked_item_prediction": 0.6838588105240682,
+        "mean_interval_width": 2.1658108234405518,
+        "median_absolute_displacement": 0.28665682673454285,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 2.1538169384002686,
+        "n_items_retained": 3
+      },
+      {
+        "correlation_with_full_information": 0.7707077143419486,
+        "empirical_score_change_rmse": 0.6343902349472046,
+        "fraction_removed": 0.75,
+        "masked_item_prediction": 0.6371513893448756,
+        "mean_interval_width": 2.285106658935547,
+        "median_absolute_displacement": 0.35670143365859985,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 2.2387542724609375,
+        "n_items_retained": 2
+      },
+      {
+        "correlation_with_full_information": 0.5956720238978145,
+        "empirical_score_change_rmse": 1.1533664464950562,
+        "fraction_removed": 0.875,
+        "masked_item_prediction": 0.5026899880709349,
+        "mean_interval_width": 3.527477979660034,
+        "median_absolute_displacement": 0.7309907078742981,
+        "median_full_information_width": 1.5677714347839355,
+        "median_interval_width": 3.598235845565796,
+        "n_items_retained": 1
+      }
+    ],
+    "participant_monotonicity_rate": 0.9796192609182531,
+    "protocol": "nested masking, frozen UNCERTAINTY_PROTOCOL shape",
+    "seed": 6502,
+    "uncertainty_error_relationship": {
+      "dataset_level_correlation": 0.9791978465071361,
+      "definition": "Within each participant, across mask levels: that person's own predicted width against that person's own absolute displacement from their own full-information estimate. A positive value licenses RANKING - wider means less certain - and says nothing about the width's scale.",
+      "n_participants_evaluated": 40097,
+      "participant_level_fraction_positive": 0.9871312068234531,
+      "participant_level_median_correlation": 0.8611307761673304
+    }
+  },
+  "per_country": {
+    "AT": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.219,
+          "pearson_agreement": 0.9649879163016549,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9966736751280059,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9955380805895399,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.221,
+      "cronbach_alpha": 0.7973,
+      "hmm_seconds": 0.018,
+      "item_missingness": 0.00334,
+      "median_relative_uncertainty": 1.6340041160583496,
+      "n_participants": 1795
+    },
+    "BE": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.116,
+          "pearson_agreement": 0.9666491178495522,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.996951271025247,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9965420143620457,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.117,
+      "cronbach_alpha": 0.7974,
+      "hmm_seconds": 0.0197,
+      "item_missingness": 0.00078,
+      "median_relative_uncertainty": 1.556583285331726,
+      "n_participants": 1769
+    },
+    "CH": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.012,
+          "pearson_agreement": 0.9660115343086537,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.994625306196421,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.998579932722742,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.014,
+      "cronbach_alpha": 0.8055,
+      "hmm_seconds": 0.0223,
+      "item_missingness": 0.00073,
+      "median_relative_uncertainty": 1.703380823135376,
+      "n_participants": 1532
+    },
+    "CZ": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.425,
+          "pearson_agreement": 0.9744569387575289,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9973903468133938,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9928616707094665,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.427,
+      "cronbach_alpha": 0.8388,
+      "hmm_seconds": 0.0187,
+      "item_missingness": 0.0124,
+      "median_relative_uncertainty": 1.4271818399429321,
+      "n_participants": 2148
+    },
+    "DE": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 7.015,
+          "pearson_agreement": 0.9687712530927123,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.002,
+          "pearson_agreement": 0.9923938323364359,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9971676492040321,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 7.018,
+      "cronbach_alpha": 0.7747,
+      "hmm_seconds": 0.0313,
+      "item_missingness": 0.0025,
+      "median_relative_uncertainty": 1.3883775472640991,
+      "n_participants": 3045
+    },
+    "DK": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.715,
+          "pearson_agreement": 0.9545123637173374,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9921635987666308,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9967605175035869,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.717,
+      "cronbach_alpha": 0.7908,
+      "hmm_seconds": 0.0205,
+      "item_missingness": 0.00383,
+      "median_relative_uncertainty": 1.7049198150634766,
+      "n_participants": 1502
+    },
+    "EE": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.121,
+          "pearson_agreement": 0.9803469784434433,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9930881408775599,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.997061680452281,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.123,
+      "cronbach_alpha": 0.8177,
+      "hmm_seconds": 0.0143,
+      "item_missingness": 0.00762,
+      "median_relative_uncertainty": 1.2573307752609253,
+      "n_participants": 2051
+    },
+    "ES": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 6.31,
+          "pearson_agreement": 0.9690862777717378,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9983956109892231,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9938477059453981,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 6.311,
+      "cronbach_alpha": 0.8478,
+      "hmm_seconds": 0.0207,
+      "item_missingness": 0.00331,
+      "median_relative_uncertainty": 1.578445315361023,
+      "n_participants": 1925
+    },
+    "FI": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 6.855,
+          "pearson_agreement": 0.9593894460468373,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.002,
+          "pearson_agreement": 0.9866445154269837,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9951089136558573,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 6.858,
+      "cronbach_alpha": 0.7531,
+      "hmm_seconds": 0.0273,
+      "item_missingness": 0.00425,
+      "median_relative_uncertainty": 1.5087220668792725,
+      "n_participants": 2087
+    },
+    "FR": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 7.059,
+          "pearson_agreement": 0.9713489621895538,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9858686101202002,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9800401310532778,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 7.061,
+      "cronbach_alpha": 0.7999,
+      "hmm_seconds": 0.0311,
+      "item_missingness": 0.00183,
+      "median_relative_uncertainty": 1.5331350564956665,
+      "n_participants": 1917
+    },
+    "GB": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.693,
+          "pearson_agreement": 0.9635886057395495,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.994002108094003,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9967455784539994,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.695,
+      "cronbach_alpha": 0.8254,
+      "hmm_seconds": 0.0324,
+      "item_missingness": 0.00657,
+      "median_relative_uncertainty": 1.54690682888031,
+      "n_participants": 2264
+    },
+    "HU": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.962,
+          "pearson_agreement": 0.9845973228532073,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9948725056362288,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9895224088248465,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.963,
+      "cronbach_alpha": 0.8641,
+      "hmm_seconds": 0.0224,
+      "item_missingness": 0.00515,
+      "median_relative_uncertainty": 1.185343623161316,
+      "n_participants": 1698
+    },
+    "IE": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.645,
+          "pearson_agreement": 0.9661143496629813,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9916472885028716,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9987614554806818,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.647,
+      "cronbach_alpha": 0.8486,
+      "hmm_seconds": 0.0212,
+      "item_missingness": 0.00643,
+      "median_relative_uncertainty": 1.7070969343185425,
+      "n_participants": 2390
+    },
+    "IL": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 6.134,
+          "pearson_agreement": 0.9673748787365554,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9943990990134587,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9971807565211573,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 6.136,
+      "cronbach_alpha": 0.8164,
+      "hmm_seconds": 0.0289,
+      "item_missingness": 0.02376,
+      "median_relative_uncertainty": 1.6065080165863037,
+      "n_participants": 2562
+    },
+    "LT": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.612,
+          "pearson_agreement": 0.9898796940801041,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9901910823920501,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9901024062615456,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.613,
+      "cronbach_alpha": 0.8552,
+      "hmm_seconds": 0.0212,
+      "item_missingness": 0.017,
+      "median_relative_uncertainty": 1.017502784729004,
+      "n_participants": 2250
+    },
+    "NL": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.038,
+          "pearson_agreement": 0.9744609134294633,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9893873484944662,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9865962504142599,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.04,
+      "cronbach_alpha": 0.8199,
+      "hmm_seconds": 0.0223,
+      "item_missingness": 0.00098,
+      "median_relative_uncertainty": 1.5754929780960083,
+      "n_participants": 1919
+    },
+    "NO": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 4.885,
+          "pearson_agreement": 0.9585794703366516,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9903307910135999,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9953644605788015,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 4.886,
+      "cronbach_alpha": 0.7639,
+      "hmm_seconds": 0.013,
+      "item_missingness": 0.00252,
+      "median_relative_uncertainty": 1.6400742530822754,
+      "n_participants": 1436
+    },
+    "PL": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.022,
+          "pearson_agreement": 0.9658408739515334,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.002,
+          "pearson_agreement": 0.9949058982233255,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9961294590281675,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.025,
+      "cronbach_alpha": 0.8663,
+      "hmm_seconds": 0.0128,
+      "item_missingness": 0.01115,
+      "median_relative_uncertainty": 1.9243344068527222,
+      "n_participants": 1615
+    },
+    "PT": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.107,
+          "pearson_agreement": 0.9729219456054555,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9976315463957133,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9905229478032094,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.108,
+      "cronbach_alpha": 0.828,
+      "hmm_seconds": 0.0145,
+      "item_missingness": 0.00188,
+      "median_relative_uncertainty": 1.4878122806549072,
+      "n_participants": 1265
+    },
+    "SE": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.167,
+          "pearson_agreement": 0.9643215608050951,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9944656422509756,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9981135204156343,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.169,
+      "cronbach_alpha": 0.7946,
+      "hmm_seconds": 0.0155,
+      "item_missingness": 0.00398,
+      "median_relative_uncertainty": 1.6470504999160767,
+      "n_participants": 1791
+    },
+    "SI": {
+      "agreement": {
+        "mml_grm_eap": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 5.276,
+          "pearson_agreement": 0.9722482754578254,
+          "rank_agreement": NaN
+        },
+        "principal_component": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.001,
+          "pearson_agreement": 0.9883324200539708,
+          "rank_agreement": NaN
+        },
+        "sum_score": {
+          "available": true,
+          "converged": true,
+          "fit_seconds": 0.0,
+          "pearson_agreement": 0.9965108988163008,
+          "rank_agreement": NaN
+        }
+      },
+      "comparator_seconds": 5.278,
+      "cronbach_alpha": 0.8367,
+      "hmm_seconds": 0.0133,
+      "item_missingness": 0.00858,
+      "median_relative_uncertainty": 1.4888548851013184,
+      "n_participants": 1224
+    }
+  },
+  "pooled": {
+    "capability": "psychometric_1d",
+    "dimensionality": {
+      "assignment_capability": "item_assignment",
+      "assignment_status": "supported",
+      "dimensionality": {
+        "assignment_entropy": 0.15052804350852966,
+        "dimensionality_ambiguous": true,
+        "gate": 0.6894073486328125,
+        "inter_slot_correlation": 0.5754278302192688,
+        "inter_slot_correlation_disattenuated": 0.8624190025820551,
+        "loglik_gain_from_slot2": 0.05781221389770508,
+        "loglik_gate_closed": -1.1060731410980225,
+        "loglik_gate_open": -1.0482609272003174,
+        "predicted_two_dimensional": false,
+        "slot1_mass": 0.7130593657493591,
+        "slot2_mass": 0.28694063425064087,
+        "slot_reliability_1": 0.598692774772644,
+        "slot_reliability_2": 0.7436029314994812
+      },
+      "item_assignment": [
+        [
+          0.9425297379493713,
+          0.057470303028821945
+        ],
+        [
+          0.9658766984939575,
+          0.03412334993481636
+        ],
+        [
+          0.9594787955284119,
+          0.04052123427391052
+        ],
+        [
+          0.0019596079364418983,
+          0.9980403780937195
+        ],
+        [
+          0.9169163107872009,
+          0.08308368176221848
+        ],
+        [
+          0.0023408138658851385,
+          0.9976592063903809
+        ],
+        [
+          0.9499029517173767,
+          0.05009710416197777
+        ],
+        [
+          0.9654701352119446,
+          0.03452983498573303
+        ]
+      ],
+      "multidimensional_capability": "multidimensional",
+      "multidimensional_dimensionality": {
+        "assignment_entropy": 0.15052804350852966,
+        "dimensionality_ambiguous": true,
+        "gate": 0.6894073486328125,
+        "inter_slot_correlation": 0.5754278302192688,
+        "inter_slot_correlation_disattenuated": 0.8624190025820551,
+        "loglik_gain_from_slot2": 0.05781221389770508,
+        "loglik_gate_closed": -1.1060731410980225,
+        "loglik_gate_open": -1.0482609272003174,
+        "predicted_two_dimensional": false,
+        "slot1_mass": 0.7130593657493591,
+        "slot2_mass": 0.28694063425064087,
+        "slot_reliability_1": 0.598692774772644,
+        "slot_reliability_2": 0.7436029314994812
+      },
+      "multidimensional_status": "supported"
+    },
+    "hmm_seconds": 0.5583,
+    "n_scored": 40185,
+    "relative_uncertainty": {
+      "contract": "relative ranking and diagnostics only; not a confidence interval, coverage interval, error bar, probability statement, or threshold input",
+      "iqr_width": [
+        0.4678797721862793,
+        0.49051785469055176
+      ],
+      "median_width": 0.4765552580356598,
+      "ranking_status": "supported_experimental",
+      "scale_status": "not_calibrated"
+    },
+    "route": [
+      "waves=1"
+    ],
+    "score_summary": {
+      "max": 4.532569408416748,
+      "mean": -0.29886579513549805,
+      "min": -1.5832915306091309,
+      "sd": 0.9079275727272034
+    },
+    "status": "supported",
+    "suppressed": {},
+    "warnings": [
+      "real_world_interval_scale_not_calibrated"
+    ]
+  },
+  "pooled_agreement": {
+    "mml_grm_eap": {
+      "available": true,
+      "fit_seconds": 11.134,
+      "pearson_agreement": 0.9695707829131581,
+      "rank_agreement": 0.9705198286762478
+    },
+    "principal_component": {
+      "available": true,
+      "fit_seconds": 0.029,
+      "pearson_agreement": 0.9955496947274267,
+      "rank_agreement": 0.9956187632137186
+    },
+    "sum_score": {
+      "available": true,
+      "fit_seconds": 0.007,
+      "pearson_agreement": 0.9978625659992336,
+      "rank_agreement": 0.9921444949230335
+    }
+  },
+  "pooled_cronbach_alpha": 0.8251,
+  "required_citation": "European Social Survey European Research Infrastructure (ESS ERIC). ESS Round 7 (2014) Integrated File, edition 2.3 [Data set]. Sikt - Norwegian Agency for Shared Services in Education and Research, Norway. doi:10.21338/NSD-ESS7-2014.",
+  "role": "new_instrument_multicountry_validation",
+  "stability": {
+    "interval_note": "The 95% interval is an ordinary sampling interval for a paired difference in split-half correlations across splits. It is NOT a model posterior width and the real-world uncertainty contract does not govern it.",
+    "n_splits": 60,
+    "paired_differences": {
+      "principal_component": {
+        "hmm_lower_in_fraction_of_splits": 0.55,
+        "mean_difference_hmm_minus_comparator": -0.0008206508977479803,
+        "median_difference": -0.0009232091456633507,
+        "n_paired_splits": 60,
+        "sampling_interval_95": [
+          -0.0015837512179964503,
+          -5.7550577499510306e-05
+        ]
+      },
+      "sum_score": {
+        "hmm_lower_in_fraction_of_splits": 0.3,
+        "mean_difference_hmm_minus_comparator": 0.0002114178199261648,
+        "median_difference": 0.0017395238551509151,
+        "n_paired_splits": 60,
+        "sampling_interval_95": [
+          -0.0006234298918576043,
+          0.001046265531709934
+        ]
+      }
+    },
+    "per_split": [
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265026,
+        "principal_component": 0.7519058286589992,
+        "split": 0,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997797,
+        "split": 1,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 2,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617163,
+        "split": 3,
+        "sum_score": 0.7483166757966071
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571196,
+        "principal_component": 0.7538897860811804,
+        "split": 4,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.05134338573248698,
+        "hmm": 0.7509402087093598,
+        "principal_component": 0.7617417598015334,
+        "split": 5,
+        "sum_score": 0.7585414232074493
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571197,
+        "principal_component": 0.7538897860811804,
+        "split": 6,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 7,
+        "sum_score": 0.7250469222888658
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 8,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997797,
+        "split": 9,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 10,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 11,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 12,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265026,
+        "principal_component": 0.7519058286589992,
+        "split": 13,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 14,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 15,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 16,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265027,
+        "principal_component": 0.7519058286589994,
+        "split": 17,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571197,
+        "principal_component": 0.7538897860811804,
+        "split": 18,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 19,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571197,
+        "principal_component": 0.7538897860811804,
+        "split": 20,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 21,
+        "sum_score": 0.7250469222888657
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 22,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 23,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997797,
+        "split": 24,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.05134338573248698,
+        "hmm": 0.75094020870936,
+        "principal_component": 0.7617417598015334,
+        "split": 25,
+        "sum_score": 0.7585414232074493
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617163,
+        "split": 26,
+        "sum_score": 0.7483166757966071
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 27,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 28,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 29,
+        "sum_score": 0.7250469222888658
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 30,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571196,
+        "principal_component": 0.7538897860811804,
+        "split": 31,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 32,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265026,
+        "principal_component": 0.7519058286589992,
+        "split": 33,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 34,
+        "sum_score": 0.7250469222888657
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571196,
+        "principal_component": 0.7538897860811804,
+        "split": 35,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997798,
+        "split": 36,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 37,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 38,
+        "sum_score": 0.7250469222888658
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997798,
+        "split": 39,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571196,
+        "principal_component": 0.7538897860811804,
+        "split": 40,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 41,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 42,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617163,
+        "split": 43,
+        "sum_score": 0.7483166757966071
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571196,
+        "principal_component": 0.7538897860811804,
+        "split": 44,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265027,
+        "principal_component": 0.7519058286589994,
+        "split": 45,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.041761623364920286,
+        "hmm": 0.7540199871571197,
+        "principal_component": 0.7538897860811804,
+        "split": 46,
+        "sum_score": 0.7522804633019687
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997797,
+        "split": 47,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 48,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.03425501662505459,
+        "hmm": 0.7412369454290604,
+        "principal_component": 0.7430993786997798,
+        "split": 49,
+        "sum_score": 0.7401111993643332
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 50,
+        "sum_score": 0.7250469222888658
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 51,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 52,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265027,
+        "principal_component": 0.7519058286589994,
+        "split": 53,
+        "sum_score": 0.7503648262801127
+      },
+      {
+        "endorsement_gap": 0.027074602946049797,
+        "hmm": 0.750960744019183,
+        "principal_component": 0.7483869879617162,
+        "split": 54,
+        "sum_score": 0.7483166757966072
+      },
+      {
+        "endorsement_gap": 0.009986233838616965,
+        "hmm": 0.7210838346634252,
+        "principal_component": 0.7237438386102311,
+        "split": 55,
+        "sum_score": 0.7250469222888657
+      },
+      {
+        "endorsement_gap": 0.05134338573248698,
+        "hmm": 0.75094020870936,
+        "principal_component": 0.7617417598015334,
+        "split": 56,
+        "sum_score": 0.7585414232074493
+      },
+      {
+        "endorsement_gap": 0.017492840578483104,
+        "hmm": 0.728991462766809,
+        "principal_component": 0.7299146719124724,
+        "split": 57,
+        "sum_score": 0.732952436238822
+      },
+      {
+        "endorsement_gap": 0.043836778992621284,
+        "hmm": 0.7587832576387872,
+        "principal_component": 0.761286319687348,
+        "split": 58,
+        "sum_score": 0.756438169336098
+      },
+      {
+        "endorsement_gap": 0.019567996206183658,
+        "hmm": 0.7537272148265027,
+        "principal_component": 0.7519058286589994,
+        "split": 59,
+        "sum_score": 0.7503648262801127
+      }
+    ],
+    "protocol": "balanced_paired_split_stability",
+    "seed": 6400,
+    "summary": {
+      "hmm": {
+        "mean": 0.7452350403738476,
+        "median": 0.750960744019183,
+        "n_splits": 60,
+        "q10": 0.7210838346634252,
+        "q90": 0.7587832576387872,
+        "sd": 0.012537800630921617
+      },
+      "principal_component": {
+        "mean": 0.7460556912715955,
+        "median": 0.7483869879617162,
+        "n_splits": 60,
+        "q10": 0.7237438386102311,
+        "q90": 0.761286319687348,
+        "sd": 0.012298926108740033
+      },
+      "sum_score": {
+        "mean": 0.7450236225539214,
+        "median": 0.7483166757966072,
+        "n_splits": 60,
+        "q10": 0.7250469222888658,
+        "q90": 0.756438169336098,
+        "sd": 0.010417597582261842
+      }
+    }
+  },
+  "timings": {
+    "comparator_pooled_seconds": 11.173,
+    "hmm_pooled_seconds": 0.5583,
+    "speedup_versus_comparators": 20.0,
+    "workflow_seconds": 189.31
+  },
+  "uncertainty_contract": {
+    "interval_scale": {
+      "evidence": "calibration ratio (predicted width / empirical variation) median 2.19 on DPQ_I, 2.18 on DPQ_J, and 3.12-10.54 across the ESS7 masking curve - above 1 at every level of every dataset, i.e. consistently conservative. The shape failure is dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 on ESS7 under an identical measurement (L47)",
+      "limitations": {
+        "scale": "L45",
+        "shape": "L43 (dataset-dependent, see L47)"
+      },
+      "prohibited_uses": [
+        "confidence_interval",
+        "coverage_interval",
+        "literal error_bar",
+        "probability statement",
+        "threshold-based individual decision"
+      ],
+      "status": "not_calibrated",
+      "warning": "real_world_interval_scale_not_calibrated",
+      "why_the_prohibitions_follow": {
+        "confidence_interval": "a frequentist coverage guarantee was never established",
+        "coverage_interval": "nominal coverage is unvalidated; the scale error alone would break it",
+        "literal error_bar": "the width runs 2x to 10x the estimate's actual variation, so the bar drawn would not be the error",
+        "probability statement": "no probability derived from this width is warranted - the scale it would be read off IS the miscalibrated quantity",
+        "threshold-based individual decision": "misplaces every participant relative to a fixed cutoff, and on the NHANES datasets not even consistently between participants. The prohibition with direct consequences for people"
+      }
+    },
+    "relative_uncertainty": {
+      "evidence": "the uncertainty-error relationship is strongly positive WITHIN participants: median r 0.907 (DPQ_I), 0.88 (DPQ_J) and 0.861 (ESS7), positive for 100%, 100% and 98.7% of participants. Across ESS countries the model's own median relative uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is this capability doing useful work rather than merely being self-consistent",
+      "permitted_use": [
+        "ordinal_uncertainty_ranking",
+        "comparative_diagnostic"
+      ],
+      "status": "supported_experimental"
+    }
+  }
+}

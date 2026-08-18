@@ -1,0 +1,18 @@
+{
+  "proper": {
+    "a_bias": -0.18823842568159668,
+    "a_correlation": 0.9440008698552071,
+    "b_rmse": 0.264085371845963,
+    "order_violations": 0,
+    "person_r": 0.936972440114114,
+    "reconstruction": -1.0769358277320862
+  },
+  "reference": {
+    "a_bias": 0.021564773260363417,
+    "a_correlation": 0.9524002333321167,
+    "b_rmse": 0.21867330777210225,
+    "order_violations": 0,
+    "person_r": 0.9372021189712197,
+    "reconstruction": -1.0440579652786255
+  }
+}

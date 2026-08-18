@@ -1,0 +1,123 @@
+{
+  "adjudication": {
+    "all_or_nothing": true,
+    "checks": {
+      "every_factor_r_at_least": true,
+      "median_r_at_least": true,
+      "no_nan_agreement": true,
+      "no_phi_collapse": true,
+      "no_variance_degeneracy": true,
+      "phi_max_diff_at_most": false,
+      "phi_mean_diff_at_most": false,
+      "phi_positive_definite": true,
+      "uncertainty_directionality_negative_every_factor": true
+    },
+    "gates_applied": {
+      "median_r": 0.93,
+      "per_factor_r": 0.9,
+      "phi_collapse_ceiling": 0.95,
+      "phi_max": 0.2,
+      "phi_mean": 0.12,
+      "variance_floor": 0.0001
+    },
+    "verdict": "REPLICATION_FAIL",
+    "verdict_language": "any gate fails. The claim closes as: zero-shot transfer agrees closely with fitted confirmatory models on development data, but replication at the prespecified operating point on an independent instrument has not been established. The model is not tuned against the replication dataset afterward; any further attempt requires a new charter, a new dataset, and disclosure of this failure."
+  },
+  "aggregates_only": true,
+  "artifact": "D9B_REPLICATION_REPORT",
+  "charter": "D9B",
+  "charter_sha256": "f081792933155abb1f455938e70bb3f37f7994e2a7e518548acc0792aedffd16",
+  "comparator": {
+    "converged": true,
+    "error": null,
+    "fit_seconds": 211.2,
+    "retried": false
+  },
+  "disclosure_rule": "every tabulated count below 10 is suppressed as '<10'",
+  "elapsed_seconds": 383.9,
+  "factor_agreement": {
+    "agreeableness": {
+      "model_sd_quantiles": {
+        "q05": 0.4892,
+        "q25": 0.4919,
+        "q50": 0.5032,
+        "q75": 0.5165,
+        "q95": 0.5306
+      },
+      "pearson_model_vs_mirt": 0.946
+    },
+    "conscientiousness": {
+      "model_sd_quantiles": {
+        "q05": 0.5806,
+        "q25": 0.5829,
+        "q50": 0.5901,
+        "q75": 0.5968,
+        "q95": 0.6054
+      },
+      "pearson_model_vs_mirt": 0.9241
+    },
+    "extraversion": {
+      "model_sd_quantiles": {
+        "q05": 0.489,
+        "q25": 0.4923,
+        "q50": 0.5006,
+        "q75": 0.5146,
+        "q95": 0.545
+      },
+      "pearson_model_vs_mirt": 0.9447
+    },
+    "neuroticism": {
+      "model_sd_quantiles": {
+        "q05": 0.7272,
+        "q25": 0.7297,
+        "q50": 0.7355,
+        "q75": 0.7494,
+        "q95": 0.7813
+      },
+      "pearson_model_vs_mirt": 0.9747
+    },
+    "openness": {
+      "model_sd_quantiles": {
+        "q05": 0.5226,
+        "q25": 0.5237,
+        "q50": 0.5303,
+        "q75": 0.544,
+        "q95": 0.5751
+      },
+      "pearson_model_vs_mirt": 0.9735
+    }
+  },
+  "gates_sha256": "3de3c8520b917439d4c80bfa2431549082ccc7ac0bdbfd7abff57dba325d6d40",
+  "median_pearson_model_vs_mirt": 0.946,
+  "model_state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+  "phi_agreement": {
+    "max_abs_off_diagonal_difference": 0.2271,
+    "mean_abs_off_diagonal_difference": 0.1333,
+    "model_phi_pd": true,
+    "model_phi_shrink_weight": 1.0
+  },
+  "runtime_descriptive": {
+    "model_inference_seconds_full_sample": 0.042
+  },
+  "sample": {
+    "n_excluded_fewer_than_2_observed": 982,
+    "n_included": 2595,
+    "n_records_total": 3577,
+    "observed_items_quantiles": {
+      "q05": 24.0,
+      "q25": 25.0,
+      "q50": 25.0,
+      "q75": 25.0,
+      "q95": 25.0
+    }
+  },
+  "uncertainty_behavior": {
+    "spearman_sd_vs_items_answered_by_factor": {
+      "agreeableness": -0.0833,
+      "conscientiousness": -0.0733,
+      "extraversion": -0.0746,
+      "neuroticism": -0.0732,
+      "openness": -0.1313
+    }
+  }
+}

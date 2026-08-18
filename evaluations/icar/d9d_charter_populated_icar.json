@@ -1,0 +1,93 @@
+{
+  "charter": "D9D",
+  "artifact": "D9D_CHARTER_POPULATED_ICAR",
+  "title": "Cross-Domain Real-Data Score Transfer - ICAR-16 Cognitive Ability",
+  "status": "FROZEN_AND_APPROVED - single locked execution approved by the project owner on 2026-08-07; no METER or MIRT outcome had been computed at approval time",
+  "date_populated": "2026-08-07",
+  "amendment_1_provenance_clarification": {
+    "date": "2026-08-07",
+    "authorized_by": "project owner, as part of the approval; no change to the sample rule, item set, factor map, model, comparator, gates, adequacy routing, or verdict language",
+    "clarification": "the ICAR-16 administration subgroup is RECONSTRUCTED from the exact 16-item response pattern because no form indicator is distributed with the data; its validity is independently supported by the exact n=4,574 match to the published Sample-Test administration group"
+  },
+  "supersedes": "configs/model/d9d_charter_draft_icar.json (design draft, preserved)",
+  "scientific_question": "Can the same frozen METER model reproduce separately fitted multidimensional factor scores on a COGNITIVE ability battery - the ICAR-16 with its four documented item domains - a construct domain entirely outside personality and quality of life?",
+  "dataset": {
+    "distribution": "Selected ICAR data from the SAPA-Project (Condon & Revelle), item responses collected 2010-08-18 through 2013-05-20 via SAPA random-subset administration",
+    "provenance": "published data paper: Condon & Revelle, 'Selected ICAR Data from the SAPA-Project: Development and Initial Validation of a Public-Domain Measure', Journal of Open Psychology Data (10.5334/jopd.25); deposit doi:10.7910/DVN/AD9RVY (Harvard Dataverse, 2015-09-23)",
+    "licence": {
+      "determination": "CC0 1.0 Public Domain Dedication - stated in the published data paper for this exact deposit; recorded ONCE per the standing governance rule; no AI-use, redistribution or commercial-use restriction exists under CC0",
+      "external_consistency": "the paper describes ~97,000 respondents and 60 items (9 LN, 11 MR, 16 VR, 24 R3D) collected 18aug2010-20may2013 - all three match this file's census exactly (N=96,958; identical item-type counts; the filename's date range)"
+    },
+    "file_hashes_sha256": {
+      "data/public/ICAR/sapaICARData18aug2010thru20may2013.csv": {"sha256": "27b22368434e94278d4cfee238770339f8e90da6229ef9ffd95900c4972426e5", "bytes": 18796756}
+    },
+    "file_immutability": "the downloaded CSV is never modified; the runner binds to the hash and byte size (snapshot-binding guard); accompanying documentation is EXTERNAL (no codebook ships with the CSV): the psychTools ability/iqitems documentation and the published papers serve as the instrument documentation of record",
+    "role_predeclaration": "cross-domain score-transfer evaluation - single role, single run, evaluated once"
+  },
+  "item_mapping": {
+    "instrument": "ICAR-16 Sample Test (International Cognitive Ability Resource; Condon & Revelle 2014, Intelligence 46:52-64)",
+    "verification": "DOUBLY verified, never from memory: (1) the published key in the psychTools 'ability'/'iqitems' documentation lists the sample test as reasoning 4/16/17/19, letters 7/33/34/58, matrix 45/46/47/55, rotate 3/4/6/8 with the four lower-order factors named; (2) the dataset's own administration structure shows exactly ONE high-frequency intact 16-item pattern (n=4,574 among 12,600 distinct 16-item patterns) and it is precisely this set with 4/4/4/4 domain composition. Both verifications agree 16/16.",
+    "k": 4,
+    "factors": {
+      "letter_number_series": {"items": ["LN.07", "LN.33", "LN.34", "LN.58"]},
+      "matrix_reasoning": {"items": ["MR.45", "MR.46", "MR.47", "MR.55"]},
+      "verbal_reasoning": {"items": ["VR.04", "VR.16", "VR.17", "VR.19"]},
+      "three_d_rotation": {"items": ["R3D.03", "R3D.04", "R3D.06", "R3D.08"]}
+    },
+    "items_per_factor": [4, 4, 4, 4],
+    "coding": "items arrive PRE-SCORED dichotomous: 0 incorrect, 1 correct (verified within the subgroup: value set exactly {0,1}); canonical categories 0..1; 2 response categories, inside METER's trained support (2-6); no recode direction exists for correct/incorrect items",
+    "missing": "'NA' cells -> missing; within the analytic subgroup no missing item exists by construction (see sample definition)",
+    "factor_labels_order_frozen": ["letter_number_series", "matrix_reasoning", "verbal_reasoning", "three_d_rotation"]
+  },
+  "sample_definition": {
+    "population_total_n": 96958,
+    "administration_design": "SAPA random subsets of the 60-item pool; the distribution carries NO form/administration variable, so administered-but-skipped items are indistinguishable from unadministered items",
+    "documented_icar16_administration_n": "not separately documented in the distribution; identified structurally as below",
+    "inclusion_rule_frozen": "a respondent is in the analytic subgroup if and only if their ANSWERED item set is EXACTLY the 16-item ICAR-16 Sample Test set - the unique high-frequency intact pattern. 'Any 16 observed responses' is explicitly REJECTED as the rule: 37,036 respondents have 16 answered items but all except this pattern are random draws (12,599 other distinct 16-item patterns).",
+    "analytic_subgroup_n": 4574,
+    "minimum_n_precondition": "PASSED: 4,574 >= the pre-frozen 500 floor",
+    "ambiguous_exclusions": "1,084 respondents answered a nonempty PROPER subset of the ICAR-16 set; they may be form-takers with skips or random-draw respondents - unidentifiable without an administration variable - and are excluded BY DESIGN, recorded here prospectively",
+    "sparse_boundary": "the subgroup is dense by construction (all 16 items answered by every included respondent), honoring the sparse-unsupported boundary; every partial administration is excluded",
+    "weights": "unweighted; gender/age columns are not read"
+  },
+  "model": {
+    "state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+    "rule": "the bit-identical M8B METER model, reproduced from frozen seeds and hash-asserted; no retraining, no calibration, no ICAR-specific fitting of any kind; K=4 and 2 categories inside trained support; 4 items per factor is a recorded transfer condition",
+    "phi_status": "Phi is descriptive only, remains NOT SUPPORTED, and cannot become supported through D9D"
+  },
+  "comparator": {
+    "specification": "the frozen confirmatory mirt specification at K=4 (pairwise COV, graded itemtype - dichotomous fits as 2-category graded, i.e. 2PL - QMCEM, NCYCLES 2000 TOL 1e-4, one MHRM retry then recorded nonconvergence, EAP with QMC, NA full-information), fitted to the identical scored 16-item matrix of the analytic subgroup",
+    "timeout": "3600 s under the repaired whole-tree enforcement"
+  },
+  "comparator_adequacy_routing_rule": {
+    "frozen_prospectively": true,
+    "rule": "nonconvergence OR an inadmissible/non-distinguishable comparator solution routes MECHANICALLY to D9D_NOT_EVALUABLE - never to scientific FAIL",
+    "inadmissible_defined_numerically": [
+      "nonconvergence under the frozen specification (one MHRM retry included)",
+      "any comparator factor-correlation |value| >= 0.95 (a live risk for g-saturated cognitive domains, named prospectively)",
+      "comparator factor-correlation matrix not positive definite",
+      "any comparator factor with EAP score variance below 1e-4"
+    ],
+    "prohibited_responses": "no item substitution, no domain merging, no residual correlations, no mapping change, no bifactor rescue, no alternative ICAR form - before or after outcomes"
+  },
+  "guards": {
+    "snapshot_binding": "execution binds to the hashed CSV exactly (sha256 + byte size); any change to the file is a refusal, never a re-hash",
+    "deterministic_alignment": "no permutation exists (factor k vs factor k, both anchored to the frozen mapping); each side's factor signs aligned INDEPENDENTLY against that side's own proportion-correct composites; flips recorded; gate correlations SIGNED, computed after alignment; no absolute value in the gate path"
+  },
+  "gates": {
+    "rule": "ALL-OR-NOTHING at the frozen criteria; pure adjudication function pinned by test before the run; no 'close enough', no domain-specific exception, no post-outcome gate change",
+    "primary": {
+      "per_factor_pearson_model_vs_mirt_at_least": 0.90,
+      "median_pearson_model_vs_mirt_at_least": 0.93,
+      "no_collapse_nan_degeneracy": "the D9B numeric definitions: no model |Phi_ij| >= 0.95, no factor score variance below 1e-4, no NaN agreement"
+    },
+    "descriptive_not_gated": ["Phi agreement", "uncertainty directionality", "runtime"],
+    "verdicts_pre_frozen": {
+      "D9D_PASS": "every primary gate passes: METER's factor scores transfer to a cognitive ability battery, reproducing separately fitted confirmatory scores on the intact ICAR-16 administration subgroup at the prespecified operating point - with all prior scope disclosures carried in the record.",
+      "D9D_FAIL": "any primary gate fails: cross-domain score transfer to cognitive ability at the prespecified operating point is not established; the supported claim remains scoped as before; the model is not tuned against ICAR afterward.",
+      "D9D_NOT_EVALUABLE": "the comparator-adequacy routing rule fired; no claim either way; re-charter required."
+    }
+  },
+  "orchestrator_boundary": "rows read by code only; aggregates only; every tabulated count below 10 suppressed as '<10'; no participant-level value in prompts, logs, reports or commits (the counts and value-set facts recorded above are administration-structure aggregates, not outcomes)",
+  "stop_condition": "no METER-MIRT agreement outcome is computed until this charter is explicitly approved"
+}

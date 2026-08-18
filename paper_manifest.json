@@ -1,0 +1,107 @@
+{
+  "manifest": "METER_NMI_PAPER_REPRODUCIBILITY_MANIFEST",
+  "paper": "Pretrained psychometric inference transfers across instruments and populations (Nature Machine Intelligence submission; focused revision)",
+  "package_version": "0.1.0",
+  "source_state": {
+    "research_commit": "9ba3ea1",
+    "freeze_tags": [
+      "METER_PRE_SHARE_FREEZE",
+      "METER_FOUNDATIONAL_EVIDENCE_FREEZE",
+      "meter-prefiling-p4b-router-pass"
+    ],
+    "model_release": "v0.6.0-beta.1",
+    "capability_contract_version": "3.5",
+    "capability_contract_sha256": "47903adbe6a8a9068957df008d289d0054fb9a4ee955e3cd332c3f48cbf4739d"
+  },
+  "models": [
+    {
+      "id": "meter-1d-paper",
+      "canonical_name": "M-score (single-construct scoring module)",
+      "module": "LongitudinalAmortizedGrm (single-wave mode via the frozen integrated interface)",
+      "parameters": 42899,
+      "training_world_family": "longitudinal-family worlds: 150-300 respondents, 6-14 items, 2-6 waves, 4/5/7 categories; 150 pretraining / 24 validation worlds",
+      "frozen": "2026-08-03 (M5E acceptance)",
+      "checkpoint": "checkpoints/phase5e-arm5_combined.pt",
+      "state_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+      "checkpoint_format": "state-only re-serialization of the frozen research checkpoint (training history stripped); the frozen identity is the state digest, which is unchanged",
+      "paper_results": [
+        "Table 1: NHANES 2017-18 PHQ-9 (r = 0.9371)",
+        "Table 1: ESS round 7 CES-D-8, 21 countries (pooled 0.9696)",
+        "Table 1: SHARE wave 9 EURO-D, 28 countries (pooled 0.9851)",
+        "Table 1: SHARE wave 8 EURO-D, 27 countries (pooled 0.9847)",
+        "Table 1: SAPA scale-wise sparse scoring (0.9672-0.9842)",
+        "Extended Data: NHANES 2015-16 development cycle (0.9330)"
+      ]
+    },
+    {
+      "id": "meter-multidim-paper",
+      "canonical_name": "M-struct (structure-conditioned multidimensional module)",
+      "module": "KnownStructureGrm (supplied item-to-factor structure)",
+      "parameters": 30986,
+      "training_world_family": "battery worlds: 400-2,000 respondents, K=3-5 supplied factors, 2/4/6 categories; frozen seed 8100",
+      "frozen": "2026-08-06 (M8 gate freeze)",
+      "checkpoint": "checkpoints/mapped_known_structure_seed8100.pt",
+      "state_sha256": "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4",
+      "checkpoint_format": "materialised once via the frozen seed-8100 reproduction procedure in the research repository and hash-asserted against the D9B/D9E charter pin before saving",
+      "paper_results": [
+        "Table 1: MIDUS Refresher Big Five (0.9241-0.9747; factor-correlation gates failed)",
+        "Table 1: IPIP-50 cross-instrument transfer (0.9596-0.9839, median 0.9791)",
+        "Table 1: ICAR-16 cross-domain FAIL (0.8610-0.9439, median 0.9023)",
+        "Extended Data: MIDUS 1 development cohort (0.9048-0.9807)",
+        "Methods: M8B synthetic confirmatory support (K=3-5 dense)"
+      ]
+    },
+    {
+      "id": "meter-1d-synthetic-m4",
+      "canonical_name": "M-ref (one-dimensional reference core)",
+      "module": "AmortizedGrm (Phase 3 reference core)",
+      "parameters": 31051,
+      "training_world_family": "one-dimensional ordinal worlds: 200 pretraining / 40 validation / 40 unseen evaluation, disjoint seed regions",
+      "frozen": "2026-08-02 (Phase 3C calibration adoption)",
+      "checkpoint": "checkpoints/phase3-stage2-arm1_beta05.pt",
+      "state_sha256": "0d571638a8eb29f64fc0202a67d72620faf2b7ec1229670bc977ab643bac36a4",
+      "checkpoint_format": "state-only re-serialization; state digest unchanged",
+      "paper_results": [
+        "Results: synthetic recovery, 40 unseen worlds (median r = 0.9388 vs specialist 0.9438)",
+        "Methods (Uncertainty): coverage 0.8288 -> 0.9479 under the checkpoint-specific multiplicative correction"
+      ]
+    }
+  ],
+  "router_evidence": {
+    "figure": "Fig. 4",
+    "artifacts": [
+      "derived_results/p4b/p4b_fully_wired_capability_router.json",
+      "derived_results/p4b/p4b_fresh_challenge.json",
+      "derived_results/p4b/p4b_rerun_original_p4.json",
+      "derived_results/p4b/p4b_numerical_nonregression.json",
+      "derived_results/p4b/p4b_router_closeout_protocol.json"
+    ],
+    "reported": {
+      "fresh_challenge_false_accepts": "0/63",
+      "fresh_challenge_false_refusals": "0/41",
+      "original_p4_rerun": "FA 0 and FR 0 on all five axes (before: 80/120, 120/120, 80/80, 80/80, 0/40)",
+      "supported_fixtures_bit_identical": "9/9",
+      "exact_fallback_probes": "16/16 exact"
+    },
+    "verifier": "tests/test_router_replay.py replays the supplied-structure and category-ceiling decisions executably from the recorded design descriptors; full tensor-level re-execution requires the research repository (reviewer-only)"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.1",
+    "torch": "2.13.0+cpu",
+    "scipy": "1.18.0",
+    "R": "4.6.1",
+    "mirt": "1.46.1",
+    "note": "versions recorded in the frozen SHARE analysis pins; comparator scripts require R + mirt, the METER scoring path requires only python/numpy/torch"
+  },
+  "weights_release_gate": {
+    "policy": "DATA_GOVERNANCE rule 9: no trained weights are released until a memorisation/privacy-leakage evaluation is recorded",
+    "status": "checkpoint files are staged in this candidate for reviewer access; hashes are public regardless; all three states were trained exclusively on synthetic worlds and frozen before any real dataset was opened",
+    "manuscript_alignment": "the paper's availability statement promises exactly this gating (hashes public, weights after the evaluation)"
+  },
+  "supported_outputs": [
+    "unidimensional person scores and ordinal-only uncertainty (frozen 5E pathway)",
+    "supplied-structure factor scores and ordinal-only uncertainty (frozen mapped pathway; Phi only under declared-synthetic provenance)",
+    "refusals with named withheld outputs for out-of-support requests (contract 3.5 routing)"
+  ]
+}

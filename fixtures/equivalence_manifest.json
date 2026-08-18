@@ -1,0 +1,99 @@
+{
+  "_frozen_provenance": {
+    "calibration_configs": {
+      "phase5d_decision.json": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+      "phase5e1_reference.json": "2709fa550586d7342dc9637f02110111d10655fe98619afee9b67eb7084d6f12",
+      "phase5f1_selected.json": "d8cc82f790c382bcf062bdfa92a347c8a544a151e1b953d424b984b696c0076b",
+      "phase5f_fusion.json": "79be56fab6522393677abf4ee4558a169e9aa76a1b40574ce2ed2a06d513d697"
+    },
+    "change_detector": "likelihood_ratio",
+    "change_detector_status": "conditionally_supported_experimental",
+    "change_score_is_calibrated_probability": false,
+    "dif_model_sha256": "cdd81044ba37b2106c678b949cc00999fa77818e1d0b03cf43facb71e1714d92",
+    "dif_operating_threshold": 0.36435567004776,
+    "input_schema_version": "6a-input-v1",
+    "interface_version": "6a-v1",
+    "linking_decision_config_sha256": "2ce5d43a2404af1c7ed8c6d754e1578029920457d59267ae5f11764d8aa255ab",
+    "linking_model_sha256": "cb43dd8a705609e1ee957100569995651d463dd8aaf33f7c1ff308807d3ebf93",
+    "longitudinal_model_sha256": "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb606a0a630397fc8",
+    "longitudinal_status": "experimental_partial",
+    "multimodal_status": "experimental_not_adopted",
+    "multimodal_wearable_validation_claim": false,
+    "output_schema_version": "6a-output-v1"
+  },
+  "_provenance": {
+    "generated_by": "tools/generate_fixtures_from_frozen.py",
+    "meter_version": "0.9.0rc1",
+    "stack": "research release/meter via ingestion.cli._load_models"
+  },
+  "_rng_note": {
+    "generator": "numpy default_rng, quantile-binned Gaussian draws",
+    "seed_base": 20260818
+  },
+  "fixture_1d": {
+    "capability": "psychometric_1d",
+    "scores_sha256_float64": "db31285a095dcbba152654675319df50455c9649f54e58fb8f5f8d6ea8732075",
+    "scores_shape": [
+      40
+    ],
+    "status": "supported",
+    "structure": null,
+    "suppressed": [],
+    "warnings": [],
+    "widths_sha256_float64": "3e11ec442484e0c68ebd3034193d4d56431ece4dfc1bad0f3b59809ea4bfaeaa"
+  },
+  "fixture_1d_binary": {
+    "capability": "psychometric_1d",
+    "scores_sha256_float64": "b1322722e518dc77dbddf14912db8eca18b46b03bfec8d00c5a7ce37f8ac56b7",
+    "scores_shape": [
+      30
+    ],
+    "status": "supported",
+    "structure": null,
+    "suppressed": [],
+    "warnings": [],
+    "widths_sha256_float64": "fca89076521bb48d86b4175d4928e8529b380b70c5e96bce73bbb6ad587a6265"
+  },
+  "fixture_1d_negative_encoding": {
+    "capability": "psychometric_1d",
+    "scores_sha256_float64": "db31285a095dcbba152654675319df50455c9649f54e58fb8f5f8d6ea8732075",
+    "scores_shape": [
+      40
+    ],
+    "status": "supported",
+    "structure": null,
+    "suppressed": [],
+    "warnings": [],
+    "widths_sha256_float64": "3e11ec442484e0c68ebd3034193d4d56431ece4dfc1bad0f3b59809ea4bfaeaa"
+  },
+  "fixture_multidim_k3": {
+    "capability": "known_structure_multidimensional_3_5",
+    "phi_sha256_float64": "b85acaa403f25aeb348a3cacc5fe0d9d1755d0a1ea1651be0e32c76f7930c7b0",
+    "scores_sha256_float64": "ced014a86df0858b5852438d10d1ffb03da0275af9f4cca4dad1af039560ea4e",
+    "scores_shape": [
+      60,
+      3
+    ],
+    "status": "supported_experimental",
+    "structure": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "suppressed": [],
+    "warnings": [],
+    "widths_sha256_float64": "cf917f4e9ea337fdf7510250a2e12e257349f7b82bd07672ccbb51208e2cf64e"
+  }
+}
