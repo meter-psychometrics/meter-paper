@@ -1,0 +1,3 @@
+# Byte-stability is load-bearing: artifact and bundle files are verified
+# by raw SHA-256 at load/test time, so git must never rewrite line endings.
+* -text

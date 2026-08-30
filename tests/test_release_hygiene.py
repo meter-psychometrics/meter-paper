@@ -84,6 +84,8 @@ def _package_files():
             continue
         if "__pycache__" in path.parts or ".pytest_cache" in path.parts:
             continue
+        if ".git" in path.parts:  # repository metadata, not package content
+            continue
         yield path
 
 
