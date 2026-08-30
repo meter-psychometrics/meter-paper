@@ -32,6 +32,7 @@
   },
   "fixture_1d": {
     "capability": "psychometric_1d",
+    "reliability_sha256_float64": "4edda3a1cef4609ff9820ae8781e9d1057a011fda48ef9bb3a8e742bd62b247a",
     "scores_sha256_float64": "db31285a095dcbba152654675319df50455c9649f54e58fb8f5f8d6ea8732075",
     "scores_shape": [
       40
@@ -39,11 +40,11 @@
     "status": "supported",
     "structure": null,
     "suppressed": [],
-    "warnings": [],
-    "widths_sha256_float64": "3e11ec442484e0c68ebd3034193d4d56431ece4dfc1bad0f3b59809ea4bfaeaa"
+    "warnings": []
   },
   "fixture_1d_binary": {
     "capability": "psychometric_1d",
+    "reliability_sha256_float64": "e8346caf551442a93fcc1c4cc95404ab05cc6e19d2043d3288acbbac0a8e8b4b",
     "scores_sha256_float64": "b1322722e518dc77dbddf14912db8eca18b46b03bfec8d00c5a7ce37f8ac56b7",
     "scores_shape": [
       30
@@ -51,11 +52,11 @@
     "status": "supported",
     "structure": null,
     "suppressed": [],
-    "warnings": [],
-    "widths_sha256_float64": "fca89076521bb48d86b4175d4928e8529b380b70c5e96bce73bbb6ad587a6265"
+    "warnings": []
   },
   "fixture_1d_negative_encoding": {
     "capability": "psychometric_1d",
+    "reliability_sha256_float64": "4edda3a1cef4609ff9820ae8781e9d1057a011fda48ef9bb3a8e742bd62b247a",
     "scores_sha256_float64": "db31285a095dcbba152654675319df50455c9649f54e58fb8f5f8d6ea8732075",
     "scores_shape": [
       40
@@ -63,12 +64,12 @@
     "status": "supported",
     "structure": null,
     "suppressed": [],
-    "warnings": [],
-    "widths_sha256_float64": "3e11ec442484e0c68ebd3034193d4d56431ece4dfc1bad0f3b59809ea4bfaeaa"
+    "warnings": []
   },
   "fixture_multidim_k3": {
     "capability": "known_structure_multidimensional_3_5",
     "phi_sha256_float64": "b85acaa403f25aeb348a3cacc5fe0d9d1755d0a1ea1651be0e32c76f7930c7b0",
+    "reliability_sha256_float64": "2c52eab0287924b69ba35865718cd6e5ff11af97115c1fb31e3578cec954486c",
     "scores_sha256_float64": "ced014a86df0858b5852438d10d1ffb03da0275af9f4cca4dad1af039560ea4e",
     "scores_shape": [
       60,
@@ -93,7 +94,6 @@
       2
     ],
     "suppressed": [],
-    "warnings": [],
-    "widths_sha256_float64": "cf917f4e9ea337fdf7510250a2e12e257349f7b82bd07672ccbb51208e2cf64e"
+    "warnings": []
   }
 }

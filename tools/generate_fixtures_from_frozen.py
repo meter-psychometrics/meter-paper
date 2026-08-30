@@ -19,13 +19,18 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 
 import numpy as np
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-RESEARCH_ROOT = PACKAGE_ROOT.parents[0]  # the research worktree root
+#: The research checkout carrying the CANONICAL frozen stack at the pinned
+#: contract version (v3.6). Defaults to the enclosing research worktree;
+#: METER_FIXTURE_STACK overrides it when the canonical v3.6 stack lives in a
+#: different checkout.
+RESEARCH_ROOT = Path(os.environ.get("METER_FIXTURE_STACK", PACKAGE_ROOT.parents[0]))
 FIXTURES = PACKAGE_ROOT / "fixtures"
 
 
@@ -95,15 +100,18 @@ def main() -> None:
         )
         assert not result.refused, f"{name} unexpectedly refused: {result.refusal_reason}"
         scores = np.asarray(result.scores, dtype=np.float64)
-        widths = np.asarray(result.uncertainty.values, dtype=np.float64)
+        # v3.6 (P5 EXIT_2): the released reliability values are within-result
+        # midrank percentiles of the withheld posterior widths. The fixture
+        # records the RELEASED values; raw widths never leave the stack.
+        reliability = np.asarray(result.relative_reliability.values, dtype=np.float64)
         arrays[f"{name}__scores"] = scores
-        arrays[f"{name}__widths"] = widths
+        arrays[f"{name}__reliability"] = reliability
         manifest[name] = {
             "structure": spec["structure"],
             "capability": result.capability,
             "status": result.status,
             "scores_sha256_float64": _digest(scores),
-            "widths_sha256_float64": _digest(widths),
+            "reliability_sha256_float64": _digest(reliability),
             "scores_shape": list(scores.shape),
             "warnings": list(result.warnings),
             "suppressed": sorted(result.suppressed),

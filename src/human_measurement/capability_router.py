@@ -60,7 +60,9 @@ ROUTER_VERSION = "p4b-capability-router-v1"
 
 #: The contract this router enforces. Asserted against the frozen protocol
 #: block at import sites that carry the contract, recorded on every decision.
-CONTRACT_VERSION = "3.5"
+#: 3.6 is the P5 EXIT_2 relabel revision: text-only in the uncertainty
+#: entries; no router predicate, boundary or status changed.
+CONTRACT_VERSION = "3.6"
 
 #: Frozen envelope constants. Each cites the record it is read from; none is
 #: chosen here.

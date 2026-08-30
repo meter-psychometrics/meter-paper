@@ -47,7 +47,10 @@ def test_unidimensional_outputs_bit_identical():
     for name in ("fixture_1d", "fixture_1d_negative_encoding", "fixture_1d_binary"):
         result = _score(name, arrays, manifest)
         assert _digest(result.scores) == manifest[name]["scores_sha256_float64"], name
-        assert _digest(result.uncertainty.values) == manifest[name]["widths_sha256_float64"], name
+        assert (
+            _digest(result.relative_reliability.values)
+            == manifest[name]["reliability_sha256_float64"]
+        ), name
         assert np.array_equal(
             np.asarray(result.scores, dtype=np.float64), arrays[f"{name}__scores"]
         ), name
@@ -58,7 +61,10 @@ def test_supplied_structure_outputs_bit_identical():
     name = "fixture_multidim_k3"
     result = _score(name, arrays, manifest)
     assert _digest(result.scores) == manifest[name]["scores_sha256_float64"]
-    assert _digest(result.uncertainty.values) == manifest[name]["widths_sha256_float64"]
+    assert (
+        _digest(result.relative_reliability.values)
+        == manifest[name]["reliability_sha256_float64"]
+    )
     phi = result.diagnostics["factor_correlation_phi"]
     assert _digest(phi) == manifest[name]["phi_sha256_float64"]
 

@@ -46,8 +46,9 @@ def main() -> None:
     result = model.score(matrix, metadata={"data_provenance": "synthetic"})
     print(f"\n1D scores: shape {result.scores.shape}, "
           f"first three {np.round(result.scores[:3], 4)}")
-    print(f"uncertainty is {result.uncertainty.scale}-only "
-          f"(permitted: {', '.join(result.uncertainty.permitted_uses)})")
+    reliability = result.relative_reliability
+    print(f"reliability output is the {reliability.label} ({reliability.scale}-only; "
+          f"permitted: {', '.join(reliability.permitted_uses)})")
 
     # 2) the weights did not move
     before = state_digest(api._models()["longitudinal"])

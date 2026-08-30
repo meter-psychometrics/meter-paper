@@ -246,10 +246,19 @@ ANALYSIS_FREEZE: dict[str, Any] = {
 #: not_established entry that records the two-dataset negative evidence.
 #: Conservative adjudication: no unrelated boundary moved; the
 #: cross-sectional entry gains SHARE evidence without a status upgrade.
+#: v3.6 (2026-08-18) applies the P5 preregistered EXIT_2_RELABEL, owner-
+#: authorized: the truth-referenced synthetic calibration study (P5, 400
+#: held-out worlds) failed its conditional-coverage band in 10 of 12
+#: prespecified strata, so the prespecified default exit fired - the
+#: uncertainty output is released as a RELATIVE RELIABILITY INDICATOR and the
+#: posterior standard deviation is withheld from the released public
+#: interface. TEXT-ONLY revision: no status changed, no permitted or
+#: prohibited use changed, no numerical output of the frozen model changed,
+#: and no calibration multiplier is applied at runtime.
 REAL_WORLD_CAPABILITY: dict[str, Any] = {
-    "contract_version": "3.5",
-    "set_on": "2026-08-11",
-    "supersedes": "3.4 (which superseded 3.3, 3.2, 3.1, 3.0, 2.0)",
+    "contract_version": "3.6",
+    "set_on": "2026-08-18",
+    "supersedes": "3.5 (which superseded 3.4, 3.3, 3.2, 3.1, 3.0, 2.0)",
     "model_version": "v0.6.0-beta.1",
     "real_world_cross_sectional_point_estimation": {
         "status": "supported_experimental",
@@ -281,6 +290,7 @@ REAL_WORLD_CAPABILITY: dict[str, Any] = {
     },
     "real_world_relative_uncertainty": {
         "status": "supported_experimental",
+        "public_label": "relative reliability indicator",
         "permitted_use": [
             "ordinal_uncertainty_ranking",
             "comparative_diagnostic",
@@ -291,6 +301,17 @@ REAL_WORLD_CAPABILITY: dict[str, Any] = {
             "and 98.7% of participants. Across ESS countries the model's own median relative "
             "uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is "
             "this capability doing useful work rather than merely being self-consistent"
+        ),
+        "exit_2_relabel": (
+            "v3.6: the P5 preregistered exit rule selected EXIT_2_RELABEL (conditional "
+            "coverage outside the prespecified band in 10 of 12 strata), so this output is "
+            "released under the public label 'relative reliability indicator' and the "
+            "posterior standard deviation is withheld from the released public interface: "
+            "release/meter exposes scale-free within-result midrank percentiles of the "
+            "withheld widths, supporting exactly the two permitted ordinal uses and nothing "
+            "scale-dependent. The underlying posterior standard deviation is preserved "
+            "internally for computation and provenance. No numerical output of the frozen "
+            "model changed and no calibration multiplier is applied at runtime"
         ),
     },
     "real_world_interval_scale": {
@@ -309,6 +330,20 @@ REAL_WORLD_CAPABILITY: dict[str, Any] = {
             "level of every dataset, i.e. consistently conservative. The shape failure is "
             "dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 "
             "on ESS7 under an identical measurement (L47)"
+        ),
+        "truth_referenced_calibration_study": (
+            "P5 (preregistered, 400 held-out synthetic worlds with known truth, seed region "
+            "disjoint from all training and prior evaluation): empirical coverage of the "
+            "nominal 0.95 interval ranged 0.785-0.983 across the 12 prespecified design "
+            "strata and fell outside the prespecified [0.93, 0.97] acceptance band in 10 of "
+            "12, with directionally different calibration requirements across response "
+            "formats - binary widths too narrow, 5- and 7-category widths too wide. A single "
+            "global scalar calibration is therefore not supported across the prespecified P5 "
+            "strata, and per the preregistered rule exit 1 (fit a calibration map) is closed "
+            "and exit 2 (relabel) was applied. This is not a claim that calibration is "
+            "impossible: the current flagship width is not absolutely calibrated, and a "
+            "future stratum-conditional calibration system would constitute a separate "
+            "capability requiring separate validation"
         ),
         "why_the_prohibitions_follow": {
             "confidence_interval": "a frequentist coverage guarantee was never established",

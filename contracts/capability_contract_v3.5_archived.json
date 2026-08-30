@@ -1,0 +1,210 @@
+{
+  "record": {
+    "battery_structure_discovery_1_to_5": {
+      "evidence": "four smoke runs (8d7f044, 4f3999a, 1dc6ef0, 4aead8c) each produced a single-column factor-count confusion matrix - every world reported as one factor - with balanced count accuracy 0.200 and item-clustering ARI 0.158, unchanged through gate-schedule repair, exact Poisson-binomial cardinality supervision, and slot-conditioned gate decoupling that verifiably removed the gate coupling (pairwise correlation 0.992+ down to 0.13-0.82). The DEVELOPMENT fit improved across all four runs while structure never appeared",
+      "mechanism": "the trained one-sample ELBO attenuates the likelihood's gate signal ~24x while parsimony is unattenuated, leaving every optional gate's optimum interior and below the activation threshold; see the exact gate-override audit (c2a6eee) and docs/milestone_7_closure.md",
+      "milestone": "7 (closed 2026-08-06)",
+      "prohibited_uses": [
+        "reporting an automatically discovered factor count as a finding",
+        "citing any Milestone 8 known-structure result as evidence for this capability"
+      ],
+      "real_data_status": "none_established",
+      "reopening": "docs/milestone_7_closure.md section 4 binds the starting point: count-weight recalibration under the frozen f8c9b70 procedure and the Stage A zero-gradient window are the pre-registered untried candidates",
+      "status": "experimental_out_of_support"
+    },
+    "binary_group_dif": {
+      "evidence": "20 two-group reference-country contrasts on ESS7 returned zero flagged items with max |effect| 0.063-0.132 logits against a 0.20 substantive floor, stable under both size-matching and half-sample subsampling",
+      "limitation": [
+        "no_real_data_positive_control_in_ESS7"
+      ],
+      "status": "experimental",
+      "why_experimental": "a uniform null is consistent with genuine invariance AND with an insensitive head, and the ESS7 design contains no contrast with known DIF that could distinguish them. Absence of a positive control is why this is experimental rather than supported, and a SYNTHETIC positive control does not discharge it - it would establish sensitivity on the data the head was trained against, not on real data"
+    },
+    "contract_version": "3.5",
+    "controlled_noise_conflict_person_mismatch_rejection": {
+      "evidence": "at the calibrated Candidate-7 operating point: pure-noise (s1) and conflict (s4) rejection 1.0 with bit-exact fallback at every information level in both the native and T=1 regimes (G3/G4a); seeded between-person permutation rejection 1.0 with genuine same-construct admission 0.972-0.979 (G5). Held across the whole C1-C7 candidate chain and on the fresh calibration regions",
+      "milestone": "10B (synthetic only)",
+      "scope": "SYNTHETIC worlds only, the frozen M10B family set; real-data counterpart is the M10A rejection result above",
+      "status": "supported"
+    },
+    "exact_psychometric_fallback": {
+      "evidence": "every rejection returns the psychometric-only posterior bit-for-bit: M10A real data at all four information levels; M10B c7cal 2,577 rejections plus whole-modality-absence and person-absence probes, all exact (G6)",
+      "milestone": "10A (real data) and 10B (synthetic)",
+      "status": "supported"
+    },
+    "external_multinational_1d_zero_shot_transfer": {
+      "evidence": "first PASS under a numeric pre-registered external gate (GATE_SA, the 6B.5 Gate A thresholds 0.95/0.95/0.94 imported unchanged): wave 9 pooled METER-vs-specialist pearson 0.9851 (participant bootstrap [0.9849, 0.9854]), midrank spearman 0.9896, n=66,812, 28/28 countries evaluable, median country agreement 0.9842, worst 0.9674; wave 8 temporal replication executed exactly as frozen: 0.9847 (lo 0.9844), rho 0.9886, n=51,732, 27/27 countries, worst 0.9607. Zero-shot: no dataset-specific METER fitting of any kind",
+      "milestone": "SHARE-A (charter frozen 2418ffd; executed 2026-08-11)",
+      "prohibited_uses": [
+        "describing wave 8 as an independent or participant-independent replication",
+        "generalizing beyond short 1D distress instruments or to any capability the charter did not test"
+      ],
+      "scope": "frozen 1D scoring of short binary-scored distress instruments (EURO-D), cross-sectional, interviewer-administered, 27-28 European countries + Israel. The wave-8 result is a TEMPORAL/WAVE replication on an overlapping panel (38,071 shared persons of 51,732) - robustness across administrations and time, NOT an independent-cohort replication, per the charter terminology lock. Household-couple dependence disclosed; clustered sensitivity interval concordant",
+      "status": "supported"
+    },
+    "incremental_multimodal_utility": {
+      "evidence": "Candidate 6 met the sparse-utility requirement (G1 5/9 median delta_r 0.0254 dev / 0.0267 fresh, bar 0.02) but failed precision-tail honesty (5 G7b exceedances at every fresh grid point against an allowed count of 4). Candidate 7 repaired the identified precision defect (zero exceedances everywhere measured) but failed the frozen G1 5/9 utility requirement (0.0165 on the development region), replicated on an independent fresh region (0.0172). No measured operating point holds both sides of the contract. The shortfall is not harm: no-harm passes, admission is unchanged, and every paired per-world change is <= 0 - the mechanism shrinks fusion it cannot price honestly at T=1 sparsity",
+      "limitation": [
+        "L52",
+        "L53"
+      ],
+      "milestone": "10B (closed 2026-08-10, ratified; commit 7a28241)",
+      "prohibited_uses": [
+        "citing the precision-honesty demonstration as utility evidence",
+        "citing Candidate 6's utility pass without its precision-tail failure"
+      ],
+      "scope": "the tested M10B architecture and operating region ONLY - the frozen 5E anchor, the M-6/M-6b defence family, the frozen family set and bars. Not evidence about other architectures, mechanisms, regimes, or bars, and not to be generalized",
+      "status": "not_established"
+    },
+    "longitudinal_binary_change_detection": {
+      "evidence": "sensitivity 0.041, specificity 0.997, false-positive rate 0.0032, precision 0.400 pooled over 164 worlds; permanent 0.051 and temporary 0.021 against the same unchanged pool. Detection exceeds 0.3 only above three stationary standard deviations of realized change",
+      "informative_when": "realized change exceeds ~3 stationary SDs",
+      "limitation": [
+        "L48",
+        "L50"
+      ],
+      "prohibited_uses": [
+        "reading a null result as evidence that no change occurred",
+        "reading the continuous change score as a magnitude - attenuated 8-14x"
+      ],
+      "real_data_status": "none_established",
+      "status": "experimental"
+    },
+    "longitudinal_enforcement": {
+      "applied_by": "human_measurement.integrated._apply_longitudinal_boundaries",
+      "closes": "L50 at the interface; the underlying insensitivity is unchanged",
+      "enforced_at": "human_measurement.longitudinal_design",
+      "fail_safe": "a longitudinal request with no design descriptor, or with routing-relevant metadata absent, is routed as OUT of support. An undescribed design is not thereby a supported one",
+      "milestone": "6B.2.3",
+      "warnings": [
+        "longitudinal_design_out_of_validated_support",
+        "longitudinal_trait_share_binary_bias",
+        "continuous_change_magnitude_attenuated",
+        "longitudinal_design_metadata_incomplete",
+        "longitudinal_trait_may_absorb_state_variance"
+      ]
+    },
+    "longitudinal_state": {
+      "evidence": "state recovery r 0.63 at OU decay per wave below 0.05, 0.53 at 0.3-0.6, 0.29 at 0.6-0.85 and 0.05 above 0.85 - weakly identified exactly where the state is persistent relative to the observation schedule",
+      "informative_when": "decay per wave below ~0.6",
+      "limitation": [
+        "L49"
+      ],
+      "not_informative_when": "decay above 0.85; a biennial schedule with realistic symptom persistence sits at r ~ 0.29",
+      "real_data_status": "none_established",
+      "status": "experimental"
+    },
+    "longitudinal_trait": {
+      "evidence": "trait recovery r 0.75-0.94 across all 164 audited synthetic designs, including 2-wave (0.71); degrades gracefully with fewer waves, lower trait share and fewer response categories rather than failing",
+      "informative_when": "broadly, across every audited design",
+      "limitation": [
+        "L49"
+      ],
+      "real_data_status": "none_established",
+      "status": "experimental"
+    },
+    "longitudinal_trait_share": {
+      "evidence": "estimated trait share exceeds the true share in every audited cell, by +0.032 to +0.685. Worst where the true trait share is low (+0.685 at 0.25) and where items are binary (+0.378 at 2 categories against -0.015 at 5). Insensitive to wave count and spacing, so more waves do not fix it",
+      "limitation": [
+        "L49"
+      ],
+      "prohibited_uses": [
+        "variance decomposition reported without the measured bias"
+      ],
+      "real_data_status": "none_established",
+      "status": "not_calibrated"
+    },
+    "model_version": "v0.6.0-beta.1",
+    "multicountry_dif": {
+      "limitation": "L46",
+      "reason": "INEXPRESSIBLE, not merely unvalidated. dif.group_code_from_settings reduces every setting to (setting > 0), so a k-group design collapses to one group against the other k-1 pooled. A many-country request returns a confident number for a contrast nobody asked for",
+      "required_decomposition": "prespecified two-group contrasts with an explicitly declared reference and focal group, each labelled with that scope",
+      "status": "not_supported"
+    },
+    "multimodal_precision_honesty_conservative_mechanism": {
+      "evidence": "under frozen Amendments 9-11: G7b exceedance count ZERO at all 8 calibration grid points on the fresh region (allowed K(n)=4) and at the calibrated point on the development region (allowed K(n)=8), with G7a median RPI 0.977-0.988 against bounds at 1.000-1.001. Candidate 6, without the mechanism, showed 5 exceedances at every fresh grid point. The mechanism is a monotone conservative UCB ceiling deflation of claimed auxiliary precision where T=1 separation cannot be certified; it never loosens a claim",
+      "milestone": "10B Candidate 7 (final conservative mechanism, M-6b)",
+      "scope": "demonstrated within the tested M10B architecture and operating region only; this is a property of the final mechanism on the measured families, not a general warranty of honest precision",
+      "status": "demonstrated"
+    },
+    "real_world_cross_sectional_point_estimation": {
+      "evidence": {
+        "countries_or_cycles": 78,
+        "datasets": [
+          "NHANES_2015_2016",
+          "NHANES_2017_2018_locked",
+          "ESS_Round_7",
+          "SHARE_Release_9_wave9_locked",
+          "SHARE_Release_9_wave8_locked_replication"
+        ],
+        "instruments": [
+          "PHQ-9",
+          "CES-D8",
+          "EURO-D"
+        ]
+      },
+      "measured": "agreement with conventional estimators 0.92-0.94 on the two NHANES cycles and 0.97-0.998 on ESS7, no schema revision on any dataset, and 0.95-0.99 against MML-GRM in every one of the 21 ESS countries taken separately; SHARE Release 9.0.0 (v3.5): pooled METER-vs-MML-GRM 0.9851 over 66,812 persons in 28 countries (wave 9) and 0.9847 over 51,732 in 27 countries (wave 8), per-country range 0.961-0.990, zero countries excluded",
+      "scope": "cross-sectional only, two instrument families, one construct family (depressive symptomatology), 23 country-cycles. Agreement with conventional estimates is NOT accuracy against truth: the model and its comparators share graded-response assumptions and can be wrong together. No criterion measure has been used",
+      "status": "supported_experimental"
+    },
+    "real_world_interval_scale": {
+      "evidence": "calibration ratio (predicted width / empirical variation) median 2.19 on DPQ_I, 2.18 on DPQ_J, and 3.12-10.54 across the ESS7 masking curve - above 1 at every level of every dataset, i.e. consistently conservative. The shape failure is dataset-dependent: monotonicity 0.10 and 0.08 on the NHANES cycles against 0.98 on ESS7 under an identical measurement (L47)",
+      "limitations": {
+        "scale": "L45",
+        "shape": "L43 (dataset-dependent, see L47)"
+      },
+      "prohibited_uses": [
+        "confidence_interval",
+        "coverage_interval",
+        "literal error_bar",
+        "probability statement",
+        "threshold-based individual decision"
+      ],
+      "status": "not_calibrated",
+      "warning": "real_world_interval_scale_not_calibrated",
+      "why_the_prohibitions_follow": {
+        "confidence_interval": "a frequentist coverage guarantee was never established",
+        "coverage_interval": "nominal coverage is unvalidated; the scale error alone would break it",
+        "literal error_bar": "the width runs 2x to 10x the estimate's actual variation, so the bar drawn would not be the error",
+        "probability statement": "no probability derived from this width is warranted - the scale it would be read off IS the miscalibrated quantity",
+        "threshold-based individual decision": "misplaces every participant relative to a fixed cutoff, and on the NHANES datasets not even consistently between participants. The prohibition with direct consequences for people"
+      }
+    },
+    "real_world_longitudinal_prospective_noninferiority": {
+      "evidence": "TWO independent frozen locked replications now fail the same pre-registered noninferiority gate on the raw-sum arm: ELSA CES-D8 (delta lower bounds -0.0237/-0.0236 vs -0.02) and SHARE EURO-D (primary arm n=20,132: -0.0236; sensitivity arm n=8,913: -0.0243; replicated at -0.0237/-0.0233) - same direction, same magnitude, across instrument, dataset, and 27+ countries. The vs-specialist (MML random intercept) noninferiority PASSED on SHARE (-0.0088/-0.0093) and every guardrail passed on both datasets: convergence with the specialist 0.987 (SHARE Gate A), stability spread 0.0007, missingness robustness intact",
+      "interpretation": "for predicting a held-out future outcome from sparse longitudinal input, the raw-sum person mean retains a small (~0.01-0.02 r) advantage that the frozen -0.02 margin does not tolerate. METER's longitudinal scores converge with the specialist model; the shortfall is specific to prospective prediction against the simplest baseline. This is a characterized boundary, replicated twice, not sampling noise",
+      "milestone": "SHARE-B (charter frozen 2418ffd; executed 2026-08-11) + 6B.5 ELSA",
+      "prohibited_uses": [
+        "claiming METER longitudinal scores are noninferior to raw sums for prospective prediction",
+        "presenting the passing convergence guardrail as a supported longitudinal utility claim"
+      ],
+      "status": "not_established"
+    },
+    "real_world_multimodal_utility": {
+      "evidence": "M10A utility gates U1/U2/U4 failed: the single locked real-data run rejected the wearable modality at every level, so no real-world fusion utility was observed; and the M10B synthetic closure removes the synthetic basis on which a real-world utility claim would have been staged. The M10B real-data holdouts (H2/H3) are permanently unopened under the ratified closure",
+      "milestone": "10A (permanent) and 10B (H2/H3 permanently unopened)",
+      "scope": "one wearable modality, one construct, one dataset tested; no real-world multimodal utility claim of any kind is supported",
+      "status": "not_established"
+    },
+    "real_world_relative_uncertainty": {
+      "evidence": "the uncertainty-error relationship is strongly positive WITHIN participants: median r 0.907 (DPQ_I), 0.88 (DPQ_J) and 0.861 (ESS7), positive for 100%, 100% and 98.7% of participants. Across ESS countries the model's own median relative uncertainty predicts where it agrees least with MML-GRM at r = -0.803, which is this capability doing useful work rather than merely being self-consistent",
+      "permitted_use": [
+        "ordinal_uncertainty_ranking",
+        "comparative_diagnostic"
+      ],
+      "status": "supported_experimental"
+    },
+    "real_world_safe_modality_rejection_and_fallback": {
+      "evidence": "single locked NHANES 2005-2006 run (N=3,024, T=1): the wearable modality was rejected at every information level (gate snapped to 0 at 9/9 through 3/9) with bit-exact psychometric fallback everywhere (delta_r 0.0, relative precision inflation 1.0, median displacement 0.0); safety gates S1-S4 all held and the negative controls were rejected. All nine evaluability preconditions passed, so this is a scientific outcome, not a technical escape",
+      "limitation": [
+        "L52"
+      ],
+      "milestone": "10A (closed 2026-08-08, permanent)",
+      "scope": "one wearable modality, one construct (depressive symptomatology), one cycle, T=1. Rejection safety is what is supported - not that rejection was the correct scientific verdict on the modality (L52: the gate's own admission evidence degrades with the psychometric anchor)",
+      "status": "supported"
+    },
+    "set_on": "2026-08-11",
+    "supersedes": "3.4 (which superseded 3.3, 3.2, 3.1, 3.0, 2.0)"
+  },
+  "record_sha256": "47903adbe6a8a9068957df008d289d0054fb9a4ee955e3cd332c3f48cbf4739d"
+}

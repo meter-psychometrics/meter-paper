@@ -26,7 +26,7 @@ from meter_reference.api import (
     MAPPED_MODEL_STATE_SHA256,
     MODEL_VERSION,
     MeterResult,
-    OrdinalUncertainty,
+    RelativeReliabilityIndicator,
     capability_support_map,
     score,
 )
@@ -41,7 +41,7 @@ __all__ = [
     "MAPPED_MODEL_STATE_SHA256",
     "MODEL_VERSION",
     "MeterResult",
-    "OrdinalUncertainty",
+    "RelativeReliabilityIndicator",
     "PaperModel",
     "capability_support_map",
     "load_model",

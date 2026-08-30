@@ -65,9 +65,14 @@ for all real-data unidimensional scoring.
 
 Checkpoint identity is enforced twice: file hashes in
 `checkpoints/CHECKSUMS.sha256` and the frozen STATE digests asserted inside
-every loader (`paper_manifest.json` records both). The uncertainty output is
-usable ordinally only; its interval scale is not calibrated on real data, and
-that warning travels with every result.
+every loader (`paper_manifest.json` records both). The reliability output is
+released as a **relative reliability indicator** (capability contract v3.6,
+the preregistered P5 EXIT_2 relabel): within-result midrank percentiles of
+the withheld posterior widths, usable ordinally only and never comparable
+across separate calls; the interval scale is not calibrated on real data,
+and that warning travels with every result. Versioned contract records live
+in `contracts/` (v3.6 active, v3.5 archived; the frozen Fig. 4 router
+evidence was executed under v3.5 and records that hash).
 
 ## What is absent
 

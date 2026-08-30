@@ -3,7 +3,7 @@
 A thin, gated wrapper over the frozen ``human_measurement`` inference stack.
 Nothing here trains, fits, recalibrates, or modifies a threshold: every number
 is produced by the frozen model (``v0.6.0-beta.1``, state ``224a701b...``,
-capability contract v3.5), and this layer decides only whether a request is
+capability contract v3.6), and this layer decides only whether a request is
 inside the validated support region, refusing or flagging it when it is not.
 
 The load-bearing rule, inherited from the frozen interface, is **suppression**:
@@ -25,8 +25,10 @@ What is flagged rather than refused:
 
 * cognition-like construct declarations (cross-domain cognitive transfer is
   NOT ESTABLISHED; D9D permanent FAIL);
-* any uncertainty output (ordinal use only; the interval scale is NOT
-  calibrated on real data - L45).
+* any reliability output (released as a RELATIVE RELIABILITY INDICATOR,
+  ordinal use only; the interval scale is NOT calibrated on real data - L45 -
+  and per the P5 preregistered EXIT_2 the posterior standard deviation is
+  withheld from this public interface).
 
 What is never exposed here at all:
 
@@ -61,8 +63,9 @@ FROZEN_MODEL_STATE_SHA256 = "224a701b8f6981e1e3eeeb64426a9bc8ab0122d7780bb74bb60
 MAPPED_MODEL_STATE_SHA256 = "8d42752009e49694def7c5dfbd77b328c28e337e85c67274058ec111dd2cf7b4"
 
 #: The capability contract this release is pinned to. `score` refuses to run
-#: against any other contract version.
-CAPABILITY_CONTRACT_VERSION = "3.5"
+#: against any other contract version. 3.6 is the P5 EXIT_2 relabel revision
+#: (text-only: no status, boundary or numerical output changed).
+CAPABILITY_CONTRACT_VERSION = "3.6"
 
 MODEL_VERSION = "v0.6.0-beta.1"
 
@@ -74,15 +77,24 @@ FREEZE_TAGS = (
 #: Verbatim warning identifier from the frozen inference (L45).
 INTERVAL_SCALE_WARNING = "real_world_interval_scale_not_calibrated"
 
-#: The human-readable half of the L45 warning, attached to every uncertainty
+#: The human-readable half of the L45 warning, attached to every reliability
 #: output this API returns.
-ORDINAL_ONLY_EXPLANATION = (
-    "Uncertainty values are usable ORDINALLY only: wider genuinely means less "
-    "certain (within-participant uncertainty-error r 0.86-0.91 across three "
-    "real datasets), but the SCALE is not calibrated - predicted widths ran "
-    "2x to 10x the empirical variation on real data (L45). Prohibited uses: "
-    "confidence intervals, coverage intervals, literal error bars, "
-    "probability statements, and threshold-based individual decisions."
+RELATIVE_RELIABILITY_EXPLANATION = (
+    "These values are a RELATIVE RELIABILITY INDICATOR, usable ORDINALLY "
+    "only: a higher value genuinely means less reliable (within-participant "
+    "uncertainty-error r 0.86-0.91 across three real datasets), but no "
+    "absolute magnitude is claimed. The underlying interval scale is not "
+    "calibrated - predicted widths ran 2x to 10x the empirical variation on "
+    "real data (L45), and the preregistered truth-referenced P5 study found "
+    "conditional coverage outside its acceptance band in 10 of 12 design "
+    "strata with directionally different miscalibration across response "
+    "formats, so no single global scalar correction is supported. Per the "
+    "P5 EXIT_2 rule the posterior standard deviation is withheld from this "
+    "interface; the values are within-result midrank percentiles of the "
+    "withheld widths and are not comparable across separate calls. "
+    "Prohibited uses: confidence intervals, coverage intervals, literal "
+    "error bars, probability statements, and threshold-based individual "
+    "decisions."
 )
 
 #: The largest number of supplied factors the frozen backbone expresses.
@@ -112,19 +124,25 @@ _VALID_PROVENANCE = ("synthetic", "real", "undeclared")
 
 
 @dataclass(frozen=True)
-class OrdinalUncertainty:
-    """An uncertainty output that carries its own usage contract.
+class RelativeReliabilityIndicator:
+    """The model's reliability output, released under the P5 EXIT_2 relabel.
 
-    ``values`` are the frozen model's posterior widths. They are informative
-    as an ORDERING and nothing else; the interval scale is not calibrated on
-    real data (L45), and the warning travels with the values so it cannot be
+    The posterior standard deviation is WITHHELD from this public interface
+    (P5 preregistered EXIT_2; it is preserved internally, unmodified, for
+    computation and provenance). ``values`` are scale-free midrank
+    percentiles in (0, 1] of the withheld widths, computed within this
+    result only - per factor for multidimensional results. Higher means
+    LESS reliable relative to the other estimates in the same call. They
+    carry no unit and no absolute magnitude, are not comparable across
+    separate calls, and the warning travels with the values so it cannot be
     dropped on the way to a user.
     """
 
     values: np.ndarray
+    label: str = "relative reliability indicator"
     scale: str = "ordinal"
     warning: str = INTERVAL_SCALE_WARNING
-    explanation: str = ORDINAL_ONLY_EXPLANATION
+    explanation: str = RELATIVE_RELIABILITY_EXPLANATION
     permitted_uses: tuple[str, ...] = (
         "ordinal_uncertainty_ranking",
         "comparative_diagnostic",
@@ -138,10 +156,38 @@ class OrdinalUncertainty:
     )
 
     def ranks(self) -> np.ndarray:
-        """Midrank of each width - the only scale-free reading of ``values``."""
-        flat = np.asarray(self.values, dtype=float).ravel()
-        order = np.argsort(np.argsort(flat, kind="stable"), kind="stable")
-        return order.astype(float)
+        """Midranks (1..n, ties averaged) recovered from the percentiles."""
+        array = np.asarray(self.values, dtype=float)
+        return array * array.shape[0]
+
+
+def _midrank_percentiles(widths: np.ndarray) -> np.ndarray:
+    """Column-wise midrank percentiles in (0, 1]; exact ties share one value.
+
+    This is the ONLY transformation between the withheld posterior widths
+    and the released indicator: rank-preserving, scale-destroying, no
+    fitted parameter of any kind.
+    """
+    array = np.asarray(widths, dtype=float)
+    flat = array.reshape(array.shape[0], -1)
+    out = np.empty_like(flat)
+    n = flat.shape[0]
+    for column in range(flat.shape[1]):
+        values = flat[:, column]
+        order = np.argsort(values, kind="stable")
+        ranks = np.empty(n, dtype=float)
+        ranks[order] = np.arange(1, n + 1, dtype=float)
+        uniques, inverse, counts = np.unique(values, return_inverse=True, return_counts=True)
+        rank_sums = np.zeros(uniques.shape[0], dtype=float)
+        np.add.at(rank_sums, inverse, ranks)
+        out[:, column] = (rank_sums / counts)[inverse] / n
+    return out.reshape(array.shape)
+
+
+def _relative_reliability(widths: Any) -> RelativeReliabilityIndicator:
+    """Build the released indicator; the raw widths do not leave this frame."""
+    raw = widths.detach().numpy() if hasattr(widths, "detach") else np.asarray(widths)
+    return RelativeReliabilityIndicator(values=_midrank_percentiles(raw))
 
 
 @dataclass(frozen=True)
@@ -154,7 +200,7 @@ class MeterResult:
     """
 
     scores: np.ndarray | None
-    uncertainty: OrdinalUncertainty | None
+    relative_reliability: RelativeReliabilityIndicator | None
     support_status: dict[str, str]
     warnings: tuple[str, ...]
     refusal_reason: str | None
@@ -195,7 +241,7 @@ def _capability_contract() -> dict[str, Any]:
 
 
 def capability_support_map() -> dict[str, str]:
-    """Per-capability status, verbatim from the frozen v3.5 contract.
+    """Per-capability status, verbatim from the frozen v3.6 contract.
 
     Every entry that carries a status is included - the supported ones and
     the not-established ones alike, because one map that omitted the negative
@@ -211,21 +257,30 @@ def capability_support_map() -> dict[str, str]:
     return statuses
 
 
-def _repo_root() -> Path:
-    # Paper-reproducibility package: checkpoints live at the package root
-    # (meter-nmi-paper/checkpoints), one level above this module.
-    return Path(__file__).resolve().parents[1]
+#: Directory holding the frozen weight files. Defaults to the paper
+#: package's ``checkpoints/`` directory; a caller may point it at another
+#: verified checkpoint directory BEFORE the first model load. This is a
+#: paper-reproducibility loader edit (path resolution only); the loaded
+#: state is hash-asserted below exactly as in the frozen reference loaders.
+_CHECKPOINT_DIR: Path | None = None
+
+
+def _checkpoint_dir() -> Path:
+    if _CHECKPOINT_DIR is not None:
+        return _CHECKPOINT_DIR
+    return Path(__file__).resolve().parents[1] / "checkpoints"
 
 
 def _models() -> dict[str, Any]:
     """The frozen 5E scoring artifact, hash-verified at load.
 
-    Paper-reproducibility trim: the research loader (`ingestion.cli._load_models`)
-    additionally loads the DIF, linking and fusion artifacts, none of which is
-    reachable through ``meter.score``; this loader replicates the frozen
+    Research-package trim (identical to the paper-reproducibility loader):
+    the research loader (``ingestion.cli._load_models``) additionally loads
+    the DIF, linking and fusion artifacts, none of which is reachable
+    through ``meter.score``; this loader replicates the frozen
     ``phase5e1_run.frozen_longitudinal()`` behaviour exactly (state key
     ``best_state``, sorted-key SHA-256 assertion, ``gate_floor = 0.0``, no
-    ``eval()`` call) for the single artifact the paper's scoring path uses.
+    ``eval()`` call) for the single artifact the scoring path uses.
     Fixture tests assert bit-identical outputs against the research loader.
     """
     global _MODELS
@@ -242,12 +297,12 @@ def _models() -> dict[str, Any]:
                 "the frozen 5E state pin does not match this release's pin; "
                 "refusing to score with an unverified model"
             )
-        checkpoint = _repo_root() / "checkpoints" / "phase5e-arm5_combined.pt"
+        checkpoint = _checkpoint_dir() / "phase5e-arm5_combined.pt"
         if not checkpoint.exists():
             raise FileNotFoundError(
                 f"frozen checkpoint not found at {checkpoint}; obtain the "
-                "checkpoint distribution and verify it against "
-                "checkpoints/CHECKSUMS.sha256 before scoring"
+                "checkpoint distribution and verify it against the bundle "
+                "hashes.json before scoring"
             )
         payload = torch.load(checkpoint, map_location="cpu", weights_only=True)
         state = payload["best_state"]
@@ -272,13 +327,14 @@ def _state_sha256(state: dict[str, Any]) -> str:
 
 
 def _mapped_model() -> Any:
-    """The frozen known-structure model, reproduced or cache-loaded, verified.
+    """The frozen known-structure model, loaded from the bundle, verified.
 
-    The M8/D9 design carries no checkpoint for this model: it is reproduced
-    deterministically from frozen seeds (never fitted to any dataset) and the
-    resulting state is hash-asserted against the charter pin. The first call
-    therefore takes on the order of two minutes; the verified state is cached
-    under ``checkpoints/`` (gitignored) and loaded instantly afterwards.
+    The M8/D9 design carries no fitted checkpoint for this model: the
+    research repository reproduces it deterministically from frozen seeds
+    (never fitted to any dataset) and hash-asserts the resulting state
+    against the charter pin. This package distributes that reproduced,
+    hash-asserted state as a bundle weight file; the same charter pin is
+    asserted here before any inference.
     """
     global _MAPPED_MODEL
     if _MAPPED_MODEL is not None:
@@ -288,13 +344,14 @@ def _mapped_model() -> Any:
 
     from human_measurement.mapped.model import KnownStructureGrm
 
-    # Paper-reproducibility trim: the research package reproduces this state
-    # from its frozen seed procedure when the cache is absent. The reproduction
-    # code (trainer + world generator) is not part of the released inference
-    # surface, so this package distributes the reproduced, hash-asserted state
-    # as a checkpoint instead. The digest below is the same charter pin the
+    # Research-package trim (identical to the paper-reproducibility loader):
+    # the research package reproduces this state from its frozen seed
+    # procedure when the cache is absent. The reproduction code (trainer +
+    # world generator) is not part of the released inference surface, so
+    # this package distributes the reproduced, hash-asserted state as a
+    # checkpoint instead. The digest below is the same charter pin the
     # research reproduction is asserted against (D9B/D9E charters).
-    cache = _repo_root() / "checkpoints" / "mapped_known_structure_seed8100.pt"
+    cache = _checkpoint_dir() / "mapped_known_structure_seed8100.pt"
     if not cache.exists():
         raise FileNotFoundError(
             f"frozen known-structure state not found at {cache}; obtain the "
@@ -501,7 +558,7 @@ def _refusal(
         }
     return MeterResult(
         scores=None,
-        uncertainty=None,
+        relative_reliability=None,
         support_status=capability_support_map(),
         warnings=tuple(extra_warnings),
         refusal_reason=reason,
@@ -845,9 +902,11 @@ def _score_unidimensional(
         scores = result.outputs["person_score"].detach().numpy().ravel()
         widths = result.outputs.get("person_sd")
 
-    uncertainty = None
+    # P5 EXIT_2: the posterior widths stay in this frame; only the
+    # scale-free relative reliability indicator leaves it.
+    reliability = None
     if widths is not None:
-        uncertainty = OrdinalUncertainty(values=widths.detach().numpy())
+        reliability = _relative_reliability(widths)
 
     diagnostics: dict[str, Any] = {"route": list(result.route)}
     if result.output_decisions:
@@ -866,7 +925,7 @@ def _score_unidimensional(
 
     return MeterResult(
         scores=scores,
-        uncertainty=uncertainty,
+        relative_reliability=reliability,
         support_status=capability_support_map(),
         warnings=(*result.warnings, *meter_flags),
         refusal_reason=None,
@@ -910,7 +969,9 @@ def _score_known_structure(
         forward = model(to_world_tensors(dataset), mapping)
 
     scores = forward.mu.detach().numpy()
-    uncertainty = OrdinalUncertainty(values=forward.sd.detach().numpy())
+    # P5 EXIT_2: forward.sd is withheld; only its within-result midrank
+    # percentiles are released.
+    reliability = _relative_reliability(forward.sd)
     adequacy = factor_adequacy(forward, mapping, observed[:, 0, :])
 
     warnings: list[str] = list(construct_flags)
@@ -962,7 +1023,7 @@ def _score_known_structure(
 
     return MeterResult(
         scores=scores,
-        uncertainty=uncertainty,
+        relative_reliability=reliability,
         support_status=capability_support_map(),
         warnings=tuple(warnings),
         refusal_reason=None,

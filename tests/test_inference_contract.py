@@ -101,7 +101,8 @@ def test_mask_encodings_are_one_semantics():
     np.testing.assert_array_equal(np.asarray(a.scores), np.asarray(b.scores))
     np.testing.assert_array_equal(np.asarray(a.scores), np.asarray(c.scores))
     np.testing.assert_array_equal(
-        np.asarray(a.uncertainty.values), np.asarray(c.uncertainty.values)
+        np.asarray(a.relative_reliability.values),
+        np.asarray(c.relative_reliability.values),
     )
 
 
