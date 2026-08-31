@@ -1,8 +1,7 @@
 # meter-nmi-paper
 
 Reproducibility package for **"Pretrained psychometric inference transfers
-across instruments and populations"** (Nature Machine Intelligence
-submission). METER is a pretrained neural-psychometric inference system:
+across instruments and populations"**. METER is a pretrained neural-psychometric inference system:
 compact modules trained only on simulated ordinal measurement worlds,
 constrained by explicit graded-response decoders, applied with FROZEN weights
 to real instruments and populations.
